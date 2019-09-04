@@ -23,4 +23,5 @@ git:
 script:
 - echo compiling enigma2 plugins
 - python -m compileall .
+- find . -type f -name "*.po" -exec msgfmt {} -o {}.mo \;
 - echo done!
