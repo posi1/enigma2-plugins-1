@@ -852,7 +852,7 @@ msgstr ""
 "yardımcı olur."
 
 msgid "What is this 'control menu' you keep talking about?"
-msgstr "Bahsettiğiniz bu "kontrol menüsü" nedir?"
+msgstr "Bahsettiğiniz bu 'kontrol menüsü' nedir?"
 
 msgid ""
 "When supporting \"Fast Scan\" the service type is ignored. You don't need to "
