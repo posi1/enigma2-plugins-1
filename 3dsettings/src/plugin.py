@@ -31,7 +31,6 @@ from Screens.Screen import Screen
 from enigma import iPlayableService, iServiceInformation, eServiceCenter, eServiceReference, eDBoxLCD
 from ServiceReference import ServiceReference
 from os.path import basename as os_basename
-from boxbranding import getImageDistro
 
 # for localized messages
 from . import _
@@ -248,12 +247,8 @@ def opensettings(session, **kwargs):
 	session.open(ThreeDSettings)
 
 def settings(menuid, **kwargs):
-	if getImageDistro() in ('openhdf'):
-		if menuid != "video_menu":
-			return [ ]
-	else:
-		if menuid != "system":
-			return []
+	if menuid != "system":
+		return []
 	return [(_("3D settings"), opensettings, "3d_settings", 10)]
 
 def autostart(session, **kwargs):

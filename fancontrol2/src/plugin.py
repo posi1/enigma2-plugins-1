@@ -43,7 +43,6 @@ from threading import Thread, Lock
 import Queue
 Briefkasten = Queue.Queue()
 
-from boxbranding import getBoxType, getImageDistro
 
 
 def main(session,**kwargs):
@@ -145,33 +144,14 @@ def setPWM(fanid, value):
 #Configuration
 config.plugins.FanControl = ConfigSubsection()
 
-if getImageDistro() in ('openspa') and getBoxType() in ('vusolo2'):
-	config.plugins.FanControl.Fan = ConfigSelection(choices = [("disabled", _("disabled")), ("aus", _("Control disabled")), ("3pin", _("3Pin")), ("4pin", _("4Pin")), ("4pinREG", _("4Pin (PID)"))], default = "3pin")
-	config.plugins.FanControl.StandbyOff = ConfigSelection(choices = [("false", _("no")), ("true", _("yes")), ("trueRec", _("yes, Except for Recording or HDD"))], default="true")
-	config.plugins.FanControl.minRPM = ConfigSlider(default = 900, increment = 50, limits = (0, 1500))
-	config.plugins.FanControl.maxRPM = ConfigSlider(default = 1100, increment = 50, limits = (500, 6000))
-	config.plugins.FanControl.temp = ConfigSlider(default = 42, increment = 1, limits = (30, 50))
-	config.plugins.FanControl.tempmax = ConfigSlider(default = 50, increment = 1, limits = (35, 55))
-	config.plugins.FanControl.pwm = ConfigSlider(default = 30, increment = 5, limits = (0, 255))
-	config.plugins.FanControl.vlt = ConfigSlider(default = 30, increment = 5, limits = (0, 255))
-elif getImageDistro() in ('openspa') and getBoxType() in ('vuduo2'):
-	config.plugins.FanControl.Fan = ConfigSelection(choices = [("disabled", _("disabled")), ("aus", _("Control disabled")), ("3pin", _("3Pin")), ("4pin", _("4Pin")), ("4pinREG", _("4Pin (PID)"))], default = "4pin")
-	config.plugins.FanControl.StandbyOff = ConfigSelection(choices = [("false", _("no")), ("true", _("yes")), ("trueRec", _("yes, Except for Recording or HDD"))], default="true")
-	config.plugins.FanControl.minRPM = ConfigSlider(default = 750, increment = 50, limits = (0, 1500))
-	config.plugins.FanControl.maxRPM = ConfigSlider(default = 1100, increment = 50, limits = (500, 6000))
-	config.plugins.FanControl.temp = ConfigSlider(default = 42, increment = 1, limits = (30, 50))
-	config.plugins.FanControl.tempmax = ConfigSlider(default = 50, increment = 1, limits = (35, 55))
-	config.plugins.FanControl.pwm = ConfigSlider(default = 125, increment = 5, limits = (0, 255))
-	config.plugins.FanControl.vlt = ConfigSlider(default = 165, increment = 5, limits = (0, 255))
-else:
-	config.plugins.FanControl.Fan = ConfigSelection(choices = [("disabled", _("disabled")), ("aus", _("Control disabled")), ("3pin", _("3Pin")), ("4pin", _("4Pin")), ("4pinREG", _("4Pin (PID)"))], default = "disabled")
-	config.plugins.FanControl.StandbyOff = ConfigSelection(choices = [("false", _("no")), ("true", _("yes")), ("trueRec", _("yes, Except for Recording or HDD"))], default="false")
-	config.plugins.FanControl.minRPM = ConfigSlider(default = 600, increment = 50, limits = (0, 1500))
-	config.plugins.FanControl.maxRPM = ConfigSlider(default = 3000, increment = 50, limits = (500, 6000))
-	config.plugins.FanControl.temp = ConfigSlider(default = 40, increment = 1, limits = (30, 50))
-	config.plugins.FanControl.tempmax = ConfigSlider(default = 50, increment = 1, limits = (35, 55))
-	config.plugins.FanControl.pwm = ConfigSlider(default = 130, increment = 5, limits = (0, 255))
-	config.plugins.FanControl.vlt = ConfigSlider(default = 255, increment = 5, limits = (0, 255))
+config.plugins.FanControl.Fan = ConfigSelection(choices = [("disabled", _("disabled")), ("aus", _("Control disabled")), ("3pin", _("3Pin")), ("4pin", _("4Pin")), ("4pinREG", _("4Pin (PID)"))], default = "disabled")
+config.plugins.FanControl.StandbyOff = ConfigSelection(choices = [("false", _("no")), ("true", _("yes")), ("trueRec", _("yes, Except for Recording or HDD"))], default="false")
+config.plugins.FanControl.minRPM = ConfigSlider(default = 600, increment = 50, limits = (0, 1500))
+config.plugins.FanControl.maxRPM = ConfigSlider(default = 3000, increment = 50, limits = (500, 6000))
+config.plugins.FanControl.temp = ConfigSlider(default = 40, increment = 1, limits = (30, 50))
+config.plugins.FanControl.tempmax = ConfigSlider(default = 50, increment = 1, limits = (35, 55))
+config.plugins.FanControl.pwm = ConfigSlider(default = 130, increment = 5, limits = (0, 255))
+config.plugins.FanControl.vlt = ConfigSlider(default = 255, increment = 5, limits = (0, 255))
 
 config.plugins.FanControl.ShowError = ConfigSelection(choices = [("false", _("do nothing")), ("true", _("display Info")), ("shutdown", _("Box Shutdown"))], default="true")
 config.plugins.FanControl.ShutdownTemp = ConfigInteger(default = 65,limits = (50, 80))
@@ -1291,15 +1271,8 @@ def autostart(reason, **kwargs):
 		session.open(FanControl2)
 
 def selSetup(menuid, **kwargs):
-	if getImageDistro() in ('openhdf'):
-		if menuid != "devices_menu":
-			return [ ]
-	elif getImageDistro() in ('openatv'):
-		if menuid != "extended":
-			return []
-	else:
-		if menuid != "system":
-			return []
+	if menuid != "system":
+		return []
 	return [(_("Fan Control 2"), main, "fansetup_config", 70)]
 
 def Plugins(**kwargs):

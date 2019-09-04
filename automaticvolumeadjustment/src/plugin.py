@@ -27,7 +27,6 @@ from Plugins.Plugin import PluginDescriptor
 from AutomaticVolumeAdjustmentSetup import AutomaticVolumeAdjustmentConfigScreen
 from AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
 from AutomaticVolumeAdjustmentConfig import saveVolumeDict
-from boxbranding import getImageDistro
 
 def autostart(reason, **kwargs):
 	if "session" in kwargs:
@@ -45,12 +44,8 @@ def setup(session, **kwargs):
 	session.open(AutomaticVolumeAdjustmentConfigScreen) # start setup
 
 def startSetup(menuid):
-	if getImageDistro() in ('openhdf', 'openatv'):
-		if menuid != "audio_menu":
-			return [ ]
-	else:
-		if menuid != "system": # show setup only in system level menu
-			return []
+	if menuid != "system": # show setup only in system level menu
+		return []
 	return [(_("Automatic Volume Adjustment"), setup, "AutomaticVolumeAdjustment", 46)]
 
 def Plugins(**kwargs):

@@ -15,7 +15,6 @@ from enigma import ePoint
 from AutoMount import iAutoMount, AutoMount
 from re import sub as re_sub
 
-from boxbranding import getImageDistro
 
 class AutoMountEdit(Screen, ConfigListScreen):
 	skin = """
@@ -130,8 +129,6 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.sharetypelist.append(("nfs", _("NFS share")))
 
 		mountusing_default = "fstab"
-		if getImageDistro() in ("openvix", "easy-gui-aus", "beyonwiz", "openatv", "openhdf"):
-			mountusing_default = "autofs"
 
 		if self.mountinfo.has_key('mountusing'):
 			mountusing = self.mountinfo['mountusing']

@@ -18,7 +18,7 @@ from Screens.Screen import Screen
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 import gettext
 import os
-from boxbranding import getImageDistro
+
 if not os.path.exists('/usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyo'):
 	os.system('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockTime.pyo /usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyo')
 if not os.path.exists('/usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.pyo'):
@@ -554,15 +554,8 @@ def startConfig(session, **kwargs):
 	session.open(PermanentClockMenu)
 
 def main(menuid):
-	if getImageDistro() in ('teamblue'):
-		if menuid != "general_menu":
-			return [ ]
-	elif getImageDistro() in ('openhdf'):
-		if menuid != "gui_menu":
-			return [ ]
-	else:
-		if menuid != "system":
-			return []
+	if menuid != "system":
+		return []
 	return [(_("Permanent Clock"), startConfig, "permanent_clock", None)]
 
 def Plugins(**kwargs):

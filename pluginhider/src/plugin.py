@@ -11,7 +11,6 @@ from PluginHiderSetup import PluginHiderSetup
 
 from operator import attrgetter
 
-from boxbranding import getImageDistro
 
 config.plugins.pluginhider = ConfigSubsection()
 config.plugins.pluginhider.hideextensions = ConfigSet(choices=[])
@@ -75,12 +74,8 @@ def main(session, *args, **kwargs):
 	session.open(PluginHiderSetup)
 
 def menu(menuid):
-	if getImageDistro() in ('teamblue'):
-		if menuid != "general_menu":
-			return [ ]
-	else:
-		if menuid != "system":
-			return []
+	if menuid != "system":
+		return []
 	return [(_("Hide Plugins"), main, "pluginhider_setup", None)]
 
 def Plugins(**kwargs):

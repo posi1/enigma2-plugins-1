@@ -22,7 +22,6 @@ import sys
 import time
 from random import Random 
 
-from boxbranding import getImageDistro
 title=_("Change Root Password")
 
 class ChangePasswdScreen(Screen):
@@ -119,12 +118,8 @@ class ChangePasswdScreen(Screen):
 			self.buildList(callback)
 
 def startChange(menuid):
-	if getImageDistro() in ('teamblue'):
-		if menuid != "general_menu":
-			return [ ]
-	else:
-		if menuid != "system":
-			return []
+	if menuid != "system":
+		return []
 	return [(title, main, "change_root_passwd", 50)]
 
 def main(session, **kwargs):

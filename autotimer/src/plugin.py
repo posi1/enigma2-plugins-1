@@ -9,7 +9,6 @@ from Screens.MessageBox import MessageBox
 # Plugin
 from Components.PluginComponent import plugins
 from Plugins.Plugin import PluginDescriptor
-from boxbranding import getImageDistro
 
 from AutoTimer import AutoTimer
 autotimer = AutoTimer()
@@ -203,8 +202,5 @@ def Plugins(**kwargs):
 
 def timermenu(menuid):
 	if menuid == "timermenu":
-		if getImageDistro() in ('openhdf'):
-			return [(_("Auto Timer"), main, "autotimer_setup", None)]
-		else:
-			return [(_("AutoTimers"), main, "autotimer_setup", None)]
+		return [(_("AutoTimers"), main, "autotimer_setup", None)]
 	return []

@@ -13,7 +13,6 @@ from Plugins.Plugin import PluginDescriptor
 from Tools import Notifications
 import os
 
-from boxbranding import getImageDistro, getBoxType
 
 try:
 	from Components.AVSwitch import iAVSwitch as video_hw
@@ -740,12 +739,8 @@ def autostart(reason, **kwargs):
 			AutoRes(session)
 
 def startSetup(menuid):
-	if getImageDistro() in ('teamblue', 'openhdf'):
-		if menuid != "video_menu":
-			return [ ]
-	else:
-		if menuid != "system":
-			return [ ]
+	if menuid != "system":
+		return [ ]
 	return [(_("Autoresolution"), autoresSetup, "autores_setup", None)]
 
 def autoresSetup(session, **kwargs):

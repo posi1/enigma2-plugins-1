@@ -14,7 +14,6 @@ from Components.ConfigList import ConfigListScreen
 from time import localtime, mktime
 from Components.HdmiCec import hdmi_cec
 
-from boxbranding import getImageDistro
 
 def _print(outtxt):
 	ltim = localtime()
@@ -163,12 +162,8 @@ def main(session, **kwargs):
 		session.open(AdvHdmiCecSetup)
 
 def showinSetup(menuid):
-	if getImageDistro() in ('openhdf'):
-		if menuid != "video_menu":
-			return [ ]
-	else:
-		if menuid != "system":
-			return []
+	if menuid != "system":
+		return []
 	return [(_("Advanced HDMI-Cec Setup"), main, "", 46)]
 
 def Plugins(**kwargs):

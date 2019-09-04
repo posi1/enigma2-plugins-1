@@ -3,7 +3,6 @@ from Components.Language import language
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
 import os, gettext
 
-from boxbranding import getImageDistro
 
 # Config
 from Components.config import config, ConfigSubsection, ConfigEnableDisable, \
@@ -30,8 +29,6 @@ config.plugins.autotimer.delay = ConfigNumber(default=3)
 config.plugins.autotimer.editdelay = ConfigNumber(default=3)
 
 default_unit = "hour"
-if getImageDistro() in ('beyonwiz', 'teamblue', 'openatv', 'openvix', 'opendroid'): # distros that want default polling in minutes
-	default_unit = "minute"
 config.plugins.autotimer.unit = ConfigSelection(choices=[
 		("hour", _("Hour")),
 		("minute", _("Minute"))
@@ -39,8 +36,6 @@ config.plugins.autotimer.unit = ConfigSelection(choices=[
 )
 
 default_interval = {"hour": 4, "minute": 30} # default poll every 4 hours or 30 minutes
-if getImageDistro() in ('teamblue', 'openatv'):
-	default_interval["minute"] = 240
 config.plugins.autotimer.interval = ConfigNumber(default=default_interval[config.plugins.autotimer.unit.value])
 
 config.plugins.autotimer.timeout = ConfigNumber(default=5)

@@ -9,7 +9,6 @@ from Components.config import config, ConfigYesNo, ConfigNumber, ConfigSelection
 from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
 from Tools.BoundFunction import boundFunction
-from boxbranding import getImageDistro
 
 from Components.SystemInfo import SystemInfo
 from Components.NimManager import nimmanager
@@ -68,10 +67,7 @@ config.plugins.epgrefresh.adapter = ConfigSelection(choices = adapter_choices, d
 
 config.plugins.epgrefresh.show_in_extensionsmenu = ConfigYesNo(default = False)
 config.plugins.epgrefresh.show_run_in_extensionsmenu = ConfigYesNo(default = True)
-if getImageDistro() in ("openatv","openvix",):
-	config.plugins.epgrefresh.show_in_plugins = ConfigYesNo(default = False)
-else:
-	config.plugins.epgrefresh.show_in_plugins = ConfigYesNo(default = True)
+config.plugins.epgrefresh.show_in_plugins = ConfigYesNo(default = True)
 config.plugins.epgrefresh.show_help = ConfigYesNo(default = True)
 config.plugins.epgrefresh.wakeup_time = ConfigInteger(default=-1)
 config.plugins.epgrefresh.showadvancedoptions = NoSave(ConfigYesNo(default = False))
@@ -280,11 +276,7 @@ config.plugins.epgrefresh.show_in_extensionsmenu.addNotifier(housekeepingExtensi
 config.plugins.epgrefresh.show_run_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call = False, immediate_feedback = True)
 
 def menu_main(menuid, **kwargs):
-	if getImageDistro() in ("openvix", "openatv", "openspa", "openhdf"):
-		if menuid != "epg":
-			return []
-	else:
-		return []
+	return []
 	return [(_("EPGRefresh"), main, "epgrefresh", None)]
 
 def Plugins(**kwargs):

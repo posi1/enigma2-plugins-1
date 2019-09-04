@@ -4,7 +4,6 @@ from Vps import vps_timers
 from Vps_setup import VPS_Setup
 from Modifications import register_vps
 from . import _
-from boxbranding import getImageDistro
 
 # Config
 from Components.config import config, ConfigYesNo, ConfigSubsection, ConfigInteger, ConfigSelection
@@ -60,15 +59,8 @@ def doneConfig(session, **kwargs):
 	vps_timers.checkTimer()
 
 def startSetup(menuid):
-	if getImageDistro() in ('teamblue'):
-		if menuid != "general_menu":
-			return [ ]
-	elif getImageDistro() in ('openhdf'):
-		if menuid != "record_menu":
-			return [ ]
-	else:
-		if menuid != "system":
-			return []
+	if menuid != "system":
+		return []
 	return [(_("VPS Settings"), setup, "vps", 50)]
 
 def getNextWakeup():
