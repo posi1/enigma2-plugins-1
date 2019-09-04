@@ -1,7 +1,6 @@
 # -*- coding: iso-8859-1 -*-
 from enigma import ePythonMessagePump
 
-from __init__ import decrypt_block
 from ThreadQueue import ThreadQueue
 import gdata.youtube
 import gdata.youtube.service
@@ -24,18 +23,6 @@ if 'HTTPSConnection' not in dir(httplib):
 	# python on enimga2 has no https socket support
 	gdata.youtube.service.YOUTUBE_USER_FEED_URI = 'http://gdata.youtube.com/feeds/api/users'
 
-def validate_cert(cert, key):
-	buf = decrypt_block(cert[8:], key)
-	if buf is None:
-		return None
-	return buf[36:107] + cert[139:196]
-
-def get_rnd():
-	try:
-		rnd = os.urandom(8)
-		return rnd
-	except:
-		return None
 
 std_headers = {
 	'User-Agent': 'Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.6) Gecko/20100627 Firefox/3.6.6',

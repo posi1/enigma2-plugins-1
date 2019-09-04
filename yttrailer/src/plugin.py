@@ -18,7 +18,6 @@
 #  This applies to the source code as a whole as well as to parts of it, unless
 #  explicitely stated otherwise.
 
-from __init__ import decrypt_block, validate_cert, read_random, rootkey, l2key
 from Screens.Screen import Screen
 from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap, HelpableActionMap
@@ -26,7 +25,7 @@ from Components.PluginComponent import plugins
 from Plugins.Plugin import PluginDescriptor
 from Components.Sources.StaticText import StaticText
 from Components.GUIComponent import GUIComponent
-from enigma import eServiceReference,  RT_WRAP, RT_VALIGN_CENTER, RT_HALIGN_LEFT, gFont, eListbox, eListboxPythonMultiContent, eTPM
+from enigma import eServiceReference,  RT_WRAP, RT_VALIGN_CENTER, RT_HALIGN_LEFT, gFont, eListbox, eListboxPythonMultiContent
 
 import gdata.youtube
 import gdata.youtube.service
@@ -57,29 +56,23 @@ baseEventViewBase__init__ = None
 
 from Screens.EpgSelection import EPGSelection
 baseEPGSelection__init__ = None
-etpm = eTPM()
 
 
 def autostart(reason, **kwargs):
-	global l2key
-	l2cert = etpm.getData(eTPM.DT_LEVEL2_CERT)
-	if l2cert:
-		l2key = validate_cert(l2cert, rootkey)
-		if l2key:
-			global baseEventViewBase__init__, baseEPGSelection__init__
-			if baseEventViewBase__init__ is None:
-				baseEventViewBase__init__ = EventViewBase.__init__
-			EventViewBase.__init__ = EventViewBase__init__
-			EventViewBase.showTrailer = showTrailer
-			EventViewBase.showTrailerList = showTrailerList
-			EventViewBase.showConfig = showConfig
+	global baseEventViewBase__init__, baseEPGSelection__init__
+	if baseEventViewBase__init__ is None:
+		baseEventViewBase__init__ = EventViewBase.__init__
+	EventViewBase.__init__ = EventViewBase__init__
+	EventViewBase.showTrailer = showTrailer
+	EventViewBase.showTrailerList = showTrailerList
+	EventViewBase.showConfig = showConfig
 
-			if baseEPGSelection__init__ is None:
-				baseEPGSelection__init__ = EPGSelection.__init__
-			EPGSelection.__init__ = EPGSelection__init__
-			EPGSelection.showTrailer = showTrailer
-			EPGSelection.showConfig = showConfig
-			EPGSelection.showTrailerList = showTrailerList
+	if baseEPGSelection__init__ is None:
+		baseEPGSelection__init__ = EPGSelection.__init__
+	EPGSelection.__init__ = EPGSelection__init__
+	EPGSelection.showTrailer = showTrailer
+	EPGSelection.showConfig = showConfig
+	EPGSelection.showTrailerList = showTrailerList
 
 
 def setup(session,**kwargs):
@@ -145,7 +138,6 @@ def showTrailerList(self):
 class YTTrailer:
 	def __init__(self, session):
 		self.session = session
-		self.l3cert = etpm.getData(eTPM.DT_LEVEL3_CERT)
 
 	def showTrailer(self, eventname):
 		if eventname:
@@ -288,17 +280,10 @@ class YTTrailer:
 				fmt_infomap[int(fmtid)] = unquote_plus(fmturl)
 		print "[YTTrailer] got",sorted(fmt_infomap.iterkeys())
 		if video_fmt_map and len(video_fmt_map):
-			if self.l3cert:
-				l3key = validate_cert(self.l3cert, l2key)
-				if l3key:
-					rnd = read_random()
-					val = etpm.computeSignature(rnd)
-					result = decrypt_block(val, l3key)
-					if result[80:88] == rnd:
-						print "[YTTrailer] found best available video format:",video_fmt_map[sorted(video_fmt_map.iterkeys())[0]]['fmtid']
-						best_video = video_fmt_map[sorted(video_fmt_map.iterkeys())[0]]
-						video_url = "%s" %(best_video['fmturl'].split(';')[0])
-						print "[YTTrailer] found best available video url:",video_url
+			print "[YTTrailer] found best available video format:",video_fmt_map[sorted(video_fmt_map.iterkeys())[0]]['fmtid']
+			best_video = video_fmt_map[sorted(video_fmt_map.iterkeys())[0]]
+			video_url = "%s" %(best_video['fmturl'].split(';')[0])
+			print "[YTTrailer] found best available video url:",video_url
 
 		return video_url
 

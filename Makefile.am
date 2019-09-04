@@ -104,18 +104,15 @@ SUBDIRS = \
 	logomanager \
 	movielistpreview \
 	networkbrowser \
-	epgsearch
-
-if TPM
-SUBDIRS += \
-	mytube \
-	yttrailer \
-	webinterface \
+	epgsearch \
 	menusort \
 	pluginhider \
-	pluginsort 
-endif
+	pluginsort \
+	mytube \
+	yttrailer
 
+
+# webinterface (We use Open WebIF)
 # networkbrowserpli epgsearchpli (PLi)
 
 metadir = $(datadir)/meta
