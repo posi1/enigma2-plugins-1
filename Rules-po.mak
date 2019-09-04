@@ -2,7 +2,7 @@ CATEGORY ?= "Extensions"
 
 plugindir = $(libdir)/enigma2/python/Plugins/$(CATEGORY)/$(PLUGIN)
 
-LANGS = ar bg ca cs da de el en en_GB es et fa fi fr fy he hr hu is it lt lv nl no nb pl pt pt_BR ro ru sv sk sl sr th tr uk
+LANGS = ar bg ca cs da de el en es et fa fi fr fy he hr hu id is it ku lt lv nb nl nn pl pt pt_BR ro ru sk sl sr sv th tr uk vi zh_CN zh_HK
 LANGMO = $(LANGS:=.mo)
 LANGPO = $(LANGS:=.po)
 
