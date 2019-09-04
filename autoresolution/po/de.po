@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-08 13:42+0100\n"
+"POT-Creation-Date: 2019-09-05 03:21+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: JuSt611 <Software@Strasdas.de>\n"
 "Language-Team: JuSt611\n"
@@ -16,6 +16,15 @@ msgstr ""
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: ../src\n"
+
+msgid "Alternative resolution when native not supported"
+msgstr ""
+
+msgid "Ask before changing videomode"
+msgstr ""
+
+msgid "Auto frame rate (refresh need 'multi')"
+msgstr ""
 
 msgid "Autoresolution"
 msgstr "Autoresolution"
@@ -34,14 +43,18 @@ msgstr "Autoresolution Umschaltung"
 msgid "Autoresolution is not working in Scart/DVI-PC Mode"
 msgstr "Autoresolution läuft nicht im Scart/DVI-PC Modus"
 
-msgid "Autoresolution settings"
-msgstr "Autoresolution Einstellungen"
-
 msgid "Autoresolution videomode setup"
 msgstr "Autoresolution Videomodus einstellen"
 
 msgid "Cancel"
 msgstr "Abbrechen"
+
+#, python-format
+msgid ""
+"Changing framerate for current service?\n"
+"Current framerate: %s\n"
+"New framerate: %s\n"
+msgstr ""
 
 msgid "Deinterlacer mode for interlaced content"
 msgstr "Deinterlacer Modus für interlaced Inhalt"
@@ -61,11 +74,34 @@ msgstr "Modus 1080p25 aktivieren"
 msgid "Enable 1080p30 Mode"
 msgstr "Modus 1080p30 aktivieren"
 
+#, fuzzy
+msgid "Enable 2160p24 Mode"
+msgstr "Modus 720p24 aktivieren"
+
+#, fuzzy
+msgid "Enable 2160p25 Mode"
+msgstr "Modus 1080p25 aktivieren"
+
+#, fuzzy
+msgid "Enable 2160p30 Mode"
+msgstr "Modus 1080p30 aktivieren"
+
 msgid "Enable 720p24 Mode"
+msgstr "Modus 720p24 aktivieren"
+
+#, fuzzy
+msgid "Enable 720p50 Mode"
 msgstr "Modus 720p24 aktivieren"
 
 msgid "Enable Autoresolution"
 msgstr "Autoresolution aktivieren"
+
+msgid "Exit"
+msgstr ""
+
+#, fuzzy
+msgid "FHD 50/60HZ Progressive Mode"
+msgstr "SD 30/60HZ Progressiv Modus"
 
 msgid "HD Interlace Mode"
 msgstr "HD Interlace Modus"
@@ -73,11 +109,34 @@ msgstr "HD Interlace Modus"
 msgid "HD Progressive Mode"
 msgstr "HD Progressiv Modus"
 
+msgid "Lock timeout"
+msgstr ""
+
+#, fuzzy
+msgid "Manual resolution"
+msgstr "Autoresolution aktivieren"
+
+#, fuzzy
+msgid "Manual resolution is not working in Scart/DVI-PC mode!"
+msgstr "Autoresolution läuft nicht im Scart/DVI-PC Modus"
+
+msgid "Message timeout"
+msgstr ""
+
+msgid "Mode"
+msgstr ""
+
 msgid "OK"
 msgstr "OK"
 
+msgid "Please select a resolution..."
+msgstr ""
+
 msgid "Refresh Rate"
 msgstr "Auflösung"
+
+msgid "Return back without confirmation after 10 sec."
+msgstr ""
 
 msgid "Running in testmode"
 msgstr "Läuft im Testbetrieb"
@@ -97,8 +156,40 @@ msgstr "SD 30/60HZ Interlace Modus"
 msgid "SD 30/60HZ Progressive Mode"
 msgstr "SD 30/60HZ Progressiv Modus"
 
+msgid "Show 'Manual resolution' in extensions menu"
+msgstr ""
+
 msgid "Show info screen"
 msgstr "Info zeigen"
+
+msgid "This resolution is OK?"
+msgstr ""
+
+#, fuzzy
+msgid "UHD Interlace Mode"
+msgstr "HD Interlace Modus"
+
+#, fuzzy
+msgid "UHD Progressive Mode"
+msgstr "HD Progressiv Modus"
+
+msgid "Use 60HZ instead 30HZ"
+msgstr ""
+
+msgid "Video: "
+msgstr ""
+
+#, python-format
+msgid "Videocontent: %sx%s%s %sHZ"
+msgstr ""
+
+#, python-format
+msgid "Videomode: %s"
+msgstr ""
+
+#, python-format
+msgid "Videomode: %s %s %s"
+msgstr ""
 
 msgid "auto"
 msgstr "automatisch"
@@ -108,6 +199,9 @@ msgstr "bestmöglich"
 
 msgid "default"
 msgstr "Standard"
+
+msgid "manual"
+msgstr ""
 
 msgid "off"
 msgstr "aus"
