@@ -29,7 +29,6 @@ SUBDIRS = \
 	emission \
 	eparted \
 	epgrefresh \
-	eurotictv \
 	eventlist \
 	eventposition \
 	filebrowser \
@@ -63,7 +62,6 @@ SUBDIRS = \
 	permanentclock \
 	pipservicerelation \
 	podcast \
-	porncenter \
 	pushservice \
 	quickbutton \
 	reconstructapsc \
@@ -101,28 +99,12 @@ SUBDIRS = \
 	sudoku \
 	vierg \
 	bmediacenter \
-	advancedmovieselection
-
-if DREAMBOX
-SUBDIRS +=  fancontrol2 letterbox logomanager movielistpreview genuinedreambox
-endif
-
-if VUSOLO2
-SUBDIRS +=  fancontrol2
-endif
-if VUDUO2
-SUBDIRS +=  fancontrol2
-endif
-if VUUNO
-SUBDIRS +=  fancontrol2
-endif
-if VUULTIMO
-SUBDIRS +=  fancontrol2
-endif
-
-if XC7346
-SUBDIRS +=  fancontrol2
-endif
+	advancedmovieselection \
+	fancontrol2 \
+	logomanager \
+	movielistpreview \
+	networkbrowser \
+	epgsearch
 
 if TPM
 SUBDIRS += \
@@ -134,11 +116,7 @@ SUBDIRS += \
 	pluginsort 
 endif
 
-if PLI
-SUBDIRS += networkbrowserpli epgsearchpli
-else
-SUBDIRS += networkbrowser epgsearch
-endif
+# networkbrowserpli epgsearchpli (PLi)
 
 metadir = $(datadir)/meta
 meta_DATA = index-enigma2-plugins.xml
