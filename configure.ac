@@ -493,6 +493,12 @@ podcast/meta/Makefile
 podcast/po/Makefile
 podcast/src/Makefile
 
+primetimemanager/Makefile
+primetimemanager/meta/Makefile
+primetimemanager/po/Makefile
+primetimemanager/src/Makefile
+primetimemanager/src/images/Makefile
+
 pushservice/Makefile
 pushservice/meta/Makefile
 pushservice/po/Makefile
@@ -510,6 +516,11 @@ quickbutton/src/Makefile
 reconstructapsc/Makefile
 reconstructapsc/meta/Makefile
 reconstructapsc/src_py/Makefile
+
+recordinfobar/Makefile
+recordinfobar/meta/Makefile
+recordinfobar/po/Makefile
+recordinfobar/src/Makefile
 
 reftopiconname/Makefile
 reftopiconname/src/Makefile
@@ -589,6 +600,12 @@ svdrp/Makefile
 svdrp/meta/Makefile
 svdrp/src/Makefile
 
+systemtime/Makefile
+systemtime/meta/Makefile
+systemtime/po/Makefile
+systemtime/src/Makefile
+systemtime/src/images/Makefile
+
 tageditor/Makefile
 tageditor/meta/Makefile
 tageditor/po/Makefile
@@ -601,6 +618,11 @@ teletext/src/Makefile
 
 toolkit/Makefile
 toolkit/src/Makefile
+
+transmission/Makefile
+transmission/src/Makefile
+transmission/po/Makefile
+transmission/meta/Makefile
 
 tvcharts/Makefile
 tvcharts/meta/Makefile

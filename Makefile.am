@@ -74,9 +74,11 @@ SUBDIRS = \
 	pluginhider \
 	pluginsort \
 	podcast \
+	primetimemanager \
 	pushservice \
 	quickbutton \
 	reconstructapsc \
+	recordinfobar \
 	reftopiconname \
 	remotetimer \
 	rsdownloader \
@@ -89,9 +91,11 @@ SUBDIRS = \
 	subsdownloader2 \
 	sudoku \
 	svdrp \
+	systemtime \
 	tageditor \
 	teletext \
 	toolkit \
+	transmission \
 	tvcharts \
 	unwetterinfo \
 	valixdcontrol \
