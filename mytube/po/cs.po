@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-05 21:11+0430\n"
 "PO-Revision-Date: 2008-04-03 19:16+0100\n"
 "Last-Translator: ws79 <ws79@centrum.cz>\n"
 "Language-Team: \n"
@@ -116,9 +116,6 @@ msgid "France"
 msgstr ""
 
 msgid "Gaming"
-msgstr ""
-
-msgid "Genuine Dreambox validation failed!"
 msgstr ""
 
 msgid "Germany"
@@ -438,9 +435,6 @@ msgid "Unknown error"
 msgstr ""
 
 msgid "User video entries."
-msgstr ""
-
-msgid "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
 msgstr ""
 
 msgid "Video successfully added to favorites"

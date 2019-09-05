@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkwizard_nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-05 21:11+0430\n"
 "PO-Revision-Date: 2013-10-06 17:53+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: AndyBlac/Rob van der Does\n"
@@ -123,9 +123,6 @@ msgstr "Frankrijk"
 
 msgid "Gaming"
 msgstr "Gaming"
-
-msgid "Genuine Dreambox validation failed!"
-msgstr ""
 
 msgid "Germany"
 msgstr "Duitsland"
@@ -444,9 +441,6 @@ msgid "Unknown error"
 msgstr "Onbekende fout"
 
 msgid "User video entries."
-msgstr ""
-
-msgid "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
 msgstr ""
 
 msgid "Video successfully added to favorites"

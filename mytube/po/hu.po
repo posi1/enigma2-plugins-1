@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-05 21:11+0430\n"
 "PO-Revision-Date: 2008-04-08 10:29+0100\n"
 "Last-Translator: MediaVox-Extrasat <info@mediavox.hu>\n"
 "Language-Team: none\n"
@@ -118,9 +118,6 @@ msgid "France"
 msgstr ""
 
 msgid "Gaming"
-msgstr ""
-
-msgid "Genuine Dreambox validation failed!"
 msgstr ""
 
 msgid "Germany"
@@ -440,9 +437,6 @@ msgid "Unknown error"
 msgstr ""
 
 msgid "User video entries."
-msgstr ""
-
-msgid "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
 msgstr ""
 
 msgid "Video successfully added to favorites"

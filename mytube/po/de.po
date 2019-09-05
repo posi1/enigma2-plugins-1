@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyTube\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-05 21:11+0430\n"
 "PO-Revision-Date: 2012-08-04 15:29+0100\n"
 "Last-Translator: JuSt611 <Software@Strasdas.de>\n"
 "Language-Team: none\n"
@@ -122,9 +122,6 @@ msgstr "Frankreich"
 
 msgid "Gaming"
 msgstr "Spiele"
-
-msgid "Genuine Dreambox validation failed!"
-msgstr "Prüfung auf Original-Dreambox gescheitert!"
 
 msgid "Germany"
 msgstr "Deutschland"
@@ -446,9 +443,6 @@ msgstr ""
 
 msgid "User video entries."
 msgstr "Benutzer Video Einträge."
-
-msgid "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
-msgstr "Bitte mit dem \"Genuine Dreambox Plugin\" auf Echtheit prüfen!"
 
 msgid "Video successfully added to favorites"
 msgstr ""

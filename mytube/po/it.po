@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - mytube\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-05 21:11+0430\n"
 "PO-Revision-Date: 2012-05-28 21:17+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -126,9 +126,6 @@ msgstr "Francia"
 
 msgid "Gaming"
 msgstr "Giochi"
-
-msgid "Genuine Dreambox validation failed!"
-msgstr "Validazione Genuine Dreambox fallita!"
 
 msgid "Germany"
 msgstr "Germania"
@@ -450,9 +447,6 @@ msgstr ""
 
 msgid "User video entries."
 msgstr "Voci video utente."
-
-msgid "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
-msgstr "Verificare l'autenticità del Dreambox tramite il plugin Genuine Dreambox!"
 
 msgid "Video successfully added to favorites"
 msgstr ""

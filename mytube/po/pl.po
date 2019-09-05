@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins-extension-MyTube\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-05 21:11+0430\n"
 "PO-Revision-Date: 2009-07-13 16:59+0100\n"
 "Last-Translator: Sebastian <zbigzbig2@op.pl>\n"
 "Language-Team: none\n"
@@ -118,9 +118,6 @@ msgid "France"
 msgstr ""
 
 msgid "Gaming"
-msgstr ""
-
-msgid "Genuine Dreambox validation failed!"
 msgstr ""
 
 msgid "Germany"
@@ -445,9 +442,6 @@ msgstr ""
 #, fuzzy
 msgid "User video entries."
 msgstr "Nie, ale przełącz na stronę główną"
-
-msgid "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
-msgstr ""
 
 msgid "Video successfully added to favorites"
 msgstr ""

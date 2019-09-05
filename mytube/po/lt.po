@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyTube\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-05 21:11+0430\n"
 "PO-Revision-Date: 2017-07-10 18:43+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -120,9 +120,6 @@ msgstr "Prancūzija"
 
 msgid "Gaming"
 msgstr "Žaidimai"
-
-msgid "Genuine Dreambox validation failed!"
-msgstr ""
 
 msgid "Germany"
 msgstr "Vokietija"
@@ -446,9 +443,6 @@ msgstr ""
 #, fuzzy
 msgid "User video entries."
 msgstr "Daugiau vaizdo įrašų."
-
-msgid "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
-msgstr ""
 
 msgid "Video successfully added to favorites"
 msgstr ""
