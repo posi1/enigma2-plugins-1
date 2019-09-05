@@ -1,6 +1,7 @@
 ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = \
+	advancedmovieselection \
 	advhdmi \
 	aihdcontroler \
 	antiscrollbar \
@@ -13,6 +14,7 @@ SUBDIRS = \
 	autotimer \
 	babelzapper \
 	birthdayreminder \
+	bmediacenter \
 	bonjour \
 	cdinfo \
 	channelselectionshorttitle \
@@ -29,8 +31,11 @@ SUBDIRS = \
 	emission \
 	eparted \
 	epgrefresh \
+	epgsearch \
+	esame \
 	eventlist \
 	eventposition \
+	fancontrol2 \
 	filebrowser \
 	flashexpander \
 	fritzcall \
@@ -42,25 +47,32 @@ SUBDIRS = \
 	infobartunerstate \
 	kiddytimer \
 	letterbox \
+	logomanager \
 	mediadownloader \
+	menusort \
 	merlinepg \
 	merlinepgcenter \
 	merlinmusicplayer \
 	mosaic \
 	moviecut \
+	movielistpreview \
 	movieretitle \
 	moviesearch \
 	movietagger \
 	mphelp \
 	multirc \
+	mytube \
 	ncidclient \
 	netcaster \
+	networkbrowser \
 	ofdb \
 	orfat \
 	orfteletext \
 	partnerbox \
 	permanentclock \
 	pipservicerelation \
+	pluginhider \
+	pluginsort \
 	podcast \
 	pushservice \
 	quickbutton \
@@ -68,12 +80,14 @@ SUBDIRS = \
 	reftopiconname \
 	remotetimer \
 	rsdownloader \
+	schiffe \
 	seriesplugin \
 	setpasswd \
 	shoutcast \
 	showclock \
 	simplerss \
 	subsdownloader2 \
+	sudoku \
 	svdrp \
 	tageditor \
 	teletext \
@@ -82,38 +96,23 @@ SUBDIRS = \
 	unwetterinfo \
 	valixdcontrol \
 	videocolorspace \
+	vierg \
 	vlcplayer \
 	vps \
-	weatherplugin \
 	weathercomponent \
 	weathercomponenthandler \
+	weatherplugin \
 	webadmin \
 	webbouqueteditor \
 	webcamviewer \
 	werbezapper \
+	yttrailer \
 	zaphistorybrowser \
 	zapstatistic \
-	zdfmediathek \
-	esame \
-	schiffe \
-	sudoku \
-	vierg \
-	bmediacenter \
-	advancedmovieselection \
-	fancontrol2 \
-	logomanager \
-	movielistpreview \
-	networkbrowser \
-	epgsearch \
-	menusort \
-	pluginhider \
-	pluginsort \
-	mytube \
-	yttrailer
+	zdfmediathek
 
 
-# webinterface (We use Open WebIF)
-# networkbrowserpli epgsearchpli (PLi)
+# epgsearchpli networkbrowserpli (PLi)
 
 metadir = $(datadir)/meta
 meta_DATA = index-enigma2-plugins.xml
