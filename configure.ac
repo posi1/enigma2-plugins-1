@@ -267,17 +267,6 @@ epgsearch/meta/Makefile
 epgsearch/po/Makefile
 epgsearch/src/Makefile
 
-epgsearchpli/Makefile
-epgsearchpli/meta/Makefile
-epgsearchpli/po/Makefile
-epgsearchpli/src/Makefile
-epgsearchpli/src/icons/Makefile
-
-eurotictv/Makefile
-eurotictv/meta/Makefile
-eurotictv/po/Makefile
-eurotictv/src/Makefile
-
 eventlist/Makefile
 eventlist/src/Makefile
 
@@ -315,10 +304,6 @@ ftpbrowser/meta/Makefile
 ftpbrowser/po/Makefile
 ftpbrowser/src/Makefile
 ftpbrowser/src/images/Makefile
-
-genuinedreambox/Makefile
-genuinedreambox/meta/Makefile
-genuinedreambox/src/Makefile
 
 googlemaps/Makefile
 googlemaps/meta/Makefile
@@ -463,13 +448,6 @@ networkbrowser/src/icons/Makefile
 networkbrowser/src/lib/Makefile
 networkbrowser/po/Makefile
 
-networkbrowserpli/Makefile
-networkbrowserpli/meta/Makefile
-networkbrowserpli/src/Makefile
-networkbrowserpli/src/icons/Makefile
-networkbrowserpli/src/lib/Makefile
-networkbrowserpli/po/Makefile
-
 ofdb/Makefile
 ofdb/meta/Makefile
 ofdb/po/Makefile
@@ -514,12 +492,6 @@ podcast/etc/Makefile
 podcast/meta/Makefile
 podcast/po/Makefile
 podcast/src/Makefile
-
-porncenter/Makefile
-porncenter/meta/Makefile
-porncenter/po/Makefile
-porncenter/src/Makefile
-porncenter/src/Additions/Makefile
 
 pushservice/Makefile
 pushservice/meta/Makefile
@@ -707,34 +679,6 @@ webbouqueteditor/src/WebScreens/Makefile
 webcamviewer/Makefile
 webcamviewer/meta/Makefile
 webcamviewer/src/Makefile
-
-webinterface/Makefile
-webinterface/meta/Makefile
-webinterface/po/Makefile
-webinterface/src/Makefile
-webinterface/src/m/Makefile
-webinterface/src/mobile/Makefile
-webinterface/src/web/Makefile
-webinterface/src/web-data/Makefile
-webinterface/src/web-data/gfx/Makefile
-webinterface/src/web-data/img/Makefile
-webinterface/src/web-data/lib/Makefile
-webinterface/src/web-data/lib/lang/Makefile
-webinterface/src/web-data/lib/datepicker/Makefile
-webinterface/src/web-data/lib/datepicker/media/Makefile
-webinterface/src/web-data/m/Makefile
-webinterface/src/web-data/m/css/Makefile
-webinterface/src/web-data/m/css/themes/Makefile
-webinterface/src/web-data/m/css/themes/images/Makefile
-webinterface/src/web-data/m/script/Makefile
-webinterface/src/web-data/tpl/Makefile
-webinterface/src/web-data/tpl/default/Makefile
-webinterface/src/web-data/tpl/default/streaminterface/Makefile
-webinterface/src/WebChilds/Makefile
-webinterface/src/WebChilds/External/Makefile
-webinterface/src/WebComponents/Makefile
-webinterface/src/WebComponents/Converter/Makefile
-webinterface/src/WebComponents/Sources/Makefile
 
 werbezapper/Makefile
 werbezapper/meta/Makefile
