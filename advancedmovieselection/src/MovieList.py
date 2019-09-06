@@ -52,6 +52,7 @@ from Source.Hotplug import hotplug
 from Source.ServiceDescriptor import MovieInfo
 from Source.MovieConfig import MovieConfig
 from Source.PicLoader import PicLoader
+from Components.Console import Console
 
 IMAGE_PATH = "Extensions/AdvancedMovieSelection/images/"
 
@@ -277,7 +278,7 @@ class MovieList(GUIComponent):
         from os import system
         cmd = 'umount "%s"' % (service.getPath())
         print cmd
-        res = system(cmd) >> 8
+        res = Console().ePopen(cmd) >> 8
         print res
         if res == 0:
             self.hotplugServices.remove(service)

@@ -20,13 +20,13 @@
 #
 import commands
 from os import system
-
 from __init__ import _
 from Components.ConfigList import ConfigListScreen
 from Components.config import getConfigListEntry, config, ConfigSubsection, ConfigSelection
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
 from Screens.Screen import Screen
+from Components.Console import Console
 
 def getColorSpace():
     mode = commands.getoutput('cat /proc/stb/video/hdmi_colorspace')
@@ -35,7 +35,7 @@ def getColorSpace():
 
 def setColorSpace(mode):
     print "[VideoColorSpace] set hdmi_colorspace:", mode
-    result = system("echo %s > /proc/stb/video/hdmi_colorspace" % (mode)) >> 8
+    result = Console().ePopen("echo %s > /proc/stb/video/hdmi_colorspace" % mode) >> 8
     if result != 0:
         print "[VideoColorSpace] error setting hdmi_colorspace"
         getColorSpace()
