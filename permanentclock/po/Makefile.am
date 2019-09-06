@@ -1,3 +1,3 @@
-PLUGIN = "PermanentClock"
+PLUGIN = PermanentClock
 CATEGORY = "Extensions"
 include $(top_srcdir)/Rules_noxml-po.mak
