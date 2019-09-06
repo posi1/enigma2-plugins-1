@@ -29,15 +29,13 @@ from Screens.TimerEdit import TimerSanityConflict
 from Tools.Directories import fileExists, pathExists, SCOPE_SKIN_IMAGE, SCOPE_ACTIVE_SKIN, resolveFilename
 from Tools.HardwareInfo import HardwareInfo
 from Plugins.Plugin import PluginDescriptor
-
+from Components.Console import Console
 from enigma import eTimer, eEPGCache, loadPNG, eListboxPythonMultiContent, gFont, eServiceReference, eServiceCenter, iPlayableService, BT_SCALE
 from random import randint
-from os import system as os_system
 from time import time, gmtime, strftime
 from twisted.web.client import getPage
 from xml.dom.minidom import parse, parseString
 from urllib import urlencode
-
 import timer
 import xml.etree.cElementTree
 import Screens.Standby
@@ -554,10 +552,10 @@ class DBUpdateStatus(Screen):
 		# Get Pluginlist
 		if config.plugins.tvcharts.submitplugins.value and self.pluginlist == "":
 			try:
-				os_system("opkg list_installed | grep enigma2-plugin- > /tmp/plugins.txt")
+				Console().ePopen("opkg list_installed | grep enigma2-plugin- > /tmp/plugins.txt")
 				for plugin in open('/tmp/plugins.txt', 'r'):
 					self.pluginlist += plugin[0:plugin.find(' - ')]+"\n"
-				os_system("rm -f /tmp/plugins.txt")
+				Console().ePopen("rm -f /tmp/plugins.txt")
 			except Exception:
 				print "[TVCharts] Error loading plugins!"
 		

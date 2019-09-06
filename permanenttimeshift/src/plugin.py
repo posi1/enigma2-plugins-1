@@ -32,13 +32,12 @@ from Tools import Directories, ASCIItranslit, Notifications
 from Tools.Directories import fileExists, copyfile, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from Plugins.Plugin import PluginDescriptor
 from RecordTimer import RecordTimer, RecordTimerEntry, parseEvent
-
+from Components.Console import Console
 from random import randint
 from enigma import eTimer, eServiceCenter, eBackgroundFileEraser, iPlayableService, iRecordableService, iServiceInformation
-from os import stat as os_stat, listdir as os_listdir, link as os_link, path as os_path, system as os_system, statvfs
+from os import stat as os_stat, listdir as os_listdir, link as os_link, path as os_path, statvfs
 from time import localtime, time, gmtime, strftime
 from timer import TimerEntry
-
 import os, gettext
 import Screens.InfoBar
 import Screens.Standby
@@ -999,7 +998,7 @@ class InfoBar(InfoBarOrg):
 		if self.session.nav.RecordTimer.isRecording() or len(JobManager.getPendingJobs()) >= 1:
 			# Rename files and delete them later ...
 			self.pts_mergeCleanUp_timer.start(120000, True)
-			os_system("echo \"\" > \"%s.pts.del\"" % (srcfile[0:-3]))
+			Console().ePopen("echo \"\" > \"%s.pts.del\"" % (srcfile[0:-3]))
 		else:
 			# Delete Instant Record permanently now ... R.I.P.
 			self.BgFileEraser.erase("%s" % (srcfile))

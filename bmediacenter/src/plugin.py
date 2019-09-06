@@ -12,6 +12,7 @@ from Tools.Directories import pathExists, fileExists
 from __init__ import _
 import os
 import commands
+from Components.Console import Console
 
 config.plugins.mc_global = ConfigSubsection()
 config.plugins.mc_global.vfd = ConfigSelection(default='off', choices=[('off', 'off'), ('on', 'on')])
@@ -78,7 +79,7 @@ class DMC_MainMenu(Screen):
 		if config.plugins.mc_globalsettings.upnp_enable.getValue():
 			if fileExists("/media/upnp") is False:
 				os.mkdir("/media/upnp")
-			os.system('djmount /media/upnp &')
+			Console().ePopen('djmount /media/upnp &')
 	def next(self):
 		self["menu"].selectNext()
 		if self["menu"].getIndex() == 1:
@@ -180,7 +181,7 @@ class DMC_MainMenu(Screen):
 				print "Set OSD Transparacy failed"
 #		if config.plugins.mc_global.vfd.value == "on":
 #			evfd.getInstance().vfd_write_string(_("Media Center"))
-		os.system('umount /media/upnp')
+		Console().ePopen('umount /media/upnp')
 		self.session.nav.playService(self.oldbmcService)
 		self.close()
 

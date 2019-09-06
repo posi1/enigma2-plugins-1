@@ -2,24 +2,22 @@
 
 from Screens.ChoiceBox import ChoiceBox
 from Screens.MessageBox import MessageBox
-
+from Components.Console import Console
 from Components.config import config
 from enigma import eEPGCache
 from enigma import eTimer
 from Tools import Notifications
 from Screens.TextBox import TextBox
 from Tools.HardwareInfo import HardwareInfo
-
 from . import _
-
 # Error-print
 from EPGBackupTools import debugOut, _getLogFilename, EPGBACKUP_NOTIFICATIONDOMAIN
 from traceback import format_exc
-
 # SH-Script
 from Tools.Directories import SCOPE_PLUGINS, resolveFilename
 import os
 import subprocess
+
 SH_EXEC_FILE = resolveFilename(SCOPE_PLUGINS, "Extensions/EPGBackup/EPGBackup.sh")
 SH_TMP_OUTPUT="/tmp/.EPGBackup.sh.output"
 BOOTCOUNTERFILE="/tmp/.EPGBackup.boot.counter"
@@ -98,7 +96,7 @@ class EPGBackupSupport:
 				backupedFile = self.executeShScript(EPGBACKUP_SHELL_CONSTANTS["GETLASTFILE"], EPGBACKUP_SHELL_CONSTANTS["GETLASTFILE_BACKUP"])
 				if backupedFile != "":
 					debugOut("Deleting file \"%s\"..." % (backupedFile))
-					os.system("rm -f %s" % (backupedFile))
+					Console().ePopen("rm -f %s" % backupedFile)
 		except:
 				debugOut("askDeleteBadBackupCB-Error:\n" + str(format_exc()), forced=True)
 
@@ -324,7 +322,7 @@ class EPGBackupSupport:
 	
 	def _executeShOld(self, sh_cmd, param1 = "", param2 = ""):
 		outtext = ""
-		os.system("%s %s %s > %s" %(sh_cmd, param1, param2, str(SH_TMP_OUTPUT)))
+		Console().ePopen("%s %s %s > %s" % (sh_cmd, param1, param2, str(SH_TMP_OUTPUT)))
 		fo=open(str(SH_TMP_OUTPUT))
 		line = fo.readline()
 		while (line):

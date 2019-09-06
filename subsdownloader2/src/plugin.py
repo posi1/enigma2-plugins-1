@@ -12,7 +12,7 @@ from Plugins.Extensions.SubsDownloader2.SourceCode.anysub2srt import SubConv
 # jak zmienie sciezke SubsDownloader2 (nazwe katalogu to trzeba ja tez zmienic w pliku OpenSubtitles.py
 #from Plugins.Extensions.SubsDownloader2.SourceCode.periscope.services.OpenSubtitle.services import OpenSubtitle
 from Plugins.Extensions.SubsDownloader2.SourceCode.xbmc_subtitles.XBMC_search import list_XBMC_Periscope_plugins#, XBMCSubtitle
-
+from Components.Console import Console
 from Plugins.Extensions.SubsDownloader2.SourceCode.periscope import SubtitleDatabase
 from Plugins.Extensions.SubsDownloader2.SourceCode.NapiProjekt import NapiProjekt #*
 from Plugins.Extensions.SubsDownloader2.SourceCode.Napisy24_pl import Napisy24_pl, GuessFileData_from_FileName, CompareMovie_and_Subtite_FileData
@@ -20,7 +20,6 @@ from Plugins.Extensions.SubsDownloader2.SourceCode.chardet_OutpuyTranslation imp
 from Plugins.Extensions.SubsDownloader2.SourceCode.myFileList import EXTENSIONS, FileList #*
 from Plugins.Extensions.SubsDownloader2.pluginOnlineContent import IsNewVersionCheck, zlib_link, libmediainfo_link, unrar_link, Subtitle_Downloader_temp_dir, PluginIpkUpdate, InstallDownloadableContent, CommertialBannerDownload #flagcounetr,
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from os import system as os_system
 from os import stat as os_stat
 from os import walk as os_walk
 from Screens.Screen import Screen
@@ -156,7 +155,7 @@ class SubsDownloaderApplication(Screen):
 		<widget source=\"key_blue\" render=\"Label\" position=\""+str(widget_source_x_position+43)+","+str(widget_source_y_position+widget_source_y_size*7)+"\" zPosition=\"1\" size=\""+str(widget_source_x_size)+","+str(widget_source_y_size)+"\" font=\"Regular;"+str(font_size)+"\" halign=\"left\" valign=\"center\" transparent=\"1\" /> \
 	        </screen>"
 		
-		os.system('mkdir /tmp/SubsDownloader_cache')
+		Console().ePopen('mkdir /tmp/SubsDownloader_cache')
 		self.subsListDownloaded=0
 		self.localConvertion = False
 		self.MyBox = HardwareInfo().get_device_name()
@@ -339,7 +338,7 @@ class SubsDownloaderApplication(Screen):
 				
 			if order != None:
 				try:
-					os.system(order)
+					Console().ePopen(order)
 				except:
 					self.session.open(MessageBox,_("%s \nFAILED!" % order), MessageBox.TYPE_ERROR)
 			self.set_FileManager_disabled()
@@ -703,7 +702,7 @@ class SubsDownloaderApplication(Screen):
 						self.clearSubList()
 						self.session.open(MessageBox,_("There is no subtitle on this server to Your movie. \nPlease try another language or subtitle server.\n\nIf error still appears please check network connection with server."), MessageBox.TYPE_INFO, timeout = 5)
 					else:
-						#os.system('echo "%s" >> /text' % str(self.subtitle_database))
+						#Console().ePopen('echo "%s" >> /text' % str(self.subtitle_database))
 						self.setServerAvailableSubtitles_for_XBMC_SUBTITLES(self.subtitle_database)
 				elif config.plugins.subsdownloader.subtitleserver.value == "NapiProjekt":
 					#self.isSubtitleDowloaded=0
@@ -1020,7 +1019,7 @@ class SubsDownloaderApplication(Screen):
 				self.setServerAvailableSubtitles_for_dirList(self["subsList"].getCurrent()[1])
 				
 	def closeApplication(self):
-		os.system('rm -r %s' % Subtitle_Downloader_temp_dir)
+		Console().ePopen('rm -r %s' % Subtitle_Downloader_temp_dir)
 		print "\n[SubsDownloaderApplication] cancel\n"
 		self.session.nav.playService(self.altservice)
 		if config.plugins.subsdownloader.pathSave.value == True:
@@ -1305,7 +1304,7 @@ class MviExplorer(Screen):
 		}, -1)
 		self.onLayoutFinish.append(self.showMvi)
 	def showMvi(self):
-		os.system("/usr/bin/showiframe " + self.file_name)
+		Console().ePopen("/usr/bin/showiframe %s" % self.file_name)
 
 
 
@@ -1525,7 +1524,7 @@ class MusicExplorer(MoviePlayer_4_MusicExploret):
 
 	def showMMI(self):
 		try:
-			os_system("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/music.mvi")
+			Console().ePopen("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/music.mvi")
 			#TODO DAC wlasna
 		except:
 			pass #TU DOROBIC WLASNA TAPETE

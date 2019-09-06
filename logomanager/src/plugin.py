@@ -8,6 +8,7 @@ from Components.config import config,ConfigSubsection,ConfigSelection, getConfig
 from Components.ConfigList import ConfigListScreen
 from Tools.HardwareInfo import HardwareInfo
 from os import path as os_path, listdir as os_listdir, system as os_system, remove as os_remove
+from Components.Console import Console
 ###############################################################################
 config.plugins.logomanager = ConfigSubsection()
 config.plugins.logomanager.path = ConfigSelection([("/media/cf/bootlogos/",_("CF Drive")),("/media/hdd/bootlogos/",_("Harddisk"))],default="/media/hdd/bootlogos/")
@@ -188,22 +189,22 @@ class LogoManagerScreen(Screen):
     def showMVI(self,mvifile):
         """ shows a mvi """
         print "playing MVI",mvifile
-        os_system("/usr/bin/showiframe '%s'" % mvifile)
+        Console().ePopen("/usr/bin/showiframe %s" % mvifile)
 
     def installMVI(self,target,sourcefile):
         """ installs a mvi by overwriting the target with a source mvi """
         print "installing %s as %s on %s" %(sourcefile,target[0],target[1])
         if os_path.isfile(target[1]):
             os_remove(target[1])
-        os_system("cp '%s' '%s'"%(sourcefile,target[1]))
+        Console().ePopen("cp %s %s" % (sourcefile, target[1]))
 
     def makeBootWritable(self):
         """ because /boot isnt writeable by default, we will change that here """
-        os_system("mount -o rw,remount /boot")
+        Console().ePopen("mount -o rw,remount /boot")
 
     def makeBootReadonly(self):
         """ make /boot writeprotected back again """
-        os_system("mount -o r,remount /boot")
+        Console().ePopen("mount -o r,remount /boot")
 
 class LogoManagerConfigScreen(ConfigListScreen,Screen):
     skin = """

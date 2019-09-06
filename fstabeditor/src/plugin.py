@@ -22,7 +22,7 @@
 #  modify it (if you keep the license), but it may not be commercially 
 #  distributed other than under the conditions noted above.
 #
-
+from Components.Console import Console
 from Components.config import config, ConfigText, ConfigNumber, ConfigSelection, NoSave, getConfigListEntry
 from Components.ActionMap import *
 from Components.ConfigList import ConfigListScreen
@@ -148,7 +148,7 @@ class fstabViewerScreen(Screen,HelpableScreen):
 	
 	def writeFile(self, returnvalue):
 		if returnvalue != 0:
-			os.system("cp /etc/fstab /etc/fstab.backup")
+			Console().ePopen("cp /etc/fstab /etc/fstab.backup")
 			configFile = open('/etc/fstab', 'w')
 			for i in range(len(entryList)):
 				line = "%*s %*s %*s %*s %s %s\n" %(int(lengthList[0])*-1, entryList[i][0], int(lengthList[1])*-1, entryList[i][1], int(lengthList[2])*-1, entryList[i][2], int(lengthList[3])*-1, entryList[i][3],str(entryList[i][4]), str(entryList[i][5]))
@@ -160,14 +160,14 @@ class fstabViewerScreen(Screen,HelpableScreen):
 		self["entryinfo"].setText("%d / %d" %(self["menulist"].getSelectedIndex()+1, self.counter))
 		
 	def mountall(self):
-		os.system("mount -a")
+		Console().ePopen("mount -a")
 		
 	def addEntry(self):
 		self.session.openWithCallback(self.writeFile, fstabEditorScreen, None, addEntry=True)
 		
 	def restoreBackUp(self):
-		os.system("rm -f /etc/fstab")
-		os.system("cp /etc/fstab.backup /etc/fstab")
+		Console().ePopen("rm -f /etc/fstab")
+		Console().ePopen("cp /etc/fstab.backup /etc/fstab")
 		self.buildScreen()
 		
 class fstabEditorScreen(Screen,ConfigListScreen,HelpableScreen):

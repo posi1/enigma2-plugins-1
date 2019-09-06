@@ -29,7 +29,7 @@ from Components.MenuList import MenuList
 from Components.Label import Label
 from Tools.Directories import fileExists
 from enigma import ePicLoad, getDesktop, eEnv
-from os import system as os_system
+from Components.Console import Console
 from Components.config import config, ConfigSubsection, ConfigText, ConfigInteger
 
 
@@ -143,7 +143,7 @@ class ORFteletextScreen(Screen):
 			self["Picture"].instance.setPixmap(ptr)
 
 	def raus(self):
-		os_system("rm -f /tmp/bild")
+		Console().ePopen("rm -f /tmp/bild")
 		config.plugins.ORFteletext.startHZ.value = self.seite
 		config.plugins.ORFteletext.startNZ.value = self.subseite
 		config.plugins.ORFteletext.adr.save()
@@ -152,7 +152,7 @@ class ORFteletextScreen(Screen):
 		self.close()
 
 	def lade2(self, hs, ns):
-		os_system("rm -f /tmp/bild")
+		Console().ePopen("rm -f /tmp/bild")
 		hz = str(hs)
 		lz = hz[0]
 		nz = str(ns)
@@ -162,7 +162,7 @@ class ORFteletextScreen(Screen):
 			adr = "http://www.sat1.at/service/teletext/cache_de/" + hz + "_0" + nz + ".png" 
 		neu = "wget -O /tmp/bild " + adr
 		self["seite"].setText(hz+"-"+nz+" at "+config.plugins.ORFteletext.adr.value)
-		os_system(neu)
+		Console().ePopen(neu)
 		if fileExists("/tmp/bild"):
 			self.whatPic = "/tmp/bild"
 		else:

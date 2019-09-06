@@ -25,6 +25,8 @@ from Screens.InfoBarGenerics import InfoBarSeek
 import os
 from os import path as os_path, remove as os_remove, listdir as os_listdir
 from __init__ import _
+from Components.Console import Console
+
 config.plugins.mc_ap = ConfigSubsection()
 sorts = [('default',_("default")),('alpha',_("alphabet")), ('alphareverse',_("alphabet backward")),('date',_("date")),('datereverse',_("date backward")),('size',_("size")),('sizereverse',_("size backward"))]
 config.plugins.mc_ap_sortmode = ConfigSubsection()
@@ -171,7 +173,7 @@ class MC_AudioPlayer(Screen, HelpableScreen, InfoBarSeek):
 			if config.av.downmix_ac3.value == False:
 				config.av.downmix_ac3.value = True
 				config.av.downmix_ac3.save()
-				os.system("touch /tmp/.ac3on")
+				Console().ePopen("touch /tmp/.ac3on")
 		except Exception, e:
 			print "Media Center: no ac3"
 		self["play"] = Pixmap()
@@ -628,7 +630,7 @@ class MC_WebRadio(Screen, HelpableScreen):
 			if config.av.downmix_ac3.value == False:
 				config.av.downmix_ac3.value = True
 				config.av.downmix_ac3.save()
-				os.system("touch /tmp/.ac3on")
+				Console().ePopen("touch /tmp/.ac3on")
 		except Exception, e:
 			print "Media Center: no ac3"
 		self["play"] = Pixmap()
@@ -1318,7 +1320,7 @@ class Lyrics(Screen):
 		if fileExists("/tmp/.onlinecover"):
 			os.remove("/tmp/.onlinecover")
 		if fileExists("/tmp/.curplaying") and fileExists("/tmp/.oldplaying"):
-			os.system("rm -rf /tmp/.*playing")
+			Console().ePopen("rm -rf /tmp/.*playing")
 		self.RFTimer.stop()
 		self.close()
 class MediaPixmap(Pixmap):

@@ -22,6 +22,7 @@ from Components.ConfigList import ConfigList, ConfigListScreen
 import time
 import os
 import commands
+from Components.Console import Console
 
 config.plugins.mc_wi = ConfigSubsection()
 config.plugins.mc_wi.entrycount =  ConfigInteger(0)
@@ -111,7 +112,7 @@ class MC_WeatherInfo(Screen):
 		downname = "/tmp/.stadtindex"
 		stadd = stadt
 		if fileExists(downname):
-			os.system("rm -rf "+ downname)
+			Console().ePopen("rm -rf %s" % downname)
 		downloadPage(downlink, downname).addCallback(self.jpgdown, stadd).addErrback(self.error)
 	def jpgdown(self, value, stadd):
 		downlink = commands.getoutput("cat /tmp/.stadtindex | grep \"background-image:url('http://mytown.de/\" | cut -d \"'\" -f2")

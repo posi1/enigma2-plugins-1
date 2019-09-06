@@ -3,7 +3,7 @@
 import os, sys, re, string, time, urllib, urllib2, cookielib
 from Screens.MessageBox import MessageBox
 from Components.config import config
-#import xbmc, xbmcgui
+from Components.Console import Console
 from Plugins.Extensions.SubsDownloader2.SourceCode.xbmc_subtitles.XBMC_search import list_directory_files, new_file_in_directory
 from Plugins.Extensions.SubsDownloader2.SourceCode.xbmc_subtitles.utilities import log
 from Plugins.Extensions.SubsDownloader2.SourceCode.archives_extractor import zip_extractor
@@ -187,7 +187,7 @@ def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, 
                     if header == 'Rar!':
                         if os.path.exists("/usr/bin/unrar"): 
                             files_before_unrar = list_directory_files(tmp_sub_dir)
-                            os.system('unrar -p- -y x %s %s' % (local_tmp_file,tmp_sub_dir))
+                            Console().ePopen('unrar -p- -y x %s %s' % (local_tmp_file, tmp_sub_dir))
                             files_after_unrar = list_directory_files(tmp_sub_dir)
                             subs_file = new_file_in_directory(files_before_unrar,files_after_unrar)
                             os.remove(local_tmp_file)

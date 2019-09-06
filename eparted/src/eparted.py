@@ -2,10 +2,8 @@
 # code by GeminiTeam
 
 from enigma import eTimer
-
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-
 from Components.Label import Label
 from Components.Pixmap import MultiPixmap
 from Components.Sources.StaticText import StaticText
@@ -16,18 +14,14 @@ from Components.Console import Console
 from Tools.Directories import pathExists, createDir
 from Tools.BoundFunction import boundFunction
 from Tools.LoadPixmap import LoadPixmap
-
 from Tools.Directories import resolveFilename, SCOPE_SKIN
 SkinDefaultPath = resolveFilename(SCOPE_SKIN, "")
-
 from Components.ConfigList import ConfigListScreen
 from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, ConfigSelection, NoSave
 config.plugins.eparted = ConfigSubsection()
-
 from locale import _
-from os import system as os_system, path as os_path, listdir
+from os import path as os_path, listdir
 
-#from Plugins.Bp.geminimain.gTools import cleanexit
 
 LIST_TYPE_DEV = 0
 LIST_TYPE_PAR = 1
@@ -95,7 +89,7 @@ def myExecute(cmd, session, test=False):
 		sleep(5)
 		result = 0
 	else:
-		res = os_system(cmd)
+		res = Console().ePopen(cmd)
 		result = (res >> 8)
 	print "[eParted]", result, cmd
 	if result != 0 and session is not None:

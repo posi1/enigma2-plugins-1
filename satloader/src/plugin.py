@@ -10,7 +10,7 @@ from enigma import getDesktop, eListbox, eListboxPythonMultiContent, gFont, RT_H
 from Tools.LoadPixmap import LoadPixmap
 from Plugins.Plugin import PluginDescriptor
 import os
-
+from Components.Console import Console
 #######################
 
 class Satloader(Screen):
@@ -214,10 +214,10 @@ class SatloaderBouquet(Screen):
 
 		try:
 			if os.path.exists('/tmp/bouquet'):
-				os.system("rm -rf /tmp/bouquet")
+				Console().ePopen("rm -rf /tmp/bouquet")
 			os.mkdir('/tmp/bouquet', 644)
-			os.system("tar -xzf /tmp/bouquet.tar.gz -C/tmp/bouquet")
-			os.system("rm -f /tmp/bouquet.tar.gz")
+			Console().ePopen("tar -xzf /tmp/bouquet.tar.gz -C/tmp/bouquet")
+			Console().ePopen("rm -f /tmp/bouquet.tar.gz")
 
 			idx=0
 			self.list.clearList()
@@ -343,10 +343,10 @@ class SatloaderMultiSat(Screen):
 
 		try:
 			if os.path.exists('/tmp/multisat'):
-				os.system("rm -rf /tmp/multisat")
+				Console().ePopen("rm -rf /tmp/multisat")
 			os.mkdir('/tmp/multisat', 644)
-			os.system("tar -xzf /tmp/multisat.tar.gz -C/tmp/multisat")
-			os.system("rm -f /tmp/multisat.tar.gz")
+			Console().ePopen("tar -xzf /tmp/multisat.tar.gz -C/tmp/multisat")
+			Console().ePopen("rm -f /tmp/multisat.tar.gz")
 
 			idx = 0
 			self.list.clearList()

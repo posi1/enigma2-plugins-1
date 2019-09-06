@@ -39,7 +39,7 @@ from Tools.LoadPixmap import LoadPixmap
 from Tools.HardwareInfo import HardwareInfo
 from enigma import RT_HALIGN_LEFT, eListboxPythonMultiContent, gFont, getDesktop
 import pickle
-from os import system as os_system
+from Components.Console import Console
 from os import listdir as os_listdir
 
 
@@ -273,7 +273,7 @@ class AddPlug(Screen):
 		else:
 			order = 'rm -f \"' + '/usr/lib/enigma2/python/Plugins/Extensions/EasyMedia/' + plugin.name + '.plug' + '\"'
 			try:
-				os_system(order)
+				Console().ePopen(order)
 				self.session.open(MessageBox, text = (plugin.name + _(" removed from EasyMedia")), type = MessageBox.TYPE_INFO)
 			except: self.session.open(MessageBox, text = "Write Error!", type = MessageBox.TYPE_WARNING)
 

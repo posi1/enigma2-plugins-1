@@ -56,7 +56,6 @@ if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plug
 else:
 	MMPavaiable = False
 from enigma import eConsoleAppContainer, eServiceReference, ePicLoad, getDesktop, eServiceCenter
-from os import system as os_system
 from os import stat as os_stat
 from os import walk as os_walk
 from os import popen as os_popen
@@ -446,9 +445,9 @@ class DreamExplorerII(Screen):
 			if not(self.MediaFilter):
 				self.session.openWithCallback(self.callbackCPmaniger, SoftLinkScreen, self["filelist"].getCurrentDirectory())
 		elif answer == "CHMOD644":
-			os_system("chmod 644 " + self["filelist"].getCurrentDirectory() + self["filelist"].getFilename())
+			Console().ePopen("chmod 644 %s%s" % (self["filelist"].getCurrentDirectory(), self["filelist"].getFilename()))
 		elif answer == "CHMOD755":
-			os_system("chmod 755 " + self["filelist"].getCurrentDirectory() + self["filelist"].getFilename())
+			Console().ePopen("chmod 755 %s%s" % (self["filelist"].getCurrentDirectory(), self["filelist"].getFilename()))
 
 	def up(self):
 		self["filelist"].up()
@@ -537,7 +536,7 @@ class DreamExplorerII(Screen):
 			DELfilename = self["filelist"].getCurrentDirectory() + self["filelist"].getFilename()
 			order = 'rm -f \"' + DELfilename + '\"'
 			try:
-				os_system(order)
+				Console().ePopen(order)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!" % order), MessageBox.TYPE_ERROR)
@@ -549,7 +548,7 @@ class DreamExplorerII(Screen):
 			DELDIR = self["filelist"].getSelection()[0]
 			order = 'rm -r \"' + DELDIR + '\"'
 			try:
-				os_system(order)
+				Console().ePopen(order)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!" % order), MessageBox.TYPE_ERROR)
@@ -604,7 +603,7 @@ class DreamExplorerII(Screen):
 			order = 'touch ' + dest + answer
 			try:
 				if not fileExists(dest + answer):
-					os_system(order)
+					Console().ePopen(order)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!" % order), MessageBox.TYPE_ERROR)
@@ -818,7 +817,7 @@ class MviExplorer(Screen):
 		}, -1)
 		self.onLayoutFinish.append(self.showMvi)
 	def showMvi(self):
-		os_system("/usr/bin/showiframe " + self.file_name)
+		Console().ePopen("/usr/bin/showiframe %s" % self.file_name)
 
 
 
@@ -981,7 +980,7 @@ class MusicExplorer(MoviePlayer):
 		MoviePlayer.WithoutStopClose = False
 
 	def showMMI(self):
-		os_system("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/music.mvi")
+		Console().ePopen("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/music.mvi")
 
 	def searchMusic(self):
 		midx = 0
@@ -1133,7 +1132,7 @@ class CPmaniger(Screen):
 			try:
 				config.plugins.DreamExplorer.CopyDest.value = dest
 				config.plugins.DreamExplorer.CopyDest.save()
-				os_system(order)
+				Console().ePopen(order)
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!" % order), MessageBox.TYPE_ERROR)
 				dei.setTitle(_("Dream-Explorer"))
@@ -1151,12 +1150,12 @@ class CPmaniger(Screen):
 			try:
 				config.plugins.DreamExplorer.CopyDest.value = dest
 				config.plugins.DreamExplorer.CopyDest.save()
-				os_system(order)
+				Console().ePopen(order)
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!" % order), MessageBox.TYPE_ERROR)
 				dei.setTitle(_("Dream-Explorer"))
 			try:
-				os_system(DELorder)
+				Console().ePopen(DELorder)
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!" % DELorder), MessageBox.TYPE_ERROR)
 				dei.setTitle(_("Dream-Explorer"))
@@ -1243,7 +1242,7 @@ class SoftLinkScreen(Screen):
 					order = 'ln -s \"' + self["SLto"].getSelection()[0] + '\" \"' + self.newSLname + '\"'
 				else:
 					order = 'ln -s \"' + (self["SLto"].getCurrentDirectory() + self["SLto"].getFilename()) + '\" \"' + self.newSLname + '\"'
-				os_system(order)
+				Console().ePopen(order)
 				self.close(" ")
 		else:
 			dei = self.session.open(MessageBox,_("Softlink name error !"), MessageBox.TYPE_ERROR)

@@ -1,24 +1,20 @@
 from enigma import eTimer, loadPic, getDesktop
-
 from Screens.Screen import Screen
 from Screens.HelpMenu import HelpableScreen
 from Components.Pixmap import Pixmap, MovingPixmap
 from Components.Label import Label
 from Components.MenuList import MenuList
 from Screens.InputBox import InputBox
-
 from Components.ActionMap import ActionMap
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, ConfigSelection, ConfigPassword
 from Plugins.Plugin import PluginDescriptor
-
 from StreamPlayer import StreamPlayer
 from LastFMConfig import LastFMConfigScreen
 from LastFM import LastFM
 from urllib2 import quote as urllib2_qoute
 from twisted.web.client import downloadPage
-from os import remove as os_remove, system as os_system
+from os import remove as os_remove
 from random import randrange
-
 # for localized messages
 from . import _
 

@@ -17,7 +17,7 @@ from VlcServerConfig import vlcServerConfig
 from Screens.MessageBox import MessageBox
 import array, struct, fcntl
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM, SHUT_RDWR
-from os import system as os_system, path as os_path
+from os import path as os_path
 
 SIOCGIFCONF = 0x8912
 BYTES = 4096

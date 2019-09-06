@@ -18,11 +18,12 @@ from Screens.Screen import Screen
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 import gettext
 import os
+from Components.Console import Console
 
 if not os.path.exists('/usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyo'):
-	os.system('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockTime.pyo /usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyo')
+	Console().ePopen('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockTime.pyo /usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyo')
 if not os.path.exists('/usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.pyo'):
-	os.system('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockWatches.pyo /usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.pyo')
+	Console().ePopen('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockWatches.pyo /usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.pyo')
 
 _session = None
 def localeInit():

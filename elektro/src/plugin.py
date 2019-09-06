@@ -25,42 +25,31 @@
 
 
 from __init__ import _
-
 from Screens.InfoBarGenerics import *
-
 import calendar
-
 # Plugin
 from Plugins.Plugin import PluginDescriptor
-
 # GUI (Screens)
 from Screens.Screen import Screen
 from Components.ConfigList import ConfigListScreen
 from Screens.MessageBox import MessageBox
 from Screens.Console import Console
 from Screens import Standby
-
 # GUI (Components)
 from Components.ActionMap import ActionMap
 from Components.Button import Button
-from Components.Language import language
 from Components.Harddisk import harddiskmanager
 from Components.Sources.StaticText import StaticText
-
 # Configuration
 from Components.config import configfile, getConfigListEntry, ConfigEnableDisable, \
 	ConfigYesNo, ConfigText, ConfigClock, ConfigNumber, ConfigSelection, \
-	config, ConfigSubsection, ConfigSubList, ConfigSubDict, ConfigIP
-
+	config, ConfigSubsection, ConfigSubDict, ConfigIP
 # Startup/shutdown notification
 from Tools import Notifications
-
 import ping
 import os
-
 # Timer, etc
-from time import localtime, asctime, time, gmtime, sleep
-
+from time import localtime, time, gmtime, sleep
 # Enigma system functions
 from enigma import quitMainloop, eTimer
 
@@ -908,7 +897,6 @@ class DoElektro(Screen):
 			config.plugins.elektro.profile.save()
 			setNextWakeuptime()
 		if (retval):
-			# os.system("wall 'Powermanagent does Deepsleep now'")
 			# Notifications.AddNotification(TryQuitMainloop,1)
 			# 1 = Deep Standby -> enigma2:/doc/RETURNCODES
 

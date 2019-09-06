@@ -240,12 +240,12 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 				cmd = "echo -e '#!/bin/sh\n\nsleep %s\n\n[ -x usr/sbin/ntpd ] && /usr/sbin/ntpd -dnqp %s\n\nexit 0' >> /etc/init.d/ntpdate" % (str(self.ST.wifi_delay.value), self.ST.ip.value)
 			if fileExists("/etc/init.d/ntpdate"):
 				os.chmod("/etc/init.d/ntpdate", 0755)
-				os.system("update-rc.d ntpdate defaults 99")
+				Console().ePopen("update-rc.d ntpdate defaults 99")
 			else:
-				os.system(cmd)
+				Console().ePopen(cmd)
 				if fileExists("/etc/init.d/ntpdate"):
 					os.chmod("/etc/init.d/ntpdate", 0755)
-					os.system("update-rc.d ntpdate defaults 99")
+					Console().ePopen("update-rc.d ntpdate defaults 99")
 				else:
 					self.ST.syncNTPcoldstart.value = False
 		else:
@@ -253,25 +253,25 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			self.ST.syncNTPcoldstart.value = False
 
 	def removeNTPcoldstart(self):
-		os.system("update-rc.d -f ntpdate remove")
+		Console().ePopen("update-rc.d -f ntpdate remove")
 		if fileExists("/etc/init.d/ntpdate"):
-			os.system("rm -rf /etc/init.d/ntpdate")
+			Console().ePopen("rm -rf /etc/init.d/ntpdate")
 
 	def addUseRTC(self):
 		if fileExists("/etc/init.d/set-rtctime"):
 			os.chmod("/etc/init.d/set-rtctime", 0755)
-			os.system("update-rc.d set-rtctime defaults 40")
+			Console().ePopen("update-rc.d set-rtctime defaults 40")
 		else:
-			os.system("cp /usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/set-rtctime /etc/init.d/set-rtctime")
+			Console().ePopen("cp /usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/set-rtctime /etc/init.d/set-rtctime")
 			if fileExists("/etc/init.d/set-rtctime"):
 				os.chmod("/etc/init.d/set-rtctime", 0755)
-				os.system("update-rc.d set-rtctime defaults 40")
+				Console().ePopen("update-rc.d set-rtctime defaults 40")
 			else:
 				self.session.open(MessageBox,_("Script 'set-rtctime' not found!"), MessageBox.TYPE_ERROR, timeout=3)
 				self.ST.useRTCstart.value = False
 
 	def removeUseRTC(self):
-		os.system("update-rc.d -f set-rtctime remove")
+		Console().ePopen("update-rc.d -f set-rtctime remove")
 
 	def keyGreen(self):
 		if self.ST.syncNTPcoldstart.value:
@@ -415,7 +415,7 @@ class ChangeTimeWizzard(Screen):
 		if answer is False:
 			self.skipChangeTime(_("No confirmation given."))
 		else:
-			os.system("date %s" % (self.newtime))
+			Console().ePopen("date %s" % self.newtime)
 			nowTime = time.time()
 			if nowTime > 1514808000:
 				setRTCtime(nowTime)
@@ -433,7 +433,7 @@ class ChangeTimeWizzard(Screen):
 
 def removeNetworkStart():
 	if os.path.exists("/usr/bin/ntpdate-sync"):
-		os.system("rm -rf /usr/bin/ntpdate-sync && rm -rf /etc/network/if-up.d/ntpdate-sync")
+		Console().ePopen("rm -rf /usr/bin/ntpdate-sync && rm -rf /etc/network/if-up.d/ntpdate-sync")
 
 def startup(reason=0, **kwargs):
 	if reason == 0:

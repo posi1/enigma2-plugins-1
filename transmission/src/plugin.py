@@ -46,7 +46,7 @@ class Transmission(Screen):
 		returnValue = self["menu"].l.getCurrentSelection() and self["menu"].l.getCurrentSelection()[1]
 		if returnValue is not None:
 			cmd = "cp /usr/lib/enigma2/python/Plugins/Extensions/Transmission/transmission.sh %s && chmod 755 %s" % (transmission_sh, transmission_sh)
-			os.system(cmd)
+			Console().ePopen(cmd)
 			if returnValue is "info":
 				self.session.open(Console,_("Information transmission download"),["chmod 755 %s && %s" % (transinfo_sh, transinfo_sh)])
 			elif returnValue is "pause":

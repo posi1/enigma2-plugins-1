@@ -81,8 +81,6 @@ class Subtitulos(SubtitleDatabase.SubtitleDB):
         guessedData = self.guessFileData(fname)
         if guessedData['type'] == 'tvshow':
             subs = self.query(guessedData['name'], guessedData['season'], guessedData['episode'], guessedData['teams'], langs)
-#            import os
-#            os.system('echo "%s" > /txt' % subs)
             return subs
         else:
             return []
