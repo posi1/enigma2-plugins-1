@@ -26,10 +26,15 @@ AM_PATH_PYTHON
 AX_PYTHON_DEVEL
 AX_PTHREAD
 
-#dnl versions of gstreamer and plugins-base
-AC_ARG_WITH(gstversion,
-	AS_HELP_STRING([--with-gstversion],[use gstreamer version (major.minor)]),
-	[GST_MAJORMINOR=$withval],[GST_MAJORMINOR=0.10])
+AC_ARG_WITH(arch,
+	[  --with-arch=NAME box arch [[none,ah4,mipsel...]]],
+	[ARCH="$withval"],[ARCH="mipsel"])
+AC_SUBST(ARCH)
+AC_DEFINE_UNQUOTED(ARCH,"$ARCH",[box arch])
+
+AM_CONDITIONAL(SH4, test `echo "$ARCH" | cut -b 1-3` == "sh4")
+AM_CONDITIONAL(MIPSEL, test `echo "$ARCH" | cut -b 1-6` == "mipsel")
+AM_CONDITIONAL(ARM, test `echo "$ARCH" | cut -b 1-3` == "arm")
 
 AC_ARG_WITH(boxtype,
 	[  --with-boxtype=NAME box type [[none,dm800...]]],
@@ -44,8 +49,6 @@ AC_SUBST(BOXBRAND)
 AC_DEFINE_UNQUOTED(BOXBRAND,"$BOXBRAND",[box brand])
 
 PKG_CHECK_MODULES(ENIGMA2, enigma2)
-PKG_CHECK_MODULES(GSTREAMER, gstreamer-$GST_MAJORMINOR gstreamer-pbutils-$GST_MAJORMINOR)
-PKG_CHECK_MODULES(LIBCRYPTO, libcrypto)
 
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
@@ -157,7 +160,6 @@ birthdayreminder/src/Makefile
 bitrateviewer/Makefile
 bitrateviewer/meta/Makefile
 bitrateviewer/src/Makefile
-bitrateviewer/src/bitratecalc/Makefile
 
 bmediacenter/Makefile
 bmediacenter/meta/Makefile
