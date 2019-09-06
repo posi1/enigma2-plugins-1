@@ -30,8 +30,7 @@ from Components.ProgressBar import ProgressBar
 
 from Components.MultiContent import MultiContentEntryText, MultiContentEntryPixmapAlphaTest
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, RT_VALIGN_TOP, RT_WRAP
-from enigma import eTimer
+from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, RT_VALIGN_TOP, RT_WRAP, eTimer, getBoxType
 
 from Tools.NumericalTextInput import NumericalTextInput
 
@@ -47,7 +46,6 @@ from Plugins.Extensions.VlcPlayer.VlcServerList import VlcServerListScreen
 from YouTubeContextMenu import YouTubeEntryContextMenu, YouTubeEntryContextMenuList
 
 from Tools.BoundFunction import boundFunction
-from Tools.HardwareInfo import HardwareInfo
 
 from YouTubePlayer import YouTubePlayer
 from DirectYouTubePlayer import DirectYouTubePlayer
@@ -594,7 +592,7 @@ class YouTubeListScreen(Screen, NumericalTextInput):
 
 
 	def tryToPlay(self):
-		if HardwareInfo.device_name == "dm8000" or HardwareInfo.device_name == "dm800":
+		if getBoxType() in ("dm8000","dm800"):
 			self.playDirect()
 		else:
 			if self.currentServer is not None:

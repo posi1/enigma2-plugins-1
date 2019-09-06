@@ -5,7 +5,6 @@ from AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
 from Components.config import config
 from enigma import eTimer
 from Tools.ISO639 import LanguageCodes
-from Tools.HardwareInfo import HardwareInfo
 import os
 import NavigationInstance
 
@@ -29,10 +28,6 @@ class AC3delay:
         
         # Current value for movie start behaviour
         self.movieStart = config.usage.on_movie_start.getValue()
-
-        # find out box type
-        self.oHWInfo = HardwareInfo()
-        self.bHasToRestartService = self.oHWInfo.get_device_name() == "dm7025"
         
     def initAudio(self):
         self.iService = NavigationInstance.instance.getCurrentService()
@@ -58,26 +53,6 @@ class AC3delay:
         # DM800, DM8000 and DM500HD directly activate the delay after using "setAC3Delay" and "setPCMDelay", they don't need the service restart
         if self.activateTimer.isActive:
             self.activateTimer.stop()
-        if self.bHasToRestartService == True:
-            bInitialized = False
-            if self.iService == None:
-                self.initAudio()
-                bInitialized = True
-            if self.iServiceReference is not None:
-                lCurPosition = self.cueGetCurrentPosition()
-                self.deleteAudio()
-                if self.whichAudio == self.channelAudio:
-                    config.usage.on_movie_start.setValue("beginning")
-                    NavigationInstance.instance.stopService()
-                    NavigationInstance.instance.playService(self.iServiceReference)
-                    config.usage.on_movie_start.setValue(self.movieStart)
-                    if lCurPosition is not None:
-                        self.lCurPosition = lCurPosition
-                        self.timer = eTimer()
-                        self.timer.callback.append(self.seekAfterWait)
-                        self.timer.start(200, False)
-            else:
-                self.deleteAudio()
         
     def seekAfterWait(self):
         self.timer.stop()

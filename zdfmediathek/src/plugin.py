@@ -8,7 +8,7 @@ from Components.MenuList import MenuList
 from Components.MultiContent import MultiContentEntryText, MultiContentEntryPixmapAlphaTest
 from Components.Pixmap import Pixmap
 from Components.PluginComponent import plugins
-from enigma import eListboxPythonMultiContent, ePicLoad, eServiceReference, eTimer, getDesktop, gFont
+from enigma import eListboxPythonMultiContent, ePicLoad, eServiceReference, eTimer, getDesktop, gFont, getBoxType
 from os import listdir, path as os_path, remove as os_remove
 from Plugins.Plugin import PluginDescriptor
 from Screens.ChoiceBox import ChoiceBox
@@ -20,7 +20,6 @@ from Screens.VirtualKeyBoard import VirtualKeyBoard
 from time import sleep
 from Tools.BoundFunction import boundFunction
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_PLUGIN
-from Tools.HardwareInfo import HardwareInfo
 from Tools.LoadPixmap import LoadPixmap
 from twisted.web.client import downloadPage, getPage
 import htmlentitydefs, re, urllib2
@@ -52,13 +51,11 @@ LIST_LEFT = 0
 LIST_RIGHT = 1
 LIST_NONE = 2
 
-deviceName = HardwareInfo().get_device_name()
+deviceName = getBoxType()
 
-PLAY_MP4 = False
+PLAY_MP4 = True
 PLAY_WMV = False
 
-if not deviceName.startswith("dm7025"):
-	PLAY_MP4 = True
 if deviceName.startswith("dm7020hd"):
 	PLAY_WMV = True
 try:

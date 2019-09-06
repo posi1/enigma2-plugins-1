@@ -35,27 +35,26 @@ from Components.Pixmap import Pixmap
 from Components.AVSwitch import AVSwitch
 from Components.config import config, ConfigSubsection, ConfigText
 from Tools.Directories import fileExists, pathExists
-from Tools.HardwareInfo import HardwareInfo
 from ServiceReference import ServiceReference
 from myFileList import FileList as myFileList
 #from vInputBox import vInputBox
 from Screens.InputBox import InputBox
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyo") or fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyc"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyo"):
 	from Plugins.Extensions.PicturePlayer.plugin import Pic_Thumb, picshow
 	PicPlayerAviable = True
 else:
 	PicPlayerAviable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyo") or fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyc"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyo"):
 	from Plugins.Extensions.DVDPlayer.plugin import DVDPlayer
 	DVDPlayerAviable = True
 else:
 	DVDPlayerAviable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyo") or fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyc"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyo"):
 	from Plugins.Extensions.MerlinMusicPlayer.plugin import MerlinMusicPlayerScreen, Item
 	MMPavaiable = True
 else:
 	MMPavaiable = False
-from enigma import eConsoleAppContainer, eServiceReference, ePicLoad, getDesktop, eServiceCenter
+from enigma import eConsoleAppContainer, eServiceReference, ePicLoad, getDesktop, eServiceCenter, getBoxType
 from os import stat as os_stat
 from os import walk as os_walk
 from os import popen as os_popen
@@ -172,7 +171,7 @@ class DreamExplorerII(Screen):
 		Screen.__init__(self, session)
 		self.sesion = session
 		self.altservice = self.session.nav.getCurrentlyPlayingServiceReference()
-		self.MyBox = HardwareInfo().get_device_name()
+		self.MyBox = getBoxType()
 		self.commando = [ "ls" ]
 		self.selectedDir = "/tmp/"
 		self.booklines = []
@@ -225,12 +224,9 @@ class DreamExplorerII(Screen):
 					fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + filename)
 					self.session.open(MoviePlayer, fileRef)
 				elif (testFileName.endswith(".avi")) or (testFileName.endswith(".mp4")) or (testFileName.endswith(".divx")) or (testFileName.endswith(".wmv")) or (testFileName.endswith(".mov")) or (testFileName.endswith(".flv")) or (testFileName.endswith(".3gp")):
-					if not(self.MyBox=="dm7025"):	
-						fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + filename)
-						self.session.open(MoviePlayer, fileRef)
+					fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + filename)
+					self.session.open(MoviePlayer, fileRef)
 				elif (testFileName.endswith(".mp3")) or (testFileName.endswith(".wav")) or (testFileName.endswith(".ogg")) or (testFileName.endswith(".m4a")) or (testFileName.endswith(".mp2")) or (testFileName.endswith(".flac")):
-					if (self.MyBox=="dm7025") and ((testFileName.endswith(".m4a")) or (testFileName.endswith(".mp2")) or (testFileName.endswith(".flac"))):
-						return
 					if MMPavaiable:
 						SongList,SongIndex = self.searchMusic()
 						try:
@@ -278,10 +274,10 @@ class DreamExplorerII(Screen):
 					askList = [(_("Cancel"), "NO"),(_("Install this package"), "YES")]
 					dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("IPKG-package:\\n"+filename), list=askList)
 					dei.setTitle(_("Dream-Explorer : Install..."))
-				elif testFileName.endswith(".pyc") or testFileName.endswith(".pyo"):
-					self.commando = [ "/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/pyc2xml " + filename ]
+				elif testFileName.endswith(".pyo"):
+					self.commando = [ "/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/pyo2xml " + filename ]
 					askList = [(_("Cancel"), "NO"),(_("Disassemble to bytecode..."), "YES")]
-					dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("Pyc-Script:\\n"+filename), list=askList)
+					dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("Pyo-Script:\\n"+filename), list=askList)
 					dei.setTitle(_("Dream-Explorer : Disassemble..."))
 				elif testFileName.endswith(".sh"):
 					self.commando = [ filename ]

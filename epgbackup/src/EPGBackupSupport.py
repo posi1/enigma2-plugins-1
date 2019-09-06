@@ -4,11 +4,9 @@ from Screens.ChoiceBox import ChoiceBox
 from Screens.MessageBox import MessageBox
 from Components.Console import Console
 from Components.config import config
-from enigma import eEPGCache
-from enigma import eTimer
+from enigma import eEPGCache, eTimer, getBoxType
 from Tools import Notifications
 from Screens.TextBox import TextBox
-from Tools.HardwareInfo import HardwareInfo
 from . import _
 # Error-print
 from EPGBackupTools import debugOut, _getLogFilename, EPGBACKUP_NOTIFICATIONDOMAIN
@@ -304,8 +302,8 @@ class EPGBackupSupport:
 			debugOut("EPGBackup.sh execute with params %s %s" %(param1, param2))
 		else:
 			debugOut("OS-execute %s with params %s %s" %(sh_cmd, param1, param2))
-		debugOut("Device-Info: %s" %(HardwareInfo().get_device_name().upper()))
-		if HardwareInfo().get_device_name().upper() == "DM800":
+		debugOut("Device-Info: %s" %(getBoxType()))
+		if getBoxType() == "dm800":
 			return self._executeShOld(sh_cmd = sh_cmd, param1 = param1, param2 = param2)
 		else:
 			return self._executeSh(sh_cmd = sh_cmd, param1 = param1, param2 = param2)

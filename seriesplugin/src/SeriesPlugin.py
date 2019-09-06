@@ -73,8 +73,8 @@ def getInstance():
 		log.debug( " ", strftime("%a, %d %b %Y %H:%M:%S", localtime()) )
 		
 		try:
-			from Tools.HardwareInfo import HardwareInfo
-			log.debug( " DeviceName " + HardwareInfo().get_device_name().strip() )
+			from enigma import getBoxType
+			log.debug( " DeviceName " + getBoxType() )
 		except:
 			sys.exc_clear()
 		
@@ -87,7 +87,6 @@ def getInstance():
 		
 		try:
 			#http://stackoverflow.com/questions/1904394/python-selecting-to-read-the-first-line-only
-			log.debug( " dreamboxmodel " + open("/proc/stb/info/model").readline().strip() )
 			log.debug( " imageversion " + open("/etc/image-version").readline().strip() )
 			log.debug( " imageissue " + open("/etc/issue.net").readline().strip() )
 		except:

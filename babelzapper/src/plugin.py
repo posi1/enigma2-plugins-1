@@ -9,7 +9,7 @@ babelzapper_menus = "/etc/babelzapper"
 #
 from RecordTimer import parseEvent
 from Plugins.Plugin import PluginDescriptor
-from enigma import eTimer,  eServiceReference, eServiceCenter, iServiceInformation, eEPGCache, iTimeshiftServicePtr
+from enigma import eTimer,  eServiceReference, eServiceCenter, iServiceInformation, eEPGCache, iTimeshiftServicePtr, getBoxType
 from Screens.Screen import Screen
 from Screens.Setup import SetupSummary
 from Screens.Console import Console
@@ -19,7 +19,6 @@ from Components.ConfigList import ConfigListScreen
 from Components.ActionMap import ActionMap
 from Components.Label import Label, MultiColorLabel
 from Tools.Directories import *
-from Tools.HardwareInfo import HardwareInfo
 from GlobalActions import globalActionMap
 from Components.config import config, ConfigSubsection, ConfigInteger
 import os
@@ -446,7 +445,7 @@ class BabelZapper(Screen):
 		else:
 			print "[BABELZAPPER] found unknown key %s" % keyname
 			return
-		if HardwareInfo.device_name == "dm8000":
+		if getBoxType == "dm8000":
 			fp = open("/dev/input/event2", 'wb')
 		else:
 			fp = open("/dev/input/event1", 'wb')

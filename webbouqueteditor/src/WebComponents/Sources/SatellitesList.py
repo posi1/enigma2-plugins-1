@@ -1,7 +1,7 @@
 from Components.Sources.Source import Source
 from Screens.ChannelSelection import service_types_tv, service_types_radio, FLAG_SERVICE_NEW_FOUND,MODE_TV, MODE_RADIO
 from enigma import eServiceReference, eServiceCenter
-from Tools.HardwareInfo import HardwareInfo
+
 service_types_tv_hd = '1:7:1:0:0:0:0:0:0:0:(type == 17) || (type == 25) || (type == 134) || (type == 195)'
 
 
@@ -34,7 +34,7 @@ class SatellitesList(Source):
 		ref = eServiceReference(refstr)
 		serviceHandler = eServiceCenter.getInstance()
 		counter = i = 0
-		if HardwareInfo().get_device_name() != "dm7025" and mode == MODE_TV:
+		if mode == MODE_TV:
 			counter = 1
 		while i <= counter:
 			if i:

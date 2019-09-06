@@ -5,16 +5,13 @@ from Components.ActionMap import ActionMap
 from Components.config import *
 from Components.ConfigList import *
 from Components.Sources.StaticText import StaticText
-from Tools.HardwareInfo import *
-
+from enigma import getBoxType
 import xml.dom.minidom
 from xml.dom.minidom import Node
 from xml.dom import EMPTY_NAMESPACE
 from Tools import XMLTools
 from Tools.XMLTools import elementsWithTag, mergeText
-
 from socket import gethostbyname_ex
-
 from dreamIRCTools import *
 
 class dreamIRCSetupScreen(ConfigListScreen, Screen):
@@ -47,8 +44,7 @@ class dreamIRCSetupScreen(ConfigListScreen, Screen):
 
 	def __init__(self, session, args = 0):
 		Screen.__init__(self, session)
-		self.hardware_info = HardwareInfo()
-		self.device=self.hardware_info.get_device_name()
+		self.device = getBoxType()
 		self.mac=getMacAddress()
 		self.mac_end=self.mac[6:]
 		self.dreamIRCconf = ConfigSubsection()
@@ -173,8 +169,7 @@ class dreamIRCConfig:
 		self.status1=False
 		self.status2=False
 		self.status3=False
-		self.hardware_info = HardwareInfo()
-		self.device=self.hardware_info.get_device_name()
+		self.device = getBoxType()
 		self.mac=getMacAddress()
 		self.mac_end=self.mac[6:]
 		try:

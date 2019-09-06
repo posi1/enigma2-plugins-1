@@ -72,7 +72,6 @@ import skin
 from Tools.BoundFunction import boundFunction
 from Tools.Notifications import AddPopup
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_CURRENT_PLUGIN, fileExists
-from Tools.HardwareInfo import HardwareInfo
 from Tools.LoadPixmap import LoadPixmap
 import NavigationInstance
 from ResultScreen import ResultScreen
@@ -1860,7 +1859,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		refstr = '%s FROM SATELLITES' % (service_types_tv)
 		ref = eServiceReference(refstr)
 		counter = i = 0
-		if config.servicelist.lastmode.value == "tv" and HardwareInfo().get_device_name() != "dm7025":
+		if config.servicelist.lastmode.value == "tv":
 			counter = 1
 
 		while i <= counter:

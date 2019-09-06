@@ -37,8 +37,8 @@ class MessageQueue:
             else:
                 request = "False"
         elif data == "getDeviceName":
-            from Tools.HardwareInfo import HardwareInfo
-            request = HardwareInfo().get_device_name()
+            from enigma import getBoxType
+            request = getBoxType()
         elif data == "inStandby":
             import Screens
             request = str(Screens.Standby.inStandby != None)

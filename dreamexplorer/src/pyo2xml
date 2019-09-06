@@ -8,10 +8,10 @@ These functions are probably most interesting for users:
 
 * Disassembler:
   - xml_code()     code object   -->      XML
-  - xml_pyc()       pyc file     -->      XML
+  - xml_pyo()       pyo file     -->      XML
 * Assembler:
   - code_xml()        XML        -->   code object
-  - pyc_xml()         XML        -->    pyc file
+  - pyo_xml()         XML        -->    pyo file
 
 The XML file is almost self documenting.  The assembly language is of
 course somewhat redundant.  Therefore, only the column containing the
@@ -180,7 +180,7 @@ def headET(f):
     return head
 
 
-def xml_pyc(filename):
+def xml_pyo(filename):
     """Given a filename of a python bytecode file,
        return corresponding XML as single string"""
     f = open(filename, 'rb')
@@ -263,12 +263,12 @@ def code_xml(xml):
     return code_elem(ET.XML(xml).find('code'))
 
 
-def pyc_xml(xml, filename):
+def pyo_xml(xml, filename):
     """Convert a single string containing XML into python bytecode and
        write this bytecode to file"""
     elem = ET.XML(xml)
     if not elem.find('head'):
-        exit('Error: <head> missing in XML file, cannot convert to pyc file.')
+        exit('Error: <head> missing in XML file, cannot convert to pyo file.')
     
     f = open(filename, 'wb')
 
@@ -303,15 +303,15 @@ def main():
             filein = arg
     else:
         filein = "noFile"
-        print 'Command line incorrect !\nUsage: pyc2xml /tmp/YOURFILE.PYC'
+        print 'Command line incorrect !\nUsage: pyo2xml /tmp/YOURFILE.PYO'
         exit()
 
-    if not((filein.endswith('.pyc')) or (filein.endswith('.pyo'))):
+    if filein.endswith('.pyo'):
         filein = "noFile"
-        print 'File-extension incorrect !\nUsage: pyc2xml /tmp/YOURFILE.PYC'
+        print 'File-extension incorrect !\nUsage: pyo2xml /tmp/YOURFILE.PYO'
         exit()
     else:
-        xml = xml_pyc(filein)
+        xml = xml_pyo(filein)
         fileout = '/tmp/disassembled.xml'
         print 'Disassembling:', filein, ' --> ', fileout
         fo = open(fileout, 'w')

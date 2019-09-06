@@ -61,7 +61,6 @@ config.plugins.valiXDsetup.ChannSelector = ConfigSelection(default="simple", cho
 config.plugins.valiXDsetup.dmType = ConfigSelection(default="800", choices = [
 				("800", _("DM-800 Simple")),
 				("8000", _("DM-8000 Full")),
-				("7025", _("DM-7025")),
 				("verysimple", _("Very simple"))
 				])
 config.plugins.valiXDsetup.BG = ConfigText(default = "18111112", fixed_size=8)
@@ -229,9 +228,7 @@ class XDsetup(ConfigListScreen, Screen):
 			for x in file_lines:
 				skin_lines.append(x)
 			if config.plugins.valiXDsetup.dmType.value == "8000":
-				oled_file = self.daten + "oled-8000.xml"
-			elif config.plugins.valiXDsetup.dmType.value == "7025":
-				oled_file = self.daten + "oled-7025.xml"                                
+				oled_file = self.daten + "oled-8000.xml"                           
 			elif config.plugins.valiXDsetup.dmType.value == "verysimple":
 				oled_file = self.daten + "oled-VerySymple.xml"
 			else:

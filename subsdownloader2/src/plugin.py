@@ -34,26 +34,25 @@ from Screens.InfoBar import MoviePlayer as MP_parent
 from Components.AVSwitch import AVSwitch
 from Components.ActionMap import ActionMap
 from Plugins.Plugin import PluginDescriptor
-from Tools.HardwareInfo import HardwareInfo
 from Tools.Directories import fileExists, pathExists
 from time import strftime as time_strftime
 from time import localtime as time_localtime
 from re import compile as re_compile
 from os import path as os_path, listdir
-from enigma import eConsoleAppContainer, eServiceReference, ePicLoad, getDesktop, eServiceCenter, eTimer
+from enigma import eConsoleAppContainer, eServiceReference, ePicLoad, getDesktop, eServiceCenter, eTimer, getBoxType
 
 #import players like Picture player, dvd player, music palyer
-if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyo") or os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyc"):
+if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyo"):
 	from Plugins.Extensions.PicturePlayer.plugin import Pic_Thumb, picshow
 	PicPlayerAviable = True
 else:
 	PicPlayerAviable = False
-if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyo") or os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyc"):
+if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyo"):
 	from Plugins.Extensions.DVDPlayer.plugin import DVDPlayer
 	DVDPlayerAviable = True
 else:
 	DVDPlayerAviable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyo") or fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyc"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyo"):
 	from Plugins.Extensions.MerlinMusicPlayer.plugin import MerlinMusicPlayerScreen, Item
 	MMPavaiable = True
 else:
@@ -158,7 +157,7 @@ class SubsDownloaderApplication(Screen):
 		Console().ePopen('mkdir /tmp/SubsDownloader_cache')
 		self.subsListDownloaded=0
 		self.localConvertion = False
-		self.MyBox = HardwareInfo().get_device_name()
+		self.MyBox = getBoxType()
 		self.textEXTENSIONS = {
 		        "srt": "text",
 		        "txt": "text",
@@ -903,8 +902,6 @@ class SubsDownloaderApplication(Screen):
 						#self.session.open(MoviePlayer, filename)
 						self.session.openWithCallback(self["fileList"].refresh, MoviePlayer, filename)
 					elif (testFileName.endswith(".mp3")) or (testFileName.endswith(".wav")) or (testFileName.endswith(".ogg")) or (testFileName.endswith(".m4a")) or (testFileName.endswith(".mp2")) or (testFileName.endswith(".flac")):
-						if (self.MyBox=="dm7025") and ((testFileName.endswith(".m4a")) or (testFileName.endswith(".mp2")) or (testFileName.endswith(".flac"))):
-							return
 						if MMPavaiable:
 							SongList,SongIndex = self.searchMusic()
 							try:
@@ -1400,8 +1397,7 @@ class MoviePlayer(MP_parent):
 		elif (self.moviename.endswith(".mpg")) or (self.moviename.endswith(".mpeg")) or (self.moviename.endswith(".mkv")) or (self.moviename.endswith(".m2ts")) or (self.moviename.endswith(".vob")) or (self.moviename.endswith(".mod")):
 			fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + self.moviename)
 		elif (self.moviename.endswith(".avi")) or (self.moviename.endswith(".mp4")) or (self.moviename.endswith(".divx")) or (self.moviename.endswith(".mov")) or (self.moviename.endswith(".flv")) or (self.moviename.endswith(".3gp")):
-			if not(HardwareInfo().get_device_name()=="dm7025"):	
-				fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + self.moviename)
+			fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + self.moviename)
 		self.session = session
 		self.WithoutStopClose = False
 		MP_parent.__init__(self, self.session, fileRef)

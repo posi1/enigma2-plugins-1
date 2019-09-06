@@ -6,7 +6,7 @@ from Components.MenuList import MenuList
 from Components.ActionMap import ActionMap
 from Components.config import config,ConfigSubsection,ConfigSelection, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
-from Tools.HardwareInfo import HardwareInfo
+from enigma import getBoxType
 from os import path as os_path, listdir as os_listdir, system as os_system, remove as os_remove
 from Components.Console import Console
 ###############################################################################
@@ -86,7 +86,7 @@ class LogoManagerScreen(Screen):
              "menu": self.openMenu,
              }, -1)
         ##
-        if HardwareInfo.device_name == "dm800":
+        if getBoxType() == "dm800":
             self.targets.append(("switchoff","/boot/switchoff.mvi"))
         ## stop current service to free the videodevice
         self.current_service = self.session.nav.getCurrentlyPlayingServiceReference()

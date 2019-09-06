@@ -272,7 +272,7 @@ class FEconf(Screen):
 				mounts = file('/etc/fstab').read().split('\n')
 				newlines = []
 				for x in mounts:
-					if x.startswith(devPath) or x.startswith("/dev/hdc1"):#/dev/hdc1 wegen 7025+
+					if x.startswith(devPath):
 						continue
 					if uuidPath and x.startswith(uuidPath):
 						continue

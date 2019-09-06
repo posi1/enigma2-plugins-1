@@ -679,9 +679,6 @@ class AdvancedMovieSelectionButtonSetup(Screen, ConfigListScreen):
             self.entryguilist.append(("Trailer search", _("Trailer search")))
         self.entryguilist2 = []
         self.entryguilist2.append(("Nothing", _("Nothing")))
-        self.entryguilist2.append(("DM-600PVR", _("DM-600PVR")))
-        self.entryguilist2.append(("DM-7000", _("DM-7000")))
-        self.entryguilist2.append(("DM-7025", _("DM-7025")))
         self.entryguilist2.append(("DM-8000HD", _("DM-8000HD")))
         self.entryguilist2.append(("DM-500HD", _("DM-500HD")))
         self.entryguilist2.append(("DM-800HD", _("DM-800HD")))
