@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 21:12+0430\n"
+"POT-Creation-Date: 2019-09-06 22:18+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -390,16 +390,7 @@ msgstr ""
 msgid "DM-500HD"
 msgstr ""
 
-msgid "DM-600PVR"
-msgstr ""
-
-msgid "DM-7000"
-msgstr ""
-
 msgid "DM-7020HD"
-msgstr ""
-
-msgid "DM-7025"
 msgstr ""
 
 msgid "DM-8000HD"

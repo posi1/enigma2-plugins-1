@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AdvancedMovieSelection\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-06 22:18+0430\n"
 "PO-Revision-Date: 2017-07-22 07:31+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -403,17 +403,8 @@ msgstr "Dabartinė vieta ir pakatalogiai"
 msgid "DM-500HD"
 msgstr "DM-500HD"
 
-msgid "DM-600PVR"
-msgstr "DM-600PVR"
-
-msgid "DM-7000"
-msgstr "DM-7000"
-
 msgid "DM-7020HD"
 msgstr "DM-7020HD"
-
-msgid "DM-7025"
-msgstr "DM-7025"
 
 msgid "DM-8000HD"
 msgstr "DM-8000HD"
