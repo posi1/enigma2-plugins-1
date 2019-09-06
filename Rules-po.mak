@@ -1,12 +1,9 @@
-CATEGORY ?= "Extensions"
-
 plugindir = $(libdir)/enigma2/python/Plugins/$(CATEGORY)/$(PLUGIN)
 
 LANGS = ar bg ca cs da de el en es et fa fi fr fy he hr hu id is it ku lt lv nb nl nn pl pt pt_BR ro ru sk sl sr sv th tr uk vi zh_CN zh_HK
 LANGMO = $(LANGS:=.mo)
 LANGPO = $(LANGS:=.po)
 
-if UPDATE_PO
 # the TRANSLATORS: allows putting translation comments before the to-be-translated line.
 $(PLUGIN)-py.pot: $(srcdir)/../src/*.py
 	$(XGETTEXT) --no-wrap -L python --from-code=UTF-8 --add-comments="TRANSLATORS:" -d $(PLUGIN) -s -o $@ $^
@@ -25,7 +22,6 @@ $(PLUGIN).pot: $(PLUGIN)-py.pot $(PLUGIN)-xml.pot
 	else \
 		$(MSGINIT) -l $@ -o $@ -i $< --no-translator; \
 	fi
-endif
 
 .po.mo:
 	$(MSGFMT) -o $@ $<

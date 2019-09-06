@@ -1,3 +1,3 @@
-PLUGIN = VlcPlayer
-LANGS = de es it tr sv sr cs fa no fr ru
+PLUGIN = "VlcPlayer"
+CATEGORY = "Extensions"
 include $(top_srcdir)/Rules_noxml-po.mak

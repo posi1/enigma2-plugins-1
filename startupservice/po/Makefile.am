@@ -1,3 +1,3 @@
-PLUGIN = StartUpService
-CATEGORY = SystemPlugins
+PLUGIN = "StartUpService"
+CATEGORY = "SystemPlugins"
 include $(top_srcdir)/Rules_noxml-po.mak

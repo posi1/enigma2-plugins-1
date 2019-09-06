@@ -1,5 +1,3 @@
-PLUGIN = PrimeTimeManager
-
-LANGS = de fr lt ru 
-
+PLUGIN = "PrimeTimeManager"
+CATEGORY = "Extensions"
 include $(top_srcdir)/Rules-po.mak

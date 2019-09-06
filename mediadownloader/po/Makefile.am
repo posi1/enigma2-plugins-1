@@ -1,2 +1,3 @@
-PLUGIN = MediaDownloader
+PLUGIN = "MediaDownloader"
+CATEGORY = "Extensions"
 include $(top_srcdir)/Rules_noxml-po.mak

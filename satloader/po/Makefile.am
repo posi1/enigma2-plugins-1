@@ -1,3 +1,3 @@
-PLUGIN = Satloader
-LANGS = de it tr
+PLUGIN = "Satloader"
+CATEGORY = "Extensions"
 include $(top_srcdir)/Rules-po.mak

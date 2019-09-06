@@ -1,7 +1,3 @@
-PLUGIN = RecInfobar
-
-CATEGORY = SystemPlugins
-
-LANGS = de fr lt nl ru uk 
-
+PLUGIN = "RecInfobar"
+CATEGORY = "SystemPlugins"
 include $(top_srcdir)/Rules-po.mak

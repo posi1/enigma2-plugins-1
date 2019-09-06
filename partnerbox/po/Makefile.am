@@ -1,3 +1,3 @@
-PLUGIN = Partnerbox
-LANGS = de hu it sr cs sv ru
+PLUGIN = "Partnerbox"
+CATEGORY = "Extensions"
 include $(top_srcdir)/Rules_noxml-po.mak
