@@ -375,8 +375,8 @@ mosaic/src/Makefile
 moviecut/Makefile
 moviecut/meta/Makefile
 moviecut/po/Makefile
+moviecut/src/Makefile
 moviecut/src_cc/Makefile
-moviecut/src_py/Makefile
 
 movielistpreview/Makefile
 movielistpreview/meta/Makefile
@@ -503,7 +503,7 @@ quickbutton/src/Makefile
 
 reconstructapsc/Makefile
 reconstructapsc/meta/Makefile
-reconstructapsc/src_py/Makefile
+reconstructapsc/src/Makefile
 
 recordinfobar/Makefile
 recordinfobar/meta/Makefile
@@ -643,12 +643,12 @@ vlcplayer/src/Makefile
 vps/Makefile
 vps/meta/Makefile
 vps/po/Makefile
+vps/src/Makefile
+vps/src/web/Makefile
+vps/src/web-data/Makefile
+vps/src/WebComponents/Makefile
+vps/src/WebComponents/Sources/Makefile
 vps/src_cc/Makefile
-vps/src_py/Makefile
-vps/src_py/web/Makefile
-vps/src_py/web-data/Makefile
-vps/src_py/WebComponents/Makefile
-vps/src_py/WebComponents/Sources/Makefile
 
 weatherplugin/Makefile
 weatherplugin/meta/Makefile
