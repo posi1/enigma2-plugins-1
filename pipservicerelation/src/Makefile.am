@@ -4,5 +4,4 @@ plugin_PYTHON = \
 	__init__.py \
 	plugin.py
 
-plugin_DATA = \
-	maintainer.info PiPServiceRelation.png
+plugin_DATA = PiPServiceRelation.png

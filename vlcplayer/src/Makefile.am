@@ -12,7 +12,6 @@ plugin_PYTHON = \
 	plugin.py
 
 plugin_DATA = \
-	maintainer.info \
 	playlist.png \
 	plugin.png \
 	vlc.png \

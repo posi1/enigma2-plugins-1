@@ -3,7 +3,4 @@ install_PYTHON = \
 	plugin.py \
 	__init__.py
 
-install_DATA = \
-	AudioRestart.png \
-	LICENSE \
-	maintainer.info
+install_DATA = AudioRestart.png

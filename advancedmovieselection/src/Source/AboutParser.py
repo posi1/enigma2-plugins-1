@@ -45,11 +45,7 @@ class AboutParser:
         print "[AdvancedMovieSelection] Set changes locale to", lng
         CHANGES = {}
         CHANGES['locale'] = lng
-        CHANGES['path'] = (path + "changes_%s.txt") % (lng)
-        if not os.path.exists(CHANGES['path']):
-            lng = "en"
-            CHANGES['locale'] = lng
-            CHANGES['path'] = (path + "changes_%s.txt") % (lng)
+        CHANGES['path'] = (path + "changes_en.txt")
     
     @classmethod
     def parseChanges(self):

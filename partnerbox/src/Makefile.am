@@ -13,5 +13,4 @@ plugin_PYTHON = \
 
 plugin_DATA = \
 	ExPlayer.png \
-	maintainer.info \
 	Setup_Partnerbox.png

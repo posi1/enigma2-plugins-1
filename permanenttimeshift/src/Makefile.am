@@ -6,7 +6,4 @@ plugin_PYTHON = \
 	__init__.py \
 	plugin.py
 
-plugin_DATA = \
-	LICENSE \
-	maintainer.info \
-	keymap.xml
+plugin_DATA = keymap.xml
