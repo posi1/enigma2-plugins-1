@@ -4,7 +4,7 @@
 #
 babelzapper_version = "0.9.6"
 babelzapper_plugindir="/usr/lib/enigma2/python/Plugins/Extensions/BabelZapper" 
-babelzapper_readme = "%s/readme.txt" % babelzapper_plugindir
+babelzapper_readme = "%s/README.md" % babelzapper_plugindir
 babelzapper_menus = "/etc/babelzapper"
 #
 from RecordTimer import parseEvent

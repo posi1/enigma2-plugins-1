@@ -3,7 +3,6 @@ converterinstalldir = $(libdir)/enigma2/python/Components/Converter
 componentsinstalldir = $(libdir)/enigma2/python/Components
 rendererinstalldir = $(libdir)/enigma2/python/Components/Renderer
 sourcesinstalldir = $(libdir)/enigma2/python/Components/Sources
-install_DATA = README
 componentsinstall_PYTHON = Components/WeatherMSN.py
 converterinstall_PYTHON = Components/Converter/MSNWeather.py
 rendererinstall_PYTHON = Components/Renderer/MSNWeatherPixmap.py

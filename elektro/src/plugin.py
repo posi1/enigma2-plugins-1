@@ -655,7 +655,7 @@ class Elektro(ConfigListScreen,Screen):
 		return str(self["config"].getCurrent()[1].getText())
 
 	def help(self):
-		self.session.open(Console,_("Showing Elektro readme.txt"),["cat /usr/lib/enigma2/python/Plugins/Extensions/Elektro/%s" % _("readme.txt")])
+		self.session.open(Console,_("Showing Elektro README.md"),["cat /usr/lib/enigma2/python/Plugins/Extensions/Elektro/%s" % _("README.md")])
 
 	def profile(self):
 		self.session.open(ElektroProfile)

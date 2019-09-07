@@ -224,7 +224,7 @@ class NETcasterScreenHelp(Screen):
         self.skin = NETcasterScreenHelp.skin
         Screen.__init__(self, session)
         global plugin_path
-        readme = plugin_path+"/readme.txt"
+        readme = plugin_path+"/README.md"
         if os_path.exists(readme):
             fp = open(readme)
             text = fp.read()

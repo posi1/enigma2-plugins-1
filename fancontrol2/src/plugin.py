@@ -786,7 +786,7 @@ class FanControl2Plugin(ConfigListScreen,Screen):
 		self.session.open(FanControl2Monitor)
 
 	def help(self):
-		self.session.open(Console,_("Information"),["cat /usr/lib/enigma2/python/Plugins/Extensions/FanControl2/%s" % _("readme.txt")])
+		self.session.open(Console,_("Information"),["cat /usr/lib/enigma2/python/Plugins/Extensions/FanControl2/%s" % _("README.md")])
 
 	def SetupMenu(self):
 		self.session.open(FanControl2SpezialSetup)
