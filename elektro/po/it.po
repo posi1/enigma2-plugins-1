@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - elektropowersaver\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: 2011-10-05 04:15+0100\n"
 "Last-Translator: JuSt611 <Software@Strasdas.de>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -116,6 +116,9 @@ msgstr "Menu Plugin"
 msgid "Puts the box in standby mode after boot."
 msgstr "Pone il box in standby dopo l'avvio."
 
+msgid "README.md"
+msgstr ""
+
 msgid "Run"
 msgstr "Eseguire"
 
@@ -125,7 +128,8 @@ msgstr "Sabato"
 msgid "Show in"
 msgstr "Mostrare in"
 
-msgid "Showing Elektro readme.txt"
+#, fuzzy
+msgid "Showing Elektro README.md"
 msgstr "Elektro readme.txt"
 
 msgid "Sleep"
@@ -208,9 +212,6 @@ msgstr "Nessun nome"
 
 msgid "please wait..."
 msgstr "Attendere..."
-
-msgid "readme.txt"
-msgstr "readme-it.txt"
 
 msgid "yes, Profile 1"
 msgstr "Sì, il profilo 1"

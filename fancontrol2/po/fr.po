@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: 2011-07-13 18:30+0100\n"
 "Last-Translator: joergm6 <joergm6@online.de>\n"
 "Language-Team: french\n"
@@ -204,6 +204,9 @@ msgstr ""
 msgid "PWM  %03d"
 msgstr "PWM  %03d"
 
+msgid "README.md"
+msgstr ""
+
 msgid "Restart GUI now?"
 msgstr "Relancer l'IGU maintenant ?"
 
@@ -312,9 +315,6 @@ msgstr "presser info pour HDD-Temp"
 
 msgid "read HDD-Temperature in HDD-Standby-Mode"
 msgstr "lire HDD-Température si HDD en Standby-Mode"
-
-msgid "readme.txt"
-msgstr "readmefr.txt"
 
 msgid "setup Fancontol inStandby mode"
 msgstr ""

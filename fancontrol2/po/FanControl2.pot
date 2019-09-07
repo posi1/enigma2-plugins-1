@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-06 22:18+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,6 +203,9 @@ msgstr ""
 msgid "PWM  %03d"
 msgstr ""
 
+msgid "README.md"
+msgstr ""
+
 msgid "Restart GUI now?"
 msgstr ""
 
@@ -310,9 +313,6 @@ msgid "press Info for HDD-Temp"
 msgstr ""
 
 msgid "read HDD-Temperature in HDD-Standby-Mode"
-msgstr ""
-
-msgid "readme.txt"
 msgstr ""
 
 msgid "setup Fancontol inStandby mode"

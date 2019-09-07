@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 - Plugin Elektro Power Save\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: 2009-09-27 17:47+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -117,6 +117,9 @@ msgstr ""
 msgid "Puts the box in standby mode after boot."
 msgstr ""
 
+msgid "README.md"
+msgstr ""
+
 msgid "Run"
 msgstr ""
 
@@ -126,7 +129,8 @@ msgstr "Subota"
 msgid "Show in"
 msgstr ""
 
-msgid "Showing Elektro readme.txt"
+#, fuzzy
+msgid "Showing Elektro README.md"
 msgstr "Prikazujem Elektro readme.txt"
 
 msgid "Sleep"
@@ -208,9 +212,6 @@ msgid "no Name"
 msgstr ""
 
 msgid "please wait..."
-msgstr ""
-
-msgid "readme.txt"
 msgstr ""
 
 msgid "yes, Profile 1"

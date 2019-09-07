@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Elektro Power Save\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: 2016-01-24 15:44+0200\n"
 "Last-Translator: joergm6 <joergm6@online.de>\n"
 "Language-Team: Vytenis P. <Vyteniui@gmail.com>\n"
@@ -115,6 +115,9 @@ msgstr "Įskiepio meniu"
 msgid "Puts the box in standby mode after boot."
 msgstr "Po starto perveda į budėjimo režimą."
 
+msgid "README.md"
+msgstr ""
+
 msgid "Run"
 msgstr "Vykdyti"
 
@@ -124,7 +127,8 @@ msgstr "šeštadienis"
 msgid "Show in"
 msgstr "Rodyti"
 
-msgid "Showing Elektro readme.txt"
+#, fuzzy
+msgid "Showing Elektro README.md"
 msgstr "Rodoma Elektro readme.txt"
 
 msgid "Sleep"
@@ -207,9 +211,6 @@ msgstr "Be pavadinimo"
 
 msgid "please wait..."
 msgstr "palaukite..."
-
-msgid "readme.txt"
-msgstr "readme.txt"
 
 msgid "yes, Profile 1"
 msgstr "taip, profilis 1"

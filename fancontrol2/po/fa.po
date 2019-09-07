@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fan control Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: 2012-07-25 23:46+0330\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -205,6 +205,9 @@ msgstr ""
 msgid "PWM  %03d"
 msgstr ""
 
+msgid "README.md"
+msgstr ""
+
 msgid "Restart GUI now?"
 msgstr ""
 
@@ -314,9 +317,6 @@ msgstr "دکمه اینفو را به منظور نمایش دمای هارد ف
 
 msgid "read HDD-Temperature in HDD-Standby-Mode"
 msgstr "خواندن هارد دیسک - دمای داخل هارد دیسک - مد استندبای - مد"
-
-msgid "readme.txt"
-msgstr ""
 
 msgid "setup Fancontol inStandby mode"
 msgstr ""

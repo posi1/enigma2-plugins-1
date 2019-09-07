@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DVDBackup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-10 14:46+0300\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -12,103 +12,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: .\n"
 "X-Generator: Poedit 2.0.2\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2-plugins/dvdbackup/"
-"src\n"
+"X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src\n"
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:50
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:401
-msgid "Name of DVD"
-msgstr "DVD pavadinimas"
+msgid "Abort"
+msgstr "Nutraukti"
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:143
+msgid "Backup"
+msgstr "Atsarginė kopija"
+
+msgid "Backup of DVD finished."
+msgstr "DVD atsarginė kopija padaryta."
+
+msgid "Backup your Video-DVD to your harddisk"
+msgstr "Kopijuokite savo vaizdo DVD į HDD atsargai"
+
 msgid "Could not find any file to backup!"
 msgstr "Nepavyko rasti failų atsarginei kopijai!"
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:146
 msgid "Could not read the DVD informations!"
 msgstr "Perskaityti DVD informacijos nepavyko!"
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:152
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:181
+msgid "Create iso:"
+msgstr "Sukurti ISO:"
+
+msgid "DVD Backup"
+msgstr "DVD atsarginė kopija"
+
+msgid "Device:"
+msgstr "Įrenginys:"
+
+msgid "Directory:"
+msgstr "Katalogas:"
+
+msgid "Duration:"
+msgstr "Trukmė:"
+
+msgid "Eject DVD?"
+msgstr "Išstumti DVD?"
+
 msgid "Error while backup of DVD!"
 msgstr "Klaida, darant DVD atsarginę kopiją!"
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:186
+msgid "Keyboard"
+msgstr "Klaviatūra"
+
+msgid "Location"
+msgstr "Vieta"
+
+msgid "Log:"
+msgstr "Žurnalas:"
+
+msgid "Name of DVD"
+msgstr "DVD pavadinimas"
+
+msgid "Name:"
+msgstr "Pavadinimas:"
+
+msgid "Progress"
+msgstr "Eiga"
+
 msgid ""
 "genisoimage job done.\n"
 "Delete DVD directory?"
 msgstr ""
 "genisoimage užduotis atlikta.\n"
 "Pašalinti DVD katalogą?"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:201
-msgid "Backup of DVD finished."
-msgstr "DVD atsarginė kopija padaryta."
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:201
-msgid "Duration:"
-msgstr "Trukmė:"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:201
-msgid "Eject DVD?"
-msgstr "Išstumti DVD?"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:250
-msgid "Abort"
-msgstr "Nutraukti"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:322
-msgid "Progress"
-msgstr "Eiga"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:323
-msgid "Backup"
-msgstr "Atsarginė kopija"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:324
-msgid "Keyboard"
-msgstr "Klaviatūra"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:325
-msgid "Location"
-msgstr "Vieta"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:331
-msgid "Device:"
-msgstr "Įrenginys:"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:332
-msgid "Directory:"
-msgstr "Katalogas:"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:333
-msgid "Name:"
-msgstr "Pavadinimas:"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:334
-msgid "Log:"
-msgstr "Žurnalas:"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:335
-msgid "Create iso:"
-msgstr "Sukurti ISO:"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:421
-msgid "Installing..."
-msgstr "Diegiama..."
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:427
-msgid "Could not install needed dvdbackup package!"
-msgstr "Įdiegti nepavyko. Reikia DVD atsarginio kopijavino paketo!"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:443
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:446
-msgid "DVD Backup"
-msgstr "DVD atsarginė kopija"
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:446
-msgid "Backup your Video-DVD to your harddisk"
-msgstr "Kopijuokite savo vaizdo DVD į HDD atsargai"

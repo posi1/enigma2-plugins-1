@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FanControl2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: 2016-11-30 02:55+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: AndyBlac, Rob van der Does\n"
@@ -210,6 +210,9 @@ msgstr "PID Ctl Err %03.2f %%"
 msgid "PWM  %03d"
 msgstr "PWM  %03d"
 
+msgid "README.md"
+msgstr ""
+
 msgid "Restart GUI now?"
 msgstr "GUI nu herstarten?"
 
@@ -318,9 +321,6 @@ msgstr "druk Info voor de HDD-Temp"
 
 msgid "read HDD-Temperature in HDD-Standby-Mode"
 msgstr "HDD-temp tijdens HDD-stand-by uitlezen"
-
-msgid "readme.txt"
-msgstr "readme.txt"
 
 msgid "setup Fancontol inStandby mode"
 msgstr "Instellingen Fancontol in stand-by"

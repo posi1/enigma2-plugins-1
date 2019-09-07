@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fancontrol2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: 2016-05-29 12:50+0100\n"
 "Last-Translator: pe.tardo <pe.thardo@gmail.com>\n"
 "Language-Team: OpenSPA <openspa.info>\n"
@@ -205,6 +205,9 @@ msgstr "Ctl. Error PID %03.2f %%"
 msgid "PWM  %03d"
 msgstr "PWM  %03d"
 
+msgid "README.md"
+msgstr ""
+
 msgid "Restart GUI now?"
 msgstr "Reiniciar GUI?"
 
@@ -313,9 +316,6 @@ msgstr "pulse info para ver la temp. del HDD"
 
 msgid "read HDD-Temperature in HDD-Standby-Mode"
 msgstr "leer temperatura del HDD en reposo"
-
-msgid "readme.txt"
-msgstr "Léeme.txt"
 
 msgid "setup Fancontol inStandby mode"
 msgstr "Configurar FanControl cuando está en reposo"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Elektro Power Save\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: 2011-09-29 17:22+0100\n"
 "Last-Translator: joergm6 <joergm6@online.de>\n"
 "Language-Team: Morty <morty@gmx.net>\n"
@@ -115,6 +115,9 @@ msgstr "Plugin Menü"
 msgid "Puts the box in standby mode after boot."
 msgstr "Versetzt die Box nach dem Booten in den Standby Modus."
 
+msgid "README.md"
+msgstr ""
+
 msgid "Run"
 msgstr "Ausführen"
 
@@ -124,7 +127,8 @@ msgstr "Samstag"
 msgid "Show in"
 msgstr "Zeigen in"
 
-msgid "Showing Elektro readme.txt"
+#, fuzzy
+msgid "Showing Elektro README.md"
 msgstr "Zeige Elektro Readme.txt"
 
 msgid "Sleep"
@@ -207,9 +211,6 @@ msgstr "kein Name"
 
 msgid "please wait..."
 msgstr "Bitte warten..."
-
-msgid "readme.txt"
-msgstr "readme-de.txt"
 
 msgid "yes, Profile 1"
 msgstr "ja, Profil 1"

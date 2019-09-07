@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - fancontrol2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2019-09-07 11:50+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -207,6 +207,9 @@ msgstr "PID Ctl Err %03.2f %%"
 msgid "PWM  %03d"
 msgstr "PWM %03d"
 
+msgid "README.md"
+msgstr ""
+
 msgid "Restart GUI now?"
 msgstr "Riavviare la GUI?"
 
@@ -315,9 +318,6 @@ msgstr "Info -> Temp. HDD"
 
 msgid "read HDD-Temperature in HDD-Standby-Mode"
 msgstr "Rilevare la temperatura del disco in standby"
-
-msgid "readme.txt"
-msgstr "readmeit.txt"
 
 msgid "setup Fancontol inStandby mode"
 msgstr ""
