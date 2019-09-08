@@ -250,10 +250,10 @@ esame/meta/Makefile
 esame/src/Makefile
 esame/src/data/Makefile
 
-epgsearch/Makefile
-epgsearch/meta/Makefile
-epgsearch/po/Makefile
-epgsearch/src/Makefile
+epgsearchpli/Makefile
+epgsearchpli/meta/Makefile
+epgsearchpli/po/Makefile
+epgsearchpli/src/Makefile
 
 eventlist/Makefile
 eventlist/src/Makefile

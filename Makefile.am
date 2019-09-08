@@ -31,7 +31,7 @@ SUBDIRS = \
 	emission \
 	eparted \
 	epgrefresh \
-	epgsearch \
+	epgsearchpli \
 	esame \
 	eventlist \
 	eventposition \
@@ -115,8 +115,6 @@ SUBDIRS = \
 	zapstatistic \
 	zdfmediathek
 
-
-# epgsearchpli (PLi)
 
 metadir = $(datadir)/meta
 meta_DATA = index-enigma2-plugins.xml
