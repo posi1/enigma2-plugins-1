@@ -64,7 +64,7 @@ SUBDIRS = \
 	mytube \
 	ncidclient \
 	netcaster \
-	networkbrowser \
+	networkbrowserpli \
 	ofdb \
 	orfat \
 	orfteletext \
@@ -116,7 +116,7 @@ SUBDIRS = \
 	zdfmediathek
 
 
-# epgsearchpli networkbrowserpli (PLi)
+# epgsearchpli (PLi)
 
 metadir = $(datadir)/meta
 meta_DATA = index-enigma2-plugins.xml

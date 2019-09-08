@@ -429,12 +429,12 @@ netcaster/src/bin/Makefile
 netcaster/src/bin/interface/Makefile
 netcaster/src/etc/Makefile
 
-networkbrowser/Makefile
-networkbrowser/meta/Makefile
-networkbrowser/src/Makefile
-networkbrowser/src/icons/Makefile
-networkbrowser/src/lib/Makefile
-networkbrowser/po/Makefile
+networkbrowserpli/Makefile
+networkbrowserpli/meta/Makefile
+networkbrowserpli/src/Makefile
+networkbrowserpli/src/icons/Makefile
+networkbrowserpli/src/lib/Makefile
+networkbrowserpli/po/Makefile
 
 ofdb/Makefile
 ofdb/meta/Makefile
