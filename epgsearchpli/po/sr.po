@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 - Plugin epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2014-11-22 20:47+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -70,6 +70,9 @@ msgstr "Bez istorije"
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Ne mogu pročitati listu autotajmera: %s"
+
+msgid "Custom search"
+msgstr ""
 
 msgid "Display name service as in bouquets"
 msgstr ""

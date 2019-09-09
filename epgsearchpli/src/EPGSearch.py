@@ -13,7 +13,7 @@ from Screens.ChoiceBox import ChoiceBox
 from Screens.EpgSelection import EPGSelection
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
-from Screens.VirtualKeyBoard import VirtualKeyBoard
+from Screens.VirtualKeyBoard import VirtualKeyBoard, VKB_SEARCH_ICON
 from Components.ActionMap import ActionMap
 from Components.Button import Button
 from Components.config import config
@@ -186,6 +186,8 @@ class EPGSearchList(EPGList):
 						timer_begin = begin
 				if x.justplay:
 					type_offset = 5
+					if x.pipzap:
+						type_offset = 30
 					if (timer_end - x.begin) <= 1:
 						timer_end += 60
 				if x.always_zap:
@@ -311,7 +313,7 @@ class EPGSearchList(EPGList):
 
 	def buildEPGSearchEntry(self, service, eventId, beginTime, duration, EventName):
 		rec1 = self.getClockTypesForEntry(service, eventId, beginTime, duration)
-		# Partnerbox
+		# Partnerbox 
 		if PartnerBoxIconsEnabled:
 			rec2 = beginTime and isInRemoteTimer(self, beginTime, duration, service)
 		else:
@@ -746,13 +748,13 @@ class EPGSearch(EPGSelection):
 			if cur[0] is not None:
 				name2 = cur[0].getEventName() or ''
 				name3 = name2.split("(")[0].strip()
-				eventname = name3.replace('"', '').replace('Õ/Ô', '').replace('Ì/Ô', '').replace('Õ/ô', '').replace('.', '')
-				eventname = eventname.replace('0+', '').replace('(0+)', '').replace('6+', '').replace('(6+)', '').replace('7+', '').replace('(7+)', '').replace('12+', '').replace('(12+)', '').replace('16+', '').replace('(16+)', '').replace('18+', '').replace('(18+)', '')
+				eventname = name3.replace('"', '').replace('Ã•/Ã”', '').replace('ÃŒ/Ã”', '').replace('Ã•/Ã´', '').replace('.', '')
+				eventname = eventname.replace('0+', '').replace('(0+)', '').replace('6+', '').replace('(6+)', '').replace('7+', '').replace('(7+)', '').replace('12+', '').replace('(12+)', '').replace('16+', '').replace('(16+)', '').replace('18+', '').replace('(18+)', '')				
 				try:
 					tmbdsearch = config.plugins.tmbd.profile.value
 				except:
 					tmbdsearch = None
-				if tmbdsearch != None:
+				if tmbdsearch is not None:
 					if config.plugins.tmbd.profile.value == "0":
 						self.session.open(TMBD, eventname, False)
 					else:
@@ -773,7 +775,8 @@ class EPGSearch(EPGSelection):
 		self.session.openWithCallback(
 			self.searchEPG,
 			VirtualKeyBoard,
-			title = _("Enter text to search for")
+			title = _("Enter text to search for"),
+			style = VKB_SEARCH_ICON
 		)
 
 	def menu(self):
@@ -802,12 +805,16 @@ class EPGSearch(EPGSelection):
 		if len(history) > 0:
 			options.append((_("Clear history"), self.ClearHistory))
 		options.append((_("Timers list"), self.openTimerslist))
-		options.append((_("Setup"), self.setup))
+
+		keys = ["menu"]
+		keys = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "red", "green", "yellow", "blue" ][:len(options)] + (len(options) - 14) * [""] + keys
+		options.append((_("Setup"), self.setup ))
 
 		self.session.openWithCallback(
 			self.menuCallback,
 			ChoiceBox,
-			list = options
+			list = options,
+			keys = keys
 		)
 
 	def menuCallback(self, ret):
@@ -893,7 +900,7 @@ class EPGSearch(EPGSelection):
 			self.session.open(IMDB, cur[0].getEventName())
 		except ImportError as ie:
 			pass
-
+			
 	def zapToSelectedService(self):
 		cur = self["list"].getCurrent()
 		serviceref = cur[1]
@@ -911,7 +918,7 @@ class EPGSearch(EPGSelection):
 				self.session.nav.playService(serviceref.ref)
 			except:
 				pass
-
+		
 	def opentmdb(self):
 		cur = self['list'].getCurrent()
 		event = cur[0]

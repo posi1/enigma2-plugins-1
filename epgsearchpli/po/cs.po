@@ -2,17 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
-"PO-Revision-Date: 2015-01-09 21:08+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2019-04-17 09:13+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
-"Language: \n"
+"Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Czech\n"
-"X-Poedit-Country: CZECH REPUBLIC\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #, python-format
 msgid " (%d min)"
@@ -29,7 +28,7 @@ msgid "Add \"Search event in EPG\" to event menu"
 msgstr "Přidat \"Najít událost v EPG\" do menu události"
 
 msgid "Add \"Search\" Button to EPG"
-msgstr "Přidat tlačítko \"Hledání\" do EPG"
+msgstr "Přidat tlačítko \"Hledat\" do EPG"
 
 msgid "Add timer"
 msgstr "Přidat časovač"
@@ -47,16 +46,16 @@ msgid "Channel Selection"
 msgstr "Výběr kanálu"
 
 msgid "Choice list"
-msgstr ""
+msgstr "Výběr akce"
 
 msgid "Choice list EPGSearch"
-msgstr ""
+msgstr "Volby EPGSearch"
 
 msgid "Choice list RED Button"
-msgstr ""
+msgstr "Akce pro červené tlačítko"
 
 msgid "Choosing an encoding. \"UTF-8\" to search for EPG cyrillic."
-msgstr ""
+msgstr "Volba kódování."
 
 msgid "Clear history"
 msgstr "Smazat historii"
@@ -65,8 +64,11 @@ msgstr "Smazat historii"
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Nepodařilo se načíst seznam časovačů AutoTimeru: %s"
 
+msgid "Custom search"
+msgstr "Uživatelské hledání"
+
 msgid "Display name service as in bouquets"
-msgstr ""
+msgstr "Zobrazovat názvy programů jako v přehledech"
 
 msgid "EPG Search"
 msgstr "EPG Search"
@@ -78,7 +80,7 @@ msgid "EPGSearch Setup"
 msgstr "Nastavení EPGSearch"
 
 msgid "Encoding Search to EPG"
-msgstr "P"
+msgstr "Kódování při vyhledávání v EPG"
 
 msgid "Enter text to search for"
 msgstr "Zadejte text pro hledání"
@@ -93,10 +95,10 @@ msgid "How many entries to keep in the search history at most. 0 disables histor
 msgstr "Kolik položek je udržováno v historii hledání. 0 zakáže historii úplně! "
 
 msgid "If 'Search only bouquets' is enabled, show service name as in bouquets for renamed services."
-msgstr ""
+msgstr "Jestliže je nastaveno 'Hledat pouze v přehledech', zobrazuje pro přejmenované programy názvy jako v přehledech."
 
 msgid "If this setting is enabled, searching EPG in only services in user bouquets."
-msgstr ""
+msgstr "Jestliže je zapnuté, EPG je prohledávána pouze v programech umístěných v uživatelských přehledech."
 
 msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
 msgstr "Jestliže je povoleno, plugin přidá tlačítko \"EPG Search\" do EPG."
@@ -117,10 +119,10 @@ msgid "Length of History"
 msgstr "Délka historie"
 
 msgid "List of history is cleared !"
-msgstr ""
+msgstr "Seznam historie je smazán!"
 
 msgid "Lookup in TMBD"
-msgstr ""
+msgstr "Vyhledat v TMDB"
 
 msgid "New Search"
 msgstr "Nové hledání"
@@ -132,10 +134,10 @@ msgid "OK"
 msgstr "OK"
 
 msgid "Open selected in IMDb"
-msgstr ""
+msgstr "Otevřít v IMDb"
 
 msgid "Partnerbox Entries"
-msgstr ""
+msgstr "Položky Partnerboxu"
 
 msgid "Save search as AutoTimer"
 msgstr "Uložit hledání jako AutoTimer"
@@ -144,88 +146,88 @@ msgid "Search"
 msgstr "Hledat"
 
 msgid "Search EPG by title event"
-msgstr ""
+msgstr "Vyhledávání události v EPG podle názvu"
 
 msgid "Search event in EPG"
 msgstr "Najít událost v EPG"
 
 msgid "Search for TMDb info"
-msgstr ""
+msgstr "Hledat TMDb info"
 
 msgid "Search only bouquets"
-msgstr ""
+msgstr "Hledat pouze v přehledech"
 
 msgid "Search strictness"
-msgstr ""
+msgstr "Přesnost vyhledávání"
 
 msgid "Search type"
-msgstr "Hledat typ"
+msgstr "Typ hledání"
 
 msgid "Search type for filter"
-msgstr ""
+msgstr "Způsob vyhledávání"
 
 msgid "Select a timer to search"
 msgstr "Výběr časovače pro hledání"
 
 msgid "Select action:"
-msgstr ""
+msgstr "Zvolte akci:"
 
 msgid "Select channel"
-msgstr ""
+msgstr "Vyberte kanál"
 
 msgid "Select text to search for"
 msgstr "Výběr textu pro hledání"
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr ""
+msgstr "Vyberte typ filtru pro vyhledávání. Stiskněte P+/- pro zobrazení / skrytí filtru v popisu po vyhledání."
 
 msgid "Select type for search, \"partial match\" for the most extensive search."
-msgstr ""
+msgstr "Zvolte typ hledání, \"částečně odpovídá\" pro rozsáhlá vyhledávání."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
-msgstr ""
+msgstr "Vyberte 'hledat a vybrat kanál' nebo 'pouze hledat'."
 
 msgid "Select whether or not you want to enforce case correctness."
-msgstr ""
+msgstr "Zvolte, zda při hledání chcete rozlišovat velikost písmen."
 
 msgid "Setup"
 msgstr "Nastavení..."
 
 msgid "Timers list"
-msgstr ""
+msgstr "Přehled časovačů"
 
 msgid "Type blue Button"
-msgstr ""
+msgstr "Možnosti modrého tlačítka"
 
 msgid "Use Picons"
-msgstr ""
+msgstr "Používat pikony"
 
 msgid "Zap to selected service"
-msgstr ""
+msgstr "Přepnout na vybraný program"
 
 msgid "case-insensitive search"
-msgstr ""
+msgstr "Nerozlišovat velikost písmen"
 
 msgid "case-sensitive search"
-msgstr ""
+msgstr "Rozlišovat velikost písmen"
 
 msgid "choice (Search and standard)"
-msgstr ""
+msgstr "Výběr (hledat a standard)"
 
 msgid "exact match"
-msgstr ""
+msgstr "Přesně odpovídá"
 
 msgid "only Search"
-msgstr "pouze hledat"
+msgstr "Pouze hledat"
 
 msgid "partial match"
-msgstr ""
+msgstr "Částečně odpovídá"
 
 msgid "search EPG"
 msgstr "Prohledat EPG"
 
 msgid "search EPG..."
-msgstr "hledat v EPG..."
+msgstr "Hledat v EPG..."
 
 msgid "title starts with"
-msgstr ""
+msgstr "Název začíná na"

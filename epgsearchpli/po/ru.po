@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2015-01-20 14:16+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team:  openPli\n"
@@ -63,6 +63,9 @@ msgstr "Очистка истории"
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Не удалось прочитать список таймеров из Автотаймера: %s"
+
+msgid "Custom search"
+msgstr "Пользовательский поиск"
 
 msgid "Display name service as in bouquets"
 msgstr "Имя сервиса как в букетах"

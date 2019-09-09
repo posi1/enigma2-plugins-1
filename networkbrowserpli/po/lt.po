@@ -3,10 +3,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: NetworkBrowser-PLi\n"
+"Project-Id-Version: NetworkBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
-"PO-Revision-Date: 2017-07-10 19:10+0300\n"
+"POT-Creation-Date: 2018-12-29 00:28+0100\n"
+"PO-Revision-Date: 2016-06-23 18:09+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 1.8.8\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 "Aktyvus/\n"
 "Neaktyvus"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Pridėti naują NFS, arba CIFS pajungimo tašką."
 
 msgid "Add new network mount point"
@@ -65,7 +65,7 @@ msgstr "Atšaukti"
 msgid "Change hostname"
 msgstr "Keisti vardą tinkle"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Keisti TV imtuvo vardą tinkle."
 
 msgid "Close"
@@ -86,20 +86,11 @@ msgstr "Ar norite įrašyti vartotojo vardą ir slaptažodį šiam prisijungimui
 msgid "Enter IP to scan..."
 msgstr "Įrašykite IP skenavimui..."
 
-msgid "Enter new hostname for your Dreambox"
-msgstr "Įveskite naują šio TV imtuvo vardą tinkle"
-
-msgid "Enter options:"
-msgstr "Įrašykite pasirinkimus:"
+msgid "Enter new hostname for your Receiver"
+msgstr "Įveskite naują TV imtuvo vardą tinkle."
 
 msgid "Enter password:"
 msgstr "Įrašykite slaptažodį:"
-
-msgid "Enter share directory:"
-msgstr "Įrašykite bendrinamą katalogą:"
-
-msgid "Enter share name:"
-msgstr "Įrašykite bendrinimo vardą:"
 
 msgid "Enter user and password for host: "
 msgstr "Įrašykite vartotoją ir slaptažodį prisijungimui: "
@@ -113,14 +104,20 @@ msgstr "Išplėstinis"
 msgid "Finished restarting your network"
 msgstr "Tinklo paleidimas iš naujo baigtas"
 
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
+
 msgid "IP Address"
 msgstr "IP adresas"
 
 msgid "IP:"
 msgstr "IP:"
 
-msgid "Local share name"
-msgstr "Bendrinimo vardas"
+msgid "Local mountpoint"
+msgstr ""
 
 msgid "Manage network shares"
 msgstr "Valdykite tinklo bendrus resursus"
@@ -139,6 +136,9 @@ msgstr "Pajungimo parinktys"
 
 msgid "Mount type"
 msgstr "Pajungimo tipas"
+
+msgid "Mount view"
+msgstr "Pajungimų peržiūra"
 
 msgid "MountManager"
 msgstr "Pajungimų valdymas"
@@ -243,8 +243,8 @@ msgstr "Vartotojų valdymas"
 msgid "Username"
 msgstr "Vartotojas"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
-msgstr "Žiūrėkite, redaguokite, ar šalinkite savo pajungimo taškus."
+msgid "View, edit or delete mountpoints on your Receiver."
+msgstr "Žiūrėkite, redaguokite, ar šalinkite pajungimo taškus."
 
 msgid "View, edit or delete usernames and passwords for your network."
 msgstr "žiūrėkite, redaguokite, ar šalinkite savo tinklo vartotojus ir slaptažodžius."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-05-11 12:34+0200\n"
 "PO-Revision-Date: 2016-06-23 11:28+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -68,6 +68,9 @@ msgstr "Išvalyti istoriją"
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Nepavyko perskaityti autolaikmačio laikmačių sąrašo: %s"
+
+msgid "Custom search"
+msgstr ""
 
 msgid "Display name service as in bouquets"
 msgstr "Kanalų pavadinimus rodyti, kaip bukietuose"

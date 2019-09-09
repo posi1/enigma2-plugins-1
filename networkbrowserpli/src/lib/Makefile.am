@@ -23,4 +23,4 @@ netscan_la_SOURCES = \
 	time_compat.h
 
 netscan_la_LDFLAGS = \
-	$(PLUGIN_LIBTOOL_FLAGS)
+	-avoid-version -module

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2014-11-22 20:45+0100\n"
 "Last-Translator: JuSt611 <Software@Strasdas.de>\n"
 "Language-Team: none\n"
@@ -68,6 +68,9 @@ msgstr "Verlauf ist leer"
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Liste der AutoTimer konnte nicht abgerufen werden: %s"
+
+msgid "Custom search"
+msgstr ""
 
 msgid "Display name service as in bouquets"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-12-29 00:28+0100\n"
 "PO-Revision-Date: 2012-05-29 18:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Aktív/\n"
 "Inaktív"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Egy új hálózati megosztás csatolása."
 
 msgid "Add new network mount point"
@@ -66,7 +66,7 @@ msgstr "Mégse"
 msgid "Change hostname"
 msgstr "Gépnév megváltoztatása"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "A készülék hálózati gépnevének megváltoztatása."
 
 msgid "Close"
@@ -87,20 +87,11 @@ msgstr "Szükséges-e felhasználónév és jelszó megadása?\n"
 msgid "Enter IP to scan..."
 msgstr "Adja meg a lekeresendő IP-címet"
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Adja meg a készülék új hosztnevét"
-
-msgid "Enter options:"
-msgstr "Opciók:"
 
 msgid "Enter password:"
 msgstr "Jelszó:"
-
-msgid "Enter share directory:"
-msgstr "Megosztott mappa:"
-
-msgid "Enter share name:"
-msgstr "Megosztás neve:"
 
 msgid "Enter user and password for host: "
 msgstr "Adja meg a felhasználónevet és a jelszavat a géphez: "
@@ -114,14 +105,20 @@ msgstr "Haladó"
 msgid "Finished restarting your network"
 msgstr "A hálózati kapcsolat újraindítása befejeződött"
 
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
+
 msgid "IP Address"
 msgstr "IP cím"
 
 msgid "IP:"
 msgstr "IP:"
 
-msgid "Local share name"
-msgstr "Helyi hálózati megosztás neve"
+msgid "Local mountpoint"
+msgstr ""
 
 msgid "Manage network shares"
 msgstr "Hálózati megosztások kezelése"
@@ -139,6 +136,10 @@ msgid "Mount options"
 msgstr "Csatlakozás opciói"
 
 msgid "Mount type"
+msgstr "Csatlakozás típusa"
+
+#, fuzzy
+msgid "Mount view"
 msgstr "Csatlakozás típusa"
 
 msgid "MountManager"
@@ -244,7 +245,7 @@ msgstr "Felhasználó-kezelő"
 msgid "Username"
 msgstr "Felhasználónév"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Csatlakoztatott hálózati megosztások megtekintése, szerkesztése vagy törlése."
 
 msgid "View, edit or delete usernames and passwords for your network."

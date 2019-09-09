@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2014-11-22 20:46+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -68,6 +68,9 @@ msgstr "Nessuna history"
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Impossibile leggere la lista timer AutoTimer: %s"
+
+msgid "Custom search"
+msgstr ""
 
 msgid "Display name service as in bouquets"
 msgstr ""

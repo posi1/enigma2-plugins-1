@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-12-29 00:28+0100\n"
 "PO-Revision-Date: 2006-01-10 01:17+0300\n"
 "Last-Translator: hazem <moustafagamal@hotmail.com>\n"
 "Language-Team: Arabic <moustafagamal@hotmail.com>\n"
@@ -33,7 +33,7 @@ msgid ""
 "Inactive"
 msgstr ""
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr ""
 
 msgid "Add new network mount point"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Change hostname"
 msgstr ""
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr ""
 
 msgid "Close"
@@ -83,19 +83,10 @@ msgstr ""
 msgid "Enter IP to scan..."
 msgstr ""
 
-msgid "Enter new hostname for your Dreambox"
-msgstr ""
-
-msgid "Enter options:"
+msgid "Enter new hostname for your Receiver"
 msgstr ""
 
 msgid "Enter password:"
-msgstr ""
-
-msgid "Enter share directory:"
-msgstr ""
-
-msgid "Enter share name:"
 msgstr ""
 
 msgid "Enter user and password for host: "
@@ -110,13 +101,19 @@ msgstr ""
 msgid "Finished restarting your network"
 msgstr ""
 
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
+
 msgid "IP Address"
 msgstr ""
 
 msgid "IP:"
 msgstr ""
 
-msgid "Local share name"
+msgid "Local mountpoint"
 msgstr ""
 
 msgid "Manage network shares"
@@ -135,6 +132,9 @@ msgid "Mount options"
 msgstr ""
 
 msgid "Mount type"
+msgstr ""
+
+msgid "Mount view"
 msgstr ""
 
 msgid "MountManager"
@@ -238,7 +238,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr ""
 
 msgid "View, edit or delete usernames and passwords for your network."

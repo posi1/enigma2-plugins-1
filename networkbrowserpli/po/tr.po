@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: e2 NetworkBrowser Plugin Turkish locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-12-29 00:28+0100\n"
 "PO-Revision-Date: 2009-02-23 18:43+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <zveyis@gmail.com>\n"
 "Language-Team: www.turkeyforum.com/satforum <zveyis@gmail.com>\n"
@@ -33,8 +33,8 @@ msgstr ""
 "Etkin/\n"
 "Devre dışı"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
-msgstr "Dreambox'ınıza yeni bir NFS veya CIFS ağ bağlantı noktası ekleyin."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
+msgstr "Receiver'ınıza yeni bir NFS veya CIFS ağ bağlantı noktası ekleyin."
 
 msgid "Add new network mount point"
 msgstr "Yeni ağ bağlantı noktası ekle"
@@ -64,8 +64,8 @@ msgstr ""
 msgid "Change hostname"
 msgstr "Konak adını değiştir"
 
-msgid "Change the hostname of your Dreambox."
-msgstr "Dreambox'ınızın konak adını değiştirin."
+msgid "Change the hostname of your Receiver."
+msgstr "Receiver'ınızın konak adını değiştirin."
 
 msgid "Close"
 msgstr "Kapat"
@@ -85,20 +85,11 @@ msgstr "Bu konak için kullanıcı adı ve parola tanımlamak istiyor musunuz?\n
 msgid "Enter IP to scan..."
 msgstr ""
 
-msgid "Enter new hostname for your Dreambox"
-msgstr "Dreambox'ınızın yeni konak adını girin"
-
-msgid "Enter options:"
-msgstr "Seçenekleri girin:"
+msgid "Enter new hostname for your Receiver"
+msgstr "Receiver'ınızın yeni konak adını girin"
 
 msgid "Enter password:"
 msgstr "Parola girin:"
-
-msgid "Enter share directory:"
-msgstr "Paylaşım klasörünü girin:"
-
-msgid "Enter share name:"
-msgstr "Paylaşım adını girin:"
 
 msgid "Enter user and password for host: "
 msgstr "Konak için kullanıcı adı ve parola girin: "
@@ -112,14 +103,20 @@ msgstr ""
 msgid "Finished restarting your network"
 msgstr "Ağ yeniden başlatıldı"
 
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
+
 msgid "IP Address"
 msgstr ""
 
 msgid "IP:"
 msgstr "IP:"
 
-msgid "Local share name"
-msgstr "Yerel paylaşım adı"
+msgid "Local mountpoint"
+msgstr ""
 
 msgid "Manage network shares"
 msgstr "Ağ paylaşımlarını yönet"
@@ -138,6 +135,10 @@ msgstr "Bağlantı seçenekleri"
 
 msgid "Mount type"
 msgstr "Bağlantı tipi"
+
+#, fuzzy
+msgid "Mount view"
+msgstr "Bağlantı noktalarına bak"
 
 msgid "MountManager"
 msgstr "Ağ diski yönetimi"
@@ -242,8 +243,8 @@ msgstr "Kullanıcı yönetimi"
 msgid "Username"
 msgstr "Kullanıcı adı"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
-msgstr "Dreambox'ınızdaki ağ bağlantı noktalarını inceleyin, düzenleyin veya silin."
+msgid "View, edit or delete mountpoints on your Receiver."
+msgstr "Receiver'ınızdaki ağ bağlantı noktalarını inceleyin, düzenleyin veya silin."
 
 msgid "View, edit or delete usernames and passwords for your network."
 msgstr "Ağınızdaki kullanıcı hesaplarını inceleyin, düzenleyin veya silin."

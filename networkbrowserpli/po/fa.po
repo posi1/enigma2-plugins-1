@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network browser Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-12-29 00:28+0100\n"
 "PO-Revision-Date: 2012-07-26 00:20+0330\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -31,7 +31,7 @@ msgid ""
 "Inactive"
 msgstr ""
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr ""
 
 msgid "Add new network mount point"
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Change hostname"
 msgstr "تغییر نام میزبان"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "تغییر نام میزبان در دستگاه شما"
 
 msgid "Close"
@@ -82,20 +82,11 @@ msgstr ""
 msgid "Enter IP to scan..."
 msgstr ""
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "وارد کردن نام جدید میزبان در دستگاه شما"
-
-msgid "Enter options:"
-msgstr "وارد کردن گزینه ها"
 
 msgid "Enter password:"
 msgstr "وارد کردن رمز ورود"
-
-msgid "Enter share directory:"
-msgstr "وارد کردن دایرکتوری اشتراک گذاشته شده"
-
-msgid "Enter share name:"
-msgstr "وارد کردن نام به اشتراک گذاشته شده "
 
 msgid "Enter user and password for host: "
 msgstr "وارد کردن نام کاربری و رمز ورود برای میزبان"
@@ -109,13 +100,19 @@ msgstr ""
 msgid "Finished restarting your network"
 msgstr "اتمام راه اندازی شبکه شما"
 
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
+
 msgid "IP Address"
 msgstr ""
 
 msgid "IP:"
 msgstr ""
 
-msgid "Local share name"
+msgid "Local mountpoint"
 msgstr ""
 
 msgid "Manage network shares"
@@ -135,6 +132,10 @@ msgid "Mount options"
 msgstr "گزینه های مونت"
 
 msgid "Mount type"
+msgstr "نوع مونت"
+
+#, fuzzy
+msgid "Mount view"
 msgstr "نوع مونت"
 
 msgid "MountManager"
@@ -243,7 +244,7 @@ msgstr "مدیر کاربر"
 msgid "Username"
 msgstr "نام کاربری"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "نمایش - ویرایش یا پاک کردن مونت پوینت دستگاه رسیور شما"
 
 msgid "View, edit or delete usernames and passwords for your network."

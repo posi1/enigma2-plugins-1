@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2018-12-29 00:28+0100\n"
 "PO-Revision-Date: 2012-02-14 09:17+0100\n"
 "Last-Translator: ims\n"
 "Language-Team: PLi <martin@volyne.cz>\n"
@@ -35,7 +35,7 @@ msgstr ""
 "aktivní/\n"
 "neaktivní"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Přidat nový NFS nebo CIFS připojovací bod."
 
 msgid "Add new network mount point"
@@ -66,7 +66,7 @@ msgstr "Zrušit"
 msgid "Change hostname"
 msgstr "Změna názvu v síti"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Změna názvu přijímače v síti."
 
 msgid "Close"
@@ -87,20 +87,11 @@ msgstr "Chcete zadat uživatelské jméno a heslo pro tento hostitelský počít
 msgid "Enter IP to scan..."
 msgstr "Zadejte IP pro hledání..."
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Zadejte síťový název Vašeho přijímače"
-
-msgid "Enter options:"
-msgstr "Zadejte možnosti:"
 
 msgid "Enter password:"
 msgstr "Zadejte heslo:"
-
-msgid "Enter share directory:"
-msgstr "Zadejte sdílený adresář:"
-
-msgid "Enter share name:"
-msgstr "Zadejte název sdílení:"
 
 msgid "Enter user and password for host: "
 msgstr "Zadání uživatele a hesla pro: "
@@ -114,14 +105,20 @@ msgstr "Expert"
 msgid "Finished restarting your network"
 msgstr "Dokončen restart sítě"
 
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
+
 msgid "IP Address"
 msgstr "IP adresa"
 
 msgid "IP:"
 msgstr "IP:"
 
-msgid "Local share name"
-msgstr "Název pro sdílení"
+msgid "Local mountpoint"
+msgstr ""
 
 msgid "Manage network shares"
 msgstr "Správa síťových sdílení"
@@ -139,6 +136,10 @@ msgid "Mount options"
 msgstr "Možnosti připojení"
 
 msgid "Mount type"
+msgstr "Typ připojení"
+
+#, fuzzy
+msgid "Mount view"
 msgstr "Typ připojení"
 
 msgid "MountManager"
@@ -244,7 +245,7 @@ msgstr "Správce uživatele"
 msgid "Username"
 msgstr "Uživatel"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Prohlížet, upravit nebo smazat připojovací body Vašeho přijímače."
 
 msgid "View, edit or delete usernames and passwords for your network."

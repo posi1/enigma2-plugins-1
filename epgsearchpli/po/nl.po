@@ -7,43 +7,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
-"PO-Revision-Date: 2014-11-22 20:46+0100\n"
-"Last-Translator: Benny <Benny.DeTandt@gmail.com>\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2018-05-02 20:06+0100\n"
+"Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team:  <Benny.DeTandt@gmail.com>\n"
-"Language: \n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #, python-format
 msgid " (%d min)"
-msgstr ""
+msgstr " (%d min)"
 
 #, python-format
 msgid " (%s%d min)"
-msgstr ""
+msgstr " (%s%d min)"
 
 msgid "Add \"Search event in EPG\" to channel menu"
-msgstr ""
+msgstr "Voeg 'zoek een event in de EPG' toe aan het zendermenu"
 
 msgid "Add \"Search event in EPG\" to event menu"
-msgstr ""
+msgstr "Voeg 'zoek een event in de EPG' toe aan het programmamenu"
 
 msgid "Add \"Search\" Button to EPG"
-msgstr ""
+msgstr "Voeg de toets 'zoeken' aan de EPG toe"
 
 msgid "Add timer"
 msgstr "Voeg timer toe"
 
 msgid "Adds \"Search event in EPG\" item into the channel selection context menu (needs restart GUI)"
-msgstr ""
+msgstr "Indien geactiveerd, dan voegt dit een 'zoekt een programma in de EPG' item toe aan het zender selectie context menu (GUI herstart noodzakelijk)"
 
 msgid "Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
-msgstr ""
+msgstr "Indien geactiveerd, dan voegt u een 'zoekt een programma in de EPG' item toe aan het programma menu (GUI herstart noodzakelijk)"
 
 msgid "Cancel"
 msgstr "Annuleren"
@@ -52,42 +51,41 @@ msgid "Channel Selection"
 msgstr "Zenderkeuze"
 
 msgid "Choice list"
-msgstr ""
+msgstr "Keuzelijst"
 
 msgid "Choice list EPGSearch"
-msgstr ""
+msgstr "EPGSearch keuzelijst"
 
 msgid "Choice list RED Button"
-msgstr ""
+msgstr "Keuzelijst Rode toets"
 
 msgid "Choosing an encoding. \"UTF-8\" to search for EPG cyrillic."
-msgstr ""
+msgstr "Met deze optie kunt u een encoding aangeven. U kunt kiezen uit UTF-8 om cyrillisch de EPG te doorzoeken en voor ISO8859-15."
 
-#, fuzzy
 msgid "Clear history"
-msgstr "Geen historiek"
+msgstr "Wis de inhoud van de historie"
 
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Kan AutoTimer timer lijst niet lezen : %s"
 
+msgid "Custom search"
+msgstr "Vrij zoeken"
+
 msgid "Display name service as in bouquets"
-msgstr ""
+msgstr "Toon de zendernaam als in het bouquet"
 
 msgid "EPG Search"
 msgstr "EPG doorzoeken"
 
-#, fuzzy
 msgid "EPGSearch"
-msgstr "EPG doorzoeken"
+msgstr "EPGSearch"
 
-#, fuzzy
 msgid "EPGSearch Setup"
-msgstr "EPG doorzoeken"
+msgstr "Stel de EPGSearch in."
 
-#, fuzzy
 msgid "Encoding Search to EPG"
-msgstr "EPG doorzoeken"
+msgstr "Encoding om de EPG te doorzoeken"
 
 msgid "Enter text to search for"
 msgstr "Voer te zoeken tekst in:"
@@ -99,140 +97,136 @@ msgid "History"
 msgstr "Historiek"
 
 msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
-msgstr ""
+msgstr "Met deze optie geeft u aan hoeveel regels u maximaal wilt bewaren in de zoekhistorie. De invoer 0 déactiveert de historie volledig !"
 
 msgid "If 'Search only bouquets' is enabled, show service name as in bouquets for renamed services."
-msgstr ""
+msgstr "Indien geactiveerd, en de optie hiervoor 'zoek alléén in de bouquetten' geactiveerd zijn, toon dan de zendernaam zoals in het bouquet als hernoemd."
 
 msgid "If this setting is enabled, searching EPG in only services in user bouquets."
-msgstr ""
+msgstr "Indien geactiveerd, dan zal de EPG enkel doorzocht worden in gebruikersbouquetten."
 
 msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
-msgstr ""
+msgstr "Indien geactiveerd, dan voegt de plugin een toets 'zoeken' toe aan de gewone EPG."
 
 msgid "If this setting is enabled, the plugin adds picons."
-msgstr ""
+msgstr "Indien geactiveerd, dan voegt de plugin picons toe."
 
 msgid "Import from AutoTimer"
-msgstr "Importeren uit AutoTimer"
+msgstr "Importeren vanuit de AutoTimer"
 
 msgid "Import from EPG"
-msgstr "Uit de EPG importeren"
+msgstr "Importeren vanuit de EPG"
 
 msgid "Import from Timer"
 msgstr "Importeren uit de timer"
 
 msgid "Length of History"
-msgstr ""
+msgstr "Lengte van de historie"
 
 msgid "List of history is cleared !"
-msgstr ""
+msgstr "Historie overzicht is gewist !"
 
 msgid "Lookup in TMBD"
-msgstr ""
+msgstr "Zoek in TMBD"
 
 msgid "New Search"
 msgstr "Nieuw"
 
-#, fuzzy
 msgid "No history !"
-msgstr "Geen historiek"
+msgstr "Geen historie !"
 
 msgid "OK"
 msgstr "OK"
 
 msgid "Open selected in IMDb"
-msgstr ""
+msgstr "Open de selectie in IMBd"
 
 msgid "Partnerbox Entries"
-msgstr ""
+msgstr "Partnerbox item"
 
 msgid "Save search as AutoTimer"
-msgstr "Bewaar als AutoTimer"
+msgstr "Bewaar dit resultaat als AutoTimer"
 
 msgid "Search"
 msgstr "Zoeken"
 
 msgid "Search EPG by title event"
-msgstr ""
+msgstr "Doorzoek de EPG op titel van het programma"
 
-#, fuzzy
 msgid "Search event in EPG"
-msgstr "EPG doorzoeken"
+msgstr "Zoek het huidige programma in de EPG"
 
 msgid "Search for TMDb info"
-msgstr ""
+msgstr "Zoek naar TMDb informatie"
 
 msgid "Search only bouquets"
-msgstr ""
+msgstr "Doorzoek alléén de bouquetten"
 
 msgid "Search strictness"
-msgstr ""
+msgstr "Nauwkeurigheid van het zoeken"
 
-#, fuzzy
 msgid "Search type"
-msgstr "Zoeken"
+msgstr "Zoektype"
 
 msgid "Search type for filter"
-msgstr ""
+msgstr "Zoektype om te filteren"
 
 msgid "Select a timer to search"
-msgstr "Selecteer te zoeken timer..."
+msgstr "Selecteer de te zoeken timer ..."
 
 msgid "Select action:"
-msgstr ""
+msgstr "Kies de actie:"
 
 msgid "Select channel"
-msgstr ""
+msgstr "Kies de zender"
 
 msgid "Select text to search for"
-msgstr "Selecteer te zoeken tekst..."
+msgstr "Selecteer de te zoeken tekst ..."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr ""
+msgstr "Met deze optie kunt u het zoektype kiezen om op filter te zoeken. Druk P +/- om het filter te tonen/verbergen na het zoeken."
 
 msgid "Select type for search, \"partial match\" for the most extensive search."
-msgstr ""
+msgstr "Met deze optie kunt u aangeven hoe u wilt zoeken. U kunt kiezen uit 'gedeeltelijke overeenkomst', 'exacte overeenkomst' en 'de titel begint met'. De eerste optie zoekt het intensiefst."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
-msgstr ""
+msgstr "Met deze optie kunt u aangeven op welke manier u wenst te zoeken.U kunt kiezen uit 'zoek en kies de zender' of 'enkel zoeken'."
 
 msgid "Select whether or not you want to enforce case correctness."
-msgstr ""
+msgstr "Kies of u de hoofdlettergevoeligheid wel of niet wilt forceren."
 
 msgid "Setup"
-msgstr ""
+msgstr "Setup"
 
 msgid "Timers list"
-msgstr ""
+msgstr "Timeroverzicht"
 
 msgid "Type blue Button"
-msgstr ""
+msgstr "Het type van de blauwe toets"
 
 msgid "Use Picons"
-msgstr ""
+msgstr "Gebruik Picons"
 
 msgid "Zap to selected service"
-msgstr ""
+msgstr "Zap naar de gekozen zender"
 
 msgid "case-insensitive search"
-msgstr ""
+msgstr "Niet hoofdlettergevoelig"
 
 msgid "case-sensitive search"
-msgstr ""
+msgstr "Hoofdlettergevoelig"
 
 msgid "choice (Search and standard)"
-msgstr ""
+msgstr "Zoek en standaard actie"
 
 msgid "exact match"
-msgstr ""
+msgstr "Exacte overeenkomst"
 
-#, fuzzy
 msgid "only Search"
-msgstr "Zoeken"
+msgstr "Alleen zoeken"
 
 msgid "partial match"
-msgstr ""
+msgstr "Gedeeltelijke overeenkomst"
 
 msgid "search EPG"
 msgstr "EPG doorzoeken"
@@ -241,4 +235,4 @@ msgid "search EPG..."
 msgstr "EPG doorzoeken..."
 
 msgid "title starts with"
-msgstr ""
+msgstr "De titel begint met"
