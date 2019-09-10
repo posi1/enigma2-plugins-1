@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2016-04-23 14:21+0300\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: LANGUAGE <dima-73@inbox.lv>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "12h"
+msgstr "12ч"
+
+msgid "24h"
+msgstr "24ч"
+
+msgid "Always off"
+msgstr "Всегда выкл."
+
+msgid "Brightness Level 1"
+msgstr "Уровень яркости 1"
+
+msgid "Brightness Level 2"
+msgstr "Уровень яркости 2"
+
+msgid "Brightness level"
+msgstr "Уровень яркости"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Change VFD display settings"
+msgstr "Смена настроек VFD дисплея"
+
+msgid "Channelnumber in Standby Clock"
+msgstr "Номер канала в режиме ожидания"
+
+msgid "Channelnumber in Standby off"
+msgstr "Выкл. номер канала в режиме ожидания"
+
+msgid "Channelnumber/Clock in Standby Clock"
+msgstr "Номер канала/часы в режиме ожидания"
+
+msgid "Clock always"
+msgstr "Часы всегда"
+
+msgid "Control 7 segment VFD display"
+msgstr "Контроль 7 сегментов дисплея VFD"
+
+msgid "Off"
+msgstr "Выкл."
+
+msgid "On/Off"
+msgstr "Вкл/Выкл"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Show REC-Symbol in Display"
+msgstr "Показать REC-символ на дисплее"
+
+msgid "Show blinking Clock on Display during recording"
+msgstr "Показать мигающие часы на дисплее во время записи"
+
+msgid "Show on VFD"
+msgstr "Показать на VFD"
+
+msgid "Time mode"
+msgstr "Режим времени"
+
+msgid "Update Date/Time"
+msgstr "Обновить дату/время"
+
+msgid "VFD Display Setup"
+msgstr "Настройки VFD дисплея"
+
+msgid "no"
+msgstr "нет"
+
+msgid "yes"
+msgstr "да"

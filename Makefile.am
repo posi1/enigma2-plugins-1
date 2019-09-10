@@ -99,6 +99,7 @@ SUBDIRS = \
 	tvcharts \
 	unwetterinfo \
 	valixdcontrol \
+	vfdcontrol \
 	videocolorspace \
 	vierg \
 	vlcplayer \

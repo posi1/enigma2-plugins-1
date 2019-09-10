@@ -627,6 +627,11 @@ valixdcontrol/src/comp/Makefile
 valixdcontrol/src/data/Makefile
 valixdcontrol/src/Makefile
 
+vfdcontrol/Makefile
+vfdcontrol/meta/Makefile
+vfdcontrol/po/Makefile
+vfdcontrol/src/Makefile
+
 videocolorspace/Makefile
 videocolorspace/meta/Makefile
 videocolorspace/po/Makefile
