@@ -7,7 +7,7 @@ from Components.ActionMap import ActionMap
 from Components.config import config,ConfigSubsection,ConfigSelection, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from enigma import getBoxType
-from os import path as os_path, listdir as os_listdir, system as os_system, remove as os_remove
+from os import path as os_path, listdir as os_listdir, remove as os_remove
 from Components.Console import Console
 ###############################################################################
 config.plugins.logomanager = ConfigSubsection()
@@ -111,7 +111,7 @@ class LogoManagerScreen(Screen):
             file = target[1].split("/")[-1]
             if os_path.isfile(plugin_path+file) is not True:
                 print "backing up original ",target[0]," from ",file
-                os_system("cp '%s' '%s'" %(target[1],plugin_path+"/"+file))
+                Console().ePopen("cp '%s' '%s'/%s" % (target[1], plugin_path, file))
 
     def restoreOriginal(self):
         """ restoring original mvis from the backuped mvi in the plugindir"""
@@ -120,7 +120,7 @@ class LogoManagerScreen(Screen):
             file = target[1].split("/")[-1]
             if os_path.isfile(plugin_path+"/"+file) is True:
                 print "restoring original ",target[0]," from ",plugin_path+"/"+file,"to",target[1]
-                os_system("cp '%s' '%s'" %(plugin_path+"/"+file,target[1]))
+                Console().ePopen("cp '%s'/%s '%s'" % (plugin_path, file, target[1]))
 
     def exit(self):
         """ quit me """

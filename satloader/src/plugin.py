@@ -192,7 +192,7 @@ class SatloaderBouquet(Screen):
 			if len(list) is not 0:
 				for item in list:
 					if "\""+item[1]+"\"" not in open("/etc/enigma2/bouquets.tv").read():
-						os.system("cp /tmp/bouquet/"+item[1]+" /etc/enigma2/"+item[1])
+						Console().ePopen("cp /tmp/bouquet/%s /etc/enigma2/%s" % (item[1], item[1]))
 						f = open("/etc/enigma2/bouquets.tv", 'a')
 						f.write("#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET \""+item[1]+"\" ORDER BY bouquet\n")
 						f.flush()
