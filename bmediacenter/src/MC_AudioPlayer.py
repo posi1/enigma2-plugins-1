@@ -902,7 +902,7 @@ class MC_WebRadio(Screen, HelpableScreen):
 	def menuCallback(self, choice):
 		if choice is None:
 			return
-		Console().ePopen("echo %s >/tmp/.webselect | wget -O /tmp/index.html %s%s" % (choice[1], radirl, choice[1))
+		Console().ePopen("echo %s >/tmp/.webselect | wget -O /tmp/index.html %s%s" % (choice[1], radirl, choice[1]))
 		self.session.openWithCallback(self.updd, MC_WebDown)
 class MC_WebDown(Screen):
 	def __init__(self, session):
