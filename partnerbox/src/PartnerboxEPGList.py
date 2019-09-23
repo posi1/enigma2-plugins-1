@@ -22,8 +22,7 @@ from enigma import eEPGCache, eListbox, eListboxPythonMultiContent, loadPNG, gFo
 from Components.config import config
 from time import localtime, strftime, ctime, time
 from skin import parameters as skinparameter
-
-from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
 import PartnerboxFunctions as partnerboxfunctions
 from PartnerboxFunctions import getServiceRef

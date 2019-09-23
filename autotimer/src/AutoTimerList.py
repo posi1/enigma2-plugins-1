@@ -1,9 +1,7 @@
 from os import path
-
 # -*- coding: UTF-8 -*-
 # for localized messages
 from . import _
-
 # GUI (Components)
 from skin import parseFont
 try:
@@ -15,16 +13,9 @@ from Components.MenuList import MenuList
 from enigma import eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_VALIGN_TOP, RT_VALIGN_BOTTOM, getDesktop
 from Tools.LoadPixmap import LoadPixmap
 from ServiceReference import ServiceReference
-
 from Tools.FuzzyDate import FuzzyTime
 from time import localtime, time, strftime, mktime
-
-from Tools.Directories import resolveFilename, SCOPE_SKIN_IMAGE
-try:
-	from Tools.Directories import SCOPE_CURRENT_SKIN
-except:
-	from Tools.Directories import SCOPE_CURRENT_SKIN
-	
+from Tools.Directories import resolveFilename, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN
 from skin import parseColor, parseFont
 try:
 	from Tools.TextBoundary import getTextBoundarySize
