@@ -8,7 +8,7 @@ from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE, SCOPE_ACTIVE_SKIN, fileExists
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN, fileExists
 from UserDialog import UserDialog
 from os import unlink, listdir, path as os_path
 
@@ -66,8 +66,8 @@ class UserManager(Screen):
 				if file == 'networkbrowser.cache':
 					continue
 				else:
-					if fileExists(resolveFilename(SCOPE_ACTIVE_SKIN, "networkbrowser/host.png")):
-						hostpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_ACTIVE_SKIN, "networkbrowser/host.png"))
+					if fileExists(resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/host.png")):
+						hostpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/host.png"))
 					else:
 						hostpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/host.png"))
 					self.list.append(( file[:-6],'edit',file,hostpng ))

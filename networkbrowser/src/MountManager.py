@@ -13,7 +13,7 @@ from Components.Network import iNetwork
 from Components.Sources.Boolean import Boolean
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_ACTIVE_SKIN, fileExists
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN, fileExists
 from os import path as os_path, fsync
 
 from MountView import AutoMountView
@@ -92,8 +92,8 @@ class AutoMountManager(Screen):
 
 	def updateList(self):
 		self.list = []
-		if fileExists(resolveFilename(SCOPE_ACTIVE_SKIN, "networkbrowser/ok.png")):
-			okpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_ACTIVE_SKIN, "networkbrowser/ok.png"))
+		if fileExists(resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/ok.png")):
+			okpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/ok.png"))
 		else:
 			okpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/ok.png"))
 		self.list.append((_("Add new network mount point"),"add", _("Add a new NFS or CIFS mount point to your Receiver."), okpng ))
