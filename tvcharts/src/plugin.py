@@ -26,7 +26,7 @@ from Screens.Screen import Screen
 from Screens.Setup import SetupSummary
 from Screens.TimerEntry import TimerEntry
 from Screens.TimerEdit import TimerSanityConflict
-from Tools.Directories import fileExists, pathExists, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN, resolveFilename
+from Tools.Directories import fileExists, pathExists, SCOPE_CURRENT_SKIN, resolveFilename
 from Plugins.Plugin import PluginDescriptor
 from Components.Console import Console
 from enigma import eTimer, eEPGCache, loadPNG, eListboxPythonMultiContent, gFont, eServiceReference, eServiceCenter, iPlayableService, BT_SCALE, getBoxType

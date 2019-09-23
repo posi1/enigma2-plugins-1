@@ -13,7 +13,7 @@ import re
 
 from enigma import eListboxPythonMultiContent, RT_HALIGN_LEFT, gFont
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import SCOPE_SKIN_IMAGE, SCOPE_PLUGINS, resolveFilename
+from Tools.Directories import SCOPE_CURRENT_SKIN, SCOPE_PLUGINS, resolveFilename
 from Components.MenuList import MenuList
 
 from pyexpat import ExpatError
@@ -75,12 +75,12 @@ class VlcFileList(MenuList):
 		]
 
 		if isDir:
-			png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "extensions/directory.png"))
+			png = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "extensions/directory.png"))
 		else:
 			extension = name.split('.')
 			extension = extension[-1].lower()
 			if MEDIA_EXTENSIONS.has_key(extension):
-				png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "extensions/" + MEDIA_EXTENSIONS[extension] + ".png"))
+				png = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "extensions/" + MEDIA_EXTENSIONS[extension] + ".png"))
 			elif PLAYLIST_EXTENSIONS.has_key(extension):
 				png = LoadPixmap(resolveFilename(SCOPE_PLUGINS, "Extensions/VlcPlayer/") + PLAYLIST_EXTENSIONS[extension])
 			else:

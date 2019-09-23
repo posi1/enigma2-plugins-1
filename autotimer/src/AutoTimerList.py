@@ -15,7 +15,7 @@ from Tools.LoadPixmap import LoadPixmap
 from ServiceReference import ServiceReference
 from Tools.FuzzyDate import FuzzyTime
 from time import localtime, time, strftime, mktime
-from Tools.Directories import resolveFilename, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from skin import parseColor, parseFont
 try:
 	from Tools.TextBoundary import getTextBoundarySize

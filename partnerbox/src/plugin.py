@@ -34,7 +34,7 @@ from Components.MultiContent import MultiContentEntryText
 from enigma import eServiceReference
 from enigma import eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_VALIGN_TOP
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_SKIN_IMAGE
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.FuzzyDate import FuzzyTime
 from timer import TimerEntry
 from enigma import eTimer, getDesktop
@@ -1502,13 +1502,13 @@ class E2TimerMenu(GUIComponent, object):
 		self.l.setItemHeight(font[2])
 		font = skin.fonts.get("PartnerBoxE2TimerMenu1", ("Regular", 18))
 		self.l.setFont(1, gFont(font[0], font[1]))
-		self.iconWait = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_wait.png"))
-		self.iconRecording = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_rec.png"))
-		self.iconPrepared = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_prep.png"))
-		self.iconDone = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_done.png"))
-		self.iconRepeat = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_rep.png"))
-		self.iconZapped = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_zap.png"))
-		self.iconDisabled = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_off.png"))
+		self.iconWait = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_wait.png"))
+		self.iconRecording = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_rec.png"))
+		self.iconPrepared = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_prep.png"))
+		self.iconDone = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_done.png"))
+		self.iconRepeat = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_rep.png"))
+		self.iconZapped = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_zap.png"))
+		self.iconDisabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_off.png"))
 
 	def buildEntry(self, timer):
 		width = self.l.getItemSize().width()
@@ -1572,7 +1572,7 @@ class E2TimerMenu(GUIComponent, object):
 		res.append((eListboxPythonMultiContent.TYPE_TEXT, width-x, y, w, h, 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, state))
 
 		#if timer.disabled:
-		#	png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/redx.png"))
+		#	png = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/redx.png"))
 		#	x, y, w, h = skin.parameters.get("PartnerBoxE2TimerIcon",(490, 5, 40, 40))
 		#	res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, x, y, w, h, png))
 		if icon:

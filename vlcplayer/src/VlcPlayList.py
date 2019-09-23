@@ -12,7 +12,7 @@
 from enigma import eListboxPythonMultiContent, RT_HALIGN_LEFT, gFont
 
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import SCOPE_SKIN_IMAGE, resolveFilename
+from Tools.Directories import SCOPE_CURRENT_SKIN, resolveFilename
 from Components.MenuList import MenuList
 
 from skin import parseFont
@@ -49,7 +49,7 @@ class VlcPlayList(MenuList):
 			(eListboxPythonMultiContent.TYPE_TEXT, height + 15, 0, size.width() - height - 15, height, 0, RT_HALIGN_LEFT, name)
 		]
 
-		png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "extensions/movie.png"))
+		png = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "extensions/movie.png"))
 
 		if png is not None:
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 10, 0, height, height, png))

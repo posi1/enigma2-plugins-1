@@ -10,7 +10,7 @@ from Components.ActionMap import ActionMap
 from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from MountView import AutoMountView
 from MountEdit import AutoMountEdit
 from AutoMount import iAutoMount, AutoMount

@@ -23,7 +23,7 @@ from Components.Harddisk import harddiskmanager
 from Plugins.Plugin import PluginDescriptor
 from Tools import Notifications
 from Tools.NumericalTextInput import NumericalTextInput
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE, SCOPE_CONFIG, SCOPE_MEDIA
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CONFIG, SCOPE_MEDIA
 from Tools.LoadPixmap import LoadPixmap
 from GlobalActions import globalActionMap # for muting
 

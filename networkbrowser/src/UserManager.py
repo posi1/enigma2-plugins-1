@@ -8,7 +8,7 @@ from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN, fileExists
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN, fileExists
 from UserDialog import UserDialog
 from os import unlink, listdir, path as os_path
 

@@ -12,7 +12,7 @@ from Components.Network import iNetwork
 from Components.Input import Input
 from Components.config import getConfigListEntry, NoSave, config, ConfigIP
 from Components.ConfigList import ConfigList, ConfigListScreen
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Tools.LoadPixmap import LoadPixmap
 from MountManager import AutoMountManager
 from AutoMount import iAutoMount

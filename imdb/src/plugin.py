@@ -23,7 +23,7 @@ from Components.ProgressBar import ProgressBar
 from Components.Sources.StaticText import StaticText
 from Components.Sources.Boolean import Boolean
 from Components.MovieList import KNOWN_EXTENSIONS
-from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
+from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS
 import os, re
 try:
 	import htmlentitydefs

@@ -8,7 +8,7 @@ from Components.ActionMap import ActionMap
 from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN, fileExists
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN, fileExists
 from AutoMount import iAutoMount, AutoMount
 from MountEdit import AutoMountEdit
 
@@ -117,13 +117,9 @@ class AutoMountView(Screen):
 		if entry["active"] == 'True' or entry["active"] == True:
 			if fileExists(resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_on.png")):
 				activepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_on.png"))
-			else:
-				activepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_SKIN_IMAGE, "icons/lock_on.png"))
 		if entry["active"] == 'False' or entry["active"] == False:
 			if fileExists(resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_error.png")):
 				activepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_error.png"))
-			else:
-				activepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_SKIN_IMAGE, "icons/lock_error.png"))
 		if entry["mounttype"] == 'nfs':
 			if fileExists(resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/i-nfs.png")):
 				mounttypepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "networkbrowser/i-nfs.png"))

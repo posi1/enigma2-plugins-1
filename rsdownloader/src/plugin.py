@@ -24,7 +24,7 @@ from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from time import localtime, sleep, strftime, time
-from Tools.Directories import fileExists, resolveFilename, SCOPE_SKIN_IMAGE, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from Tools.Downloader import HTTPProgressDownloader
 from Tools.LoadPixmap import LoadPixmap
 from twisted.internet import reactor
@@ -1318,8 +1318,8 @@ def RSListEntry(download):
 	res = [(download)]
 	res.append(MultiContentEntryText(pos=(0, 0), size=(170, 25), font=0, text=download.name))
 	res.append(MultiContentEntryText(pos=(175, 0), size=(75, 25), font=0, text="%d%s"%(download.size, "MB"), flags=RT_HALIGN_CENTER))
-	res.append(MultiContentEntryPixmapAlphaTest(pos=(260, 9), size=(84, 7), png=LoadPixmap(cached=True, path=resolveFilename(SCOPE_SKIN_IMAGE, "progress_bg.png"))))
-	res.append(MultiContentEntryPixmapAlphaTest(pos=(260, 10), size=(int(0.84 * download.progress), 5), png=LoadPixmap(cached=True, path=resolveFilename(SCOPE_SKIN_IMAGE, "progress_small.png"))))
+	res.append(MultiContentEntryPixmapAlphaTest(pos=(260, 9), size=(84, 7), png=LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "progress_bg.png"))))
+	res.append(MultiContentEntryPixmapAlphaTest(pos=(260, 10), size=(int(0.84 * download.progress), 5), png=LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "progress_small.png"))))
 	res.append(MultiContentEntryText(pos=(360, 0), size=(60, 25), font=0, text="%d%s"%(download.progress, "%"), flags=RT_HALIGN_CENTER))
 	res.append(MultiContentEntryText(pos=(420, 0), size=(140, 25), font=0, text=download.status, flags=RT_HALIGN_RIGHT))
 	return res

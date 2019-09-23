@@ -29,7 +29,7 @@ from Components.Pixmap import Pixmap
 from Components.ProgressBar import ProgressBar
 
 from Components.MultiContent import MultiContentEntryText, MultiContentEntryPixmapAlphaTest
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, RT_VALIGN_TOP, RT_WRAP, eTimer, getBoxType
 
 from Tools.NumericalTextInput import NumericalTextInput
@@ -66,7 +66,7 @@ def YouTubeEntryComponent(entry):
 	res.append(MultiContentEntryText(pos = (150, 46), size = (370, 56), font = 1, color = 0xFFA323, color_sel = 0xFFA323, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = entry.getDescription()))
 
 	if entry.thumbnail["0"] is None:
-		png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/plugin.png"))
+		png = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/plugin.png"))
 	else:
 		png = entry.thumbnail["0"]
 	res.append(MultiContentEntryPixmapAlphaTest(pos = (10, 5), size = (130, 97), png = png))
