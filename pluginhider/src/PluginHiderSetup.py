@@ -37,7 +37,7 @@ class PluginHiderSetup(Screen, HelpableScreen):
 		<widget source="key_yellow" render="Label" position="280,358" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget source="key_blue" render="Label" position="420,358" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<ePixmap size="551,336" alphatest="on" position="5,21" pixmap="border_epg.png" zPosition="3" />
-		<widget size="320,25" alphatest="on" position="5,1" zPosition="1" name="tabbar" pixmaps="epg_now.png,skin_default/epg_next.png,skin_default/epg_more.png" />
+		<widget size="320,25" alphatest="on" position="5,1" zPosition="1" name="tabbar" pixmaps="epg_now.png,epg_next.png,epg_more.png" />
 		<widget valign="center" transparent="1" size="108,22" backgroundColor="#25062748" position="5,1" zPosition="2" source="plugins" render="Label" halign="center" font="Regular;18" />
 		<widget valign="center" transparent="1" size="108,22" backgroundColor="#25062748" position="111,1" zPosition="2" source="extensions" render="Label" halign="center" font="Regular;18" />
 		<widget valign="center" transparent="1" size="108,22" backgroundColor="#25062748" position="216,1" zPosition="2" source="eventinfo" render="Label" halign="center" font="Regular;18" />

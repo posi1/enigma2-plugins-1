@@ -311,7 +311,7 @@ self.instance.move(ePoint((1024-wsizex)/2, (576-wsizey)/2))
 		<ePixmap alphatest="on" pixmap="buttons/button_red.png" position="40,35" size="15,16"/>
 		<widget font="Regular;18" name="languagetext" position="60,30" size="200,30"/>
 		<widget alphatest="blend" name="wizard" pixmap="Vali-XD/window/merlin.png" position="720,125" size="200,326" zPosition="10"/>
-		<widget alphatest="on" name="rc" pixmaps="rc0.png,skin_default/rc1.png,skin_default/rc2.png" position="500,50" size="154,500" zPosition="10"/>
+		<widget alphatest="on" name="rc" pixmaps="rc0.png,rc1.png,rc2.png" position="500,50" size="154,500" zPosition="10"/>
 		<widget alphatest="on" name="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11"/>
 		<widget alphatest="on" name="arrowdown2" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11"/>
 		<widget alphatest="on" name="arrowup" pixmap="arrowup.png" position="-100,-100" size="37,70" zPosition="11"/>
@@ -377,7 +377,7 @@ self.instance.move(ePoint((1024-wsizex)/2, (576-wsizey)/2))
 			</convert>
 		</widget>
 		<widget alphatest="blend" name="wizard" pixmap="Vali-XD/window/merlin.png" position="720,125" size="200,326" zPosition="10"/>
-		<widget alphatest="on" name="rc" pixmaps="rc0.png,skin_default/rc1.png,skin_default/rc2.png" position="500,50" size="154,500" zPosition="10"/>
+		<widget alphatest="on" name="rc" pixmaps="rc0.png,rc1.png,rc2.png" position="500,50" size="154,500" zPosition="10"/>
 		<widget alphatest="on" name="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11"/>
 		<widget alphatest="on" name="arrowdown2" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11"/>
 		<widget alphatest="on" name="arrowup" pixmap="arrowup.png" position="-100,-100" size="37,70" zPosition="11"/>
@@ -398,7 +398,7 @@ self.instance.move(ePoint((1024-wsizex)/2, (576-wsizey)/2))
 		<eLabel font="Regular;40" position="400,40" size="220,60" text="help..."/>
 		<widget name="list" position="50,100" scrollbarMode="showOnDemand" size="450,380"/>
 		<ePixmap alphatest="blend" pixmap="Vali-XD/window/merlin.png" position="720,125" size="200,326" zPosition="10"/>
-		<widget alphatest="on" name="rc" pixmaps="rc0.png,skin_default/rc1.png,skin_default/rc2.png" position="540,10" size="154,500" zPosition="10"/>
+		<widget alphatest="on" name="rc" pixmaps="rc0.png,rc1.png,rc2.png" position="540,10" size="154,500" zPosition="10"/>
 		<widget alphatest="on" name="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11"/>
 		<widget alphatest="on" name="arrowdown2" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11"/>
 		<widget alphatest="on" name="arrowup" pixmap="arrowup.png" position="-100,-100" size="37,70" zPosition="11"/>
@@ -415,7 +415,7 @@ self.instance.move(ePoint((1024-wsizex)/2, (576-wsizey)/2))
 		<ePixmap alphatest="on" pixmap="buttons/button_red.png" position="40,35" size="15,16"/>
 		<widget font="Regular;18" name="languagetext" position="60,30" size="200,30"/>
 		<widget alphatest="blend" name="wizard" pixmap="Vali-XD/window/merlin.png" position="720,125" size="200,326" zPosition="10"/>
-		<widget alphatest="on" name="rc" pixmaps="rc0.png,skin_default/rc1.png,skin_default/rc2.png" position="540,10" size="154,500" zPosition="10"/>
+		<widget alphatest="on" name="rc" pixmaps="rc0.png,rc1.png,rc2.png" position="540,10" size="154,500" zPosition="10"/>
 		<widget alphatest="on" name="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11"/>
 		<widget alphatest="on" name="arrowdown2" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11"/>
 		<widget alphatest="on" name="arrowup" pixmap="arrowup.png" position="-100,-100" size="37,70" zPosition="11"/>
@@ -581,19 +581,19 @@ self.instance.move(ePoint((1024-wsizex)/2, (576-wsizey)/2))
 		<widget backgroundColor="dark" font="Regular;19" foregroundColors="#8c8c93,#1cff1c" halign="left" name="Networktext" position="50,120" size="800,23" zPosition="1"/>
 		<widget font="Regular;19" foregroundColors="#8c8c93,#f23d21,#1cff1c" halign="center" name="Network" position="280,120" size="306,23" transparent="1" zPosition="2"/>
 		<widget font="Regular;19" foregroundColors="#8c8c93,#000000,#1cff1c" name="NetworkInfo_Text" position="630,120" size="200,23" transparent="1" zPosition="2"/>
-		<widget alphatest="on" name="NetworkInfo_Check" pixmaps="icons/lock_on.png,skin_default/icons/lock_error.png" position="590,115" size="38,31" zPosition="2"/>
+		<widget alphatest="on" name="NetworkInfo_Check" pixmaps="icons/lock_on.png,icons/lock_error.png" position="590,115" size="38,31" zPosition="2"/>
 		<widget backgroundColor="dark" font="Regular;19" foregroundColors="#8c8c93,#1cff1c" halign="left" name="Dhcptext" position="50,170" size="800,23" zPosition="1"/>
 		<widget font="Regular;19" foregroundColors="#8c8c93,#f23d21,#1cff1c" halign="center" name="Dhcp" position="280,170" size="306,23" transparent="1" zPosition="2"/>
 		<widget font="Regular;19" foregroundColors="#8c8c93,#000000,#1cff1c" name="DhcpInfo_Text" position="630,170" size="200,23" transparent="1" zPosition="2"/>
-		<widget alphatest="on" name="DhcpInfo_Check" pixmaps="icons/lock_on.png,skin_default/icons/lock_error.png" position="590,165" size="38,31" zPosition="2"/>
+		<widget alphatest="on" name="DhcpInfo_Check" pixmaps="icons/lock_on.png,icons/lock_error.png" position="590,165" size="38,31" zPosition="2"/>
 		<widget backgroundColor="dark" font="Regular;19" foregroundColors="#8c8c93,#1cff1c" halign="left" name="IPtext" position="50,220" size="800,23" zPosition="1"/>
 		<widget font="Regular;19" foregroundColors="#8c8c93,#f23d21,#1cff1c" halign="center" name="IP" position="280,220" size="306,23" transparent="1" zPosition="2"/>
 		<widget font="Regular;19" foregroundColors="#8c8c93,#000000,#1cff1c" name="IPInfo_Text" position="630,220" size="200,23" transparent="1" zPosition="2"/>
-		<widget alphatest="on" name="IPInfo_Check" pixmaps="icons/lock_on.png,skin_default/icons/lock_error.png" position="590,215" size="38,31" zPosition="2"/>
+		<widget alphatest="on" name="IPInfo_Check" pixmaps="icons/lock_on.png,icons/lock_error.png" position="590,215" size="38,31" zPosition="2"/>
 		<widget backgroundColor="dark" font="Regular;19" foregroundColors="#8c8c93,#1cff1c" halign="left" name="DNStext" position="50,270" size="800,23" zPosition="1"/>
 		<widget font="Regular;19" foregroundColors="#8c8c93,#f23d21,#1cff1c" halign="center" name="DNS" position="280,270" size="306,23" transparent="1" zPosition="2"/>
 		<widget font="Regular;19" foregroundColors="#8c8c93,#000000,#1cff1c" name="DNSInfo_Text" position="630,270" size="200,23" transparent="1" zPosition="2"/>
-		<widget alphatest="on" name="DNSInfo_Check" pixmaps="icons/lock_on.png,skin_default/icons/lock_error.png" position="590,265" size="38,31" zPosition="2"/>
+		<widget alphatest="on" name="DNSInfo_Check" pixmaps="icons/lock_on.png,icons/lock_error.png" position="590,265" size="38,31" zPosition="2"/>
 		<widget alphatest="on" name="EditSettingsButton" pixmaps="Vali-XD/buttons/grey.png,Vali-XD/buttons/blue.png" position="590,330" size="35,25" transparent="1" zPosition="1"/>
 		<widget font="Regular;19" foregroundColors="#000000,#8c8c93,#1cff1c" name="EditSettings_Text" position="630,330" size="200,23" transparent="1" zPosition="2"/>
 		<widget font="Regular;21" name="InfoText" position="15,50" size="866,256" zPosition="25"/>

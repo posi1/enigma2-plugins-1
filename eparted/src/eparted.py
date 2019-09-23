@@ -250,11 +250,11 @@ class Cpart(Screen):
 				}
 			</convert>
 			</widget>
-			<widget name="PixmapRed" position="25,170" size="15,16" pixmaps="buttons/button_red_off.png,skin_default/buttons/button_red.png" transparent="1" alphatest="on" />
+			<widget name="PixmapRed" position="25,170" size="15,16" pixmaps="buttons/button_red_off.png,buttons/button_red.png" transparent="1" alphatest="on" />
 			<widget name="LabelRed" position="50,160" size="150,40" font="Regular;19" valign="center" />
-			<widget name="PixmapGreen" position="225,170" size="15,16" pixmaps="buttons/button_green_off.png,skin_default/buttons/button_green.png" transparent="1" alphatest="on" />
+			<widget name="PixmapGreen" position="225,170" size="15,16" pixmaps="buttons/button_green_off.png,buttons/button_green.png" transparent="1" alphatest="on" />
 			<widget name="LabelGreen" position="250,160" size="150,40" font="Regular;19" valign="center" />
-			<widget name="PixmapBlue" position="425,170" size="15,16" pixmaps="buttons/button_blue_off.png,skin_default/buttons/button_blue.png" transparent="1" alphatest="on" />
+			<widget name="PixmapBlue" position="425,170" size="15,16" pixmaps="buttons/button_blue_off.png,buttons/button_blue.png" transparent="1" alphatest="on" />
 			<widget name="LabelBlue" position="450,160" size="150,40" font="Regular;19" valign="center" />
 		</screen>"""
 
@@ -495,7 +495,7 @@ class Cpartexe(Screen):
 				}
 			</convert>
 			</widget>
-			<widget name="PixmapButton" position="25,370" size="15,16" pixmaps="buttons/button_green.png,skin_default/buttons/button_green_off.png" transparent="1" alphatest="on" />
+			<widget name="PixmapButton" position="25,370" size="15,16" pixmaps="buttons/button_green.png,buttons/button_green_off.png" transparent="1" alphatest="on" />
 			<widget name="LabelButton" position="50,360" size="620,40" font="Regular;19" valign="center" />
 		</screen>"""
 
