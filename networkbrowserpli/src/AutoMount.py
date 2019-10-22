@@ -246,6 +246,7 @@ class AutoMount():
 							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 							print "[AutoMount.py] CIFS MOUNTCMD--->",command
+							self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
 
 						else:
 							# loop over the version and security options
@@ -268,13 +269,14 @@ class AutoMount():
 									# record these options
 									self.automounts[item]['options'] = secver + data['options']
 									self.writeMountsConfig()
+									# finish the mount
+									self.CheckMountPointFinished(command ,ret, [data, callback])
 									# and terminate the loop
 									break
 
 				except Exception, ex:
 						print "[AutoMount.py] Failed to create", path, "Error:", ex
 
-		self.CheckMountPointFinished(None,None, [data, callback])
 
 	def CheckMountPointFinished(self, result, retval, extra_args):
 		print "[AutoMount.py] CheckMountPointFinished",result,retval
