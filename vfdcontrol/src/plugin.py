@@ -5,15 +5,14 @@ from Components.Button import Button
 from Components.ActionMap import ActionMap
 from Components.config import config, configfile, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigSlider
 from Components.ConfigList import ConfigListScreen
-from enigma import iPlayableService, eServiceCenter, eTimer, eActionMap, eDBoxLCD
+from enigma import iPlayableService, eServiceCenter, eTimer, eActionMap, eDBoxLCD, getBoxType
 from Components.ServiceEventTracker import ServiceEventTracker
 from Screens.InfoBar import InfoBar
 from time import localtime, time
 import Screens.Standby
-from Tools.HardwareInfo import HardwareInfo
 
 use_oled = False
-if HardwareInfo().get_device_model() in ("formuler3", "formuler4", "s1", "h3", "h4", "h5", "lc"):
+if getBoxType() in ("formuler3","formuler4","sh1","h3","h4","h5","lc"):
 	use_oled = True
 
 config.plugins.VFD_ini = ConfigSubsection()
