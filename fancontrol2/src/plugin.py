@@ -183,8 +183,8 @@ def GetFanRPM():
 
 def GetBox():
 	B = Box
-	if os.path.exists("/proc/stb/info/model"):
-		f = open("/proc/stb/info/model")
+	if os.path.exists("/etc/model"):
+		f = open("/etc/model")
 		B = f.readline()
 		f.close()
 	return B
