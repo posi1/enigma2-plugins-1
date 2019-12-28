@@ -212,8 +212,10 @@ class NetworkBrowser(Screen):
 		nwlist = []
 		sharelist = []
 		self.IP = iNetwork.getAdapterAttribute(self.iface, "ip")
-		if len(self.IP):
-			strIP = str(self.IP[0]) + "." + str(self.IP[1]) + "." + str(self.IP[2]) + ".0/24"
+		self.netmask = iNetwork.getAdapterAttribute(self.iface, "netmask")
+		if self.IP and self.netmask and len(self.IP) == 4 and len(self.netmask) == 4 and sum(self.IP) and sum(self.netmask):
+			strCIDR = str(sum((bin(x).count('1') for x in self.netmask)))
+			strIP = '.'.join((str(ip & mask) for ip, mask in zip(self.IP, self.netmask))) + "/" + strCIDR
 			nwlist.append(netscan.netzInfo(strIP))
 		tmplist = nwlist[0]
 		return tmplist
