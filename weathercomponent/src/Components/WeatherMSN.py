@@ -21,7 +21,7 @@
 #
 
 from enigma import eEnv, eTimer
-from Plugins.Extensions.WeatherPlugin.MSNWeather import MSNWeather
+from Plugins.Extensions.WeatherPlugin2.MSNWeather import MSNWeather
 
 class WeatherMSN:
 	TIMER_INTERVAL = 1800
