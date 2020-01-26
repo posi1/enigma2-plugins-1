@@ -260,7 +260,7 @@ class FilebrowserScreen(Screen):
             print "RESULT OPEN FILE",x
         except TypeError,e:
             # catching error
-            #  File "/home/tmbinc/opendreambox/1.5/dm8000/experimental/build/tmp/work/enigma2-2.6git20090627-r1/image/usr/lib/enigma2/python/Components/Scanner.py", line 43, in handleFile
+            #  File "/usr/lib/enigma2/python/Components/Scanner.py", line 43, in handleFile
             #  TypeError: 'in <string>' requires string as left operand
             self.session.open(MessageBox,_("no Viewer installed for this mimetype!"), type = MessageBox.TYPE_ERROR, timeout = 5, close_on_any_key = True)
 

@@ -59,6 +59,7 @@ from Screens.PiPSetup import clip
 # GUI (Summary)
 from Screens.Setup import SetupSummary
 
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 ###############################################################################        
 VERSION = "0.6"
@@ -293,7 +294,7 @@ class ShowClockMain():
 		self.timer = eTimer() # check timer
 		self.timer.callback.append(self.ShowHide)
 		global globalActionMap
-		readKeymap("/usr/lib/enigma2/python/Plugins/Extensions/ShowClock/keymap.xml")
+		readKeymap(resolveFilename(SCOPE_PLUGINS, "Extensions/ShowClock/keymap.xml"))
 		self.dialog = session.instantiateDialog(ShowClock)
 		globalActionMap.actions['showClock'] = self.ShowHide
 		

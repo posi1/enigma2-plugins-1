@@ -29,7 +29,7 @@ from Screens.Standby import Standby, TryQuitMainloop
 from Screens.PVRState import TimeshiftState
 from ServiceReference import ServiceReference
 from Tools import Directories, ASCIItranslit, Notifications
-from Tools.Directories import fileExists, copyfile, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from Tools.Directories import fileExists, copyfile, resolveFilename, SCOPE_PLUGINS
 from Plugins.Plugin import PluginDescriptor
 from RecordTimer import RecordTimer, RecordTimerEntry, parseEvent
 from Components.Console import Console
@@ -968,7 +968,7 @@ class InfoBar(InfoBarOrg):
 				eventname = readmetafile.readline()[0:-1]
 			else:
 				eventname = ""
-			JobManager.AddJob(CreateAPSCFilesJob(self, "/usr/lib/enigma2/python/Plugins/Extensions/PermanentTimeshift/createapscfiles \"%s\"" % (filename), eventname))
+			JobManager.AddJob(CreateAPSCFilesJob(self, resolveFilename(SCOPE_PLUGINS, "Extensions/PermanentTimeshift/createapscfiles \"%s\"") % (filename), eventname))
 		else:
 			self.ptsSaveTimeshiftFinished()
 
@@ -1715,7 +1715,7 @@ class PermanentTimeShiftSetup(Screen, ConfigListScreen):
 			))
 
 		# Permanent Recording Hack
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/HouseKeeping/plugin.py"):
+		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/HouseKeeping/plugin.pyo")):
 			self.list.append(getConfigListEntry(_("Beta: Enable Permanent Recording?"), config.plugins.pts.permanentrecording))
 
 		self["config"].list = self.list

@@ -9,22 +9,18 @@
 # version.
 #===============================================================================
 
-from enigma import ePicLoad, eTimer, getDesktop
-
+from enigma import eTimer, getDesktop
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Plugins.Plugin import PluginDescriptor
-
 from Components.Pixmap import Pixmap, MovingPixmap
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Button import Button
-
 from Tools.LoadPixmap import LoadPixmap
-
 from stonefield import StoneField
-
 import time
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 
 def main(session,**kwargs):
@@ -47,7 +43,7 @@ class eSame(Screen):
 		self.stonesY = 10
 		self.maxstones = self.stonesX * self.stonesY
 
-		path = "/usr/lib/enigma2/python/Plugins/Extensions/eSame/data/"
+		path = resolveFilename(SCOPE_PLUGINS, "Extensions/eSame/data/")
 
 		# Load bitmaps...
 		self.maps = []

@@ -8,7 +8,7 @@ from Components.Label import Label
 from Screens.Screen import Screen
 from Components.Pixmap import Pixmap
 from Plugins.Plugin import PluginDescriptor
-from Tools.Directories import pathExists, fileExists
+from Tools.Directories import pathExists, fileExists, resolveFilename, SCOPE_PLUGINS
 from __init__ import _
 import os
 import commands
@@ -17,7 +17,7 @@ from Components.Console import Console
 config.plugins.mc_global = ConfigSubsection()
 config.plugins.mc_global.vfd = ConfigSelection(default='off', choices=[('off', 'off'), ('on', 'on')])
 config.plugins.mc_globalsettings.upnp_enable = ConfigYesNo(default=False)
-loadSkin("/usr/lib/enigma2/python/Plugins/Extensions/BMediaCenter/skins/defaultHD/skin.xml")
+loadSkin(resolveFilename(SCOPE_PLUGINS, "Extensions/BMediaCenter/skins/defaultHD/skin.xml"))
 #try:
 #	from enigma import evfd
 #	config.plugins.mc_global.vfd.value = 'on'
@@ -31,7 +31,7 @@ except:
 	print "Media Center: Import DVDPlayer failed"
 	dvdplayer = False
 
-mcpath = '/usr/lib/enigma2/python/Plugins/Extensions/BMediaCenter/skins/defaultHD/images/'
+mcpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/BMediaCenter/skins/defaultHD/images/')
 class DMC_MainMenu(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -150,7 +150,7 @@ class DMC_MainMenu(Screen):
 				from MC_AudioPlayer import MC_WebRadio
 				self.session.open(MC_WebRadio)
 			elif selection[1] == "MC_VLCPlayer":
-				if pathExists("/usr/lib/enigma2/python/Plugins/Extensions/VlcPlayer/") == True:
+				if pathExists(resolveFilename(SCOPE_PLUGINS, "Extensions/VlcPlayer/")) == True:
 					from MC_VLCPlayer import MC_VLCServerlist
 					self.session.open(MC_VLCServerlist)
 				else:

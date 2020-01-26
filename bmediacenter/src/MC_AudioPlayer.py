@@ -20,7 +20,7 @@ from Components.ServiceEventTracker import ServiceEventTracker
 from Components.Playlist import PlaylistIOInternal, PlaylistIOM3U, PlaylistIOPLS
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import *
-from Tools.Directories import resolveFilename, fileExists, pathExists, createDir, SCOPE_MEDIA, SCOPE_PLAYLIST, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, fileExists, pathExists, createDir, SCOPE_MEDIA, SCOPE_PLAYLIST, SCOPE_CURRENT_SKIN, SCOPE_PLUGINS
 from MC_Filelist import FileList
 from Screens.InfoBarGenerics import InfoBarSeek
 import os
@@ -87,7 +87,7 @@ def sendUrlCommand(url, contextFactory=None, timeout=50, *args, **kwargs):
 	factory = myHTTPClientFactory(url, *args, **kwargs)
 	reactor.connectTCP(host, port, factory, timeout=timeout)
 	return factory.deferred
-mcpath = "/usr/lib/enigma2/python/Plugins/Extensions/BMediaCenter/"
+mcpath = resolveFilename(SCOPE_PLUGINS, "Extensions/BMediaCenter/")
 def PlaylistEntryComponent(serviceref):
 	res = [ serviceref ]
 	text = serviceref.getName()

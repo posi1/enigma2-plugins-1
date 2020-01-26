@@ -15,15 +15,15 @@ from GlobalActions import globalActionMap
 from keymapparser import readKeymap, removeKeymap
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
-from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LIBDIR
 import gettext
 import os
 from Components.Console import Console
 
-if not os.path.exists('/usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyo'):
-	Console().ePopen('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockTime.pyo /usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyo')
-if not os.path.exists('/usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.pyo'):
-	Console().ePopen('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockWatches.pyo /usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.pyo')
+if not os.path.exists(resolveFilename(SCOPE_LIBDIR, 'enigma2/python/Components/Converter/PermanentClockTime.pyo')):
+	Console().ePopen('cp %s %s') % (resolveFilename(SCOPE_PLUGINS, "Extensions/PermanentClock/PermanentClockTime.pyo"), resolveFilename(SCOPE_LIBDIR, 'enigma2/python/Components/Converter/PermanentClockTime.pyo'))
+if not os.path.exists(resolveFilename(SCOPE_LIBDIR, 'enigma2/python/Components/Renderer/PermanentClockWatches.pyo')):
+	Console().ePopen('cp %s %s') % (resolveFilename(SCOPE_PLUGINS, "Extensions/PermanentClock/PermanentClockWatches.pyo"), resolveFilename(SCOPE_LIBDIR, 'enigma2/python/Components/Renderer/PermanentClockWatches.pyo'))
 
 _session = None
 def localeInit():
@@ -230,13 +230,13 @@ class PermanentClock():
 	def start_key(self):
 		if config.plugins.PermanentClock.show_hide.value and not self.clockey:
 			if 'showClock' not in globalActionMap.actions:
-				readKeymap("/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/keymap.xml")
+				readKeymap(resolveFilename(SCOPE_PLUGINS, "Extensions/PermanentClock/keymap.xml"))
 				globalActionMap.actions['showClock'] = self.ShowHideKey
 			self.clockey = True
 
 	def unload_key(self, force=False):
 		if not config.plugins.PermanentClock.show_hide.value and self.clockey or force:
-			removeKeymap("/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/keymap.xml")
+			removeKeymap(resolveFilename(SCOPE_PLUGINS, "Extensions/PermanentClock/keymap.xml"))
 			if 'showClock' in globalActionMap.actions:
 				del globalActionMap.actions['showClock']
 			self.clockey = False

@@ -5,7 +5,7 @@ from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Pixmap import Pixmap
 from Components.Label import Label
 from Components.ScrollLabel import ScrollLabel
-from Tools.Directories import resolveFilename, pathExists, fileExists, SCOPE_MEDIA
+from Tools.Directories import resolveFilename, pathExists, fileExists, SCOPE_MEDIA, SCOPE_LIBDIR
 from Components.Sources.List import List
 from Components.ServicePosition import ServicePositionGauge
 from Components.ServiceEventTracker import ServiceEventTracker
@@ -46,7 +46,7 @@ class MC_VideoInfoView(Screen):
 			tlist.append(ServiceInfoListEntry("sDescription: ", currPlay.info().getInfoString(iServiceInformation.sDescription)))
 class Showiframe():
 	def __init__(self):
-		lib="/usr/lib/"
+		lib=resolveFilename(SCOPE_LIBDIR)
 		if fileExists(lib +"libshowiframe.so.0.0.0"):
 			self.showiframe = dlopen(lib +"libshowiframe.so.0.0.0")
 		try:

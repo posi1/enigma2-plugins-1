@@ -34,7 +34,7 @@ from Screens.InfoBar import MoviePlayer as MP_parent
 from Components.AVSwitch import AVSwitch
 from Components.ActionMap import ActionMap
 from Plugins.Plugin import PluginDescriptor
-from Tools.Directories import fileExists, pathExists
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS
 from time import strftime as time_strftime
 from time import localtime as time_localtime
 from re import compile as re_compile
@@ -42,17 +42,17 @@ from os import path as os_path, listdir
 from enigma import eConsoleAppContainer, eServiceReference, ePicLoad, getDesktop, eServiceCenter, eTimer, getBoxType
 
 #import players like Picture player, dvd player, music palyer
-if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyo"):
+if os.path.exists(resolveFilename(SCOPE_PLUGINS, "Extensions/PicturePlayer/plugin.pyo")):
 	from Plugins.Extensions.PicturePlayer.plugin import Pic_Thumb, picshow
 	PicPlayerAviable = True
 else:
 	PicPlayerAviable = False
-if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyo"):
+if os.path.exists(resolveFilename(SCOPE_PLUGINS, "Extensions/DVDPlayer/plugin.pyo")):
 	from Plugins.Extensions.DVDPlayer.plugin import DVDPlayer
 	DVDPlayerAviable = True
 else:
 	DVDPlayerAviable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyo"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/MerlinMusicPlayer/plugin.pyo")):
 	from Plugins.Extensions.MerlinMusicPlayer.plugin import MerlinMusicPlayerScreen, Item
 	MMPavaiable = True
 else:
@@ -75,15 +75,15 @@ config.plugins.subsdownloader.ItasaPassword = ConfigPassword(default = "password
 #config.plugins.subsdownloader.del_sub_after_conv = ConfigYesNo(default = False)
 
 #Create Subtitle Server plugin list
-PERISCOPE_PLUGINS = list_XBMC_Periscope_plugins('/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/SourceCode/periscope/services/')
+PERISCOPE_PLUGINS = list_XBMC_Periscope_plugins(resolveFilename(SCOPE_PLUGINS, 'Extensions/SubsDownloader2/SourceCode/periscope/services/'))
 SUBTITLE_SERVER_LIST = [(("NapiProjekt"),"NapiProjekt"), (("Napisy24"),"Napisy24")]
 for server in PERISCOPE_PLUGINS :
 	SUBTITLE_SERVER_LIST.append((server,server))
-XBMC_PLUGINS = list_XBMC_Periscope_plugins('/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/SourceCode/xbmc_subtitles/services/')
+XBMC_PLUGINS = list_XBMC_Periscope_plugins(resolveFilename(SCOPE_PLUGINS, 'Extensions/SubsDownloader2/SourceCode/xbmc_subtitles/services/'))
 for server in XBMC_PLUGINS:
 	SUBTITLE_SERVER_LIST.append((server,server))
 config.plugins.subsdownloader.subtitleserver = ConfigSelection(default = "OpenSubtitle", choices = SUBTITLE_SERVER_LIST)
-if os.path.exists('/usr/lib/enigma2/python/Plugins/Extensions/DMnapi/DMnapi.py'):
+if os.path.exists(resolveFilename(SCOPE_PLUGINS, 'Extensions/DMnapi/DMnapi.py')):
 	try:
 		from Plugins.Extensions.DMnapi.DMnapi import DMnapi, dmnapi_version
 		SUBTITLE_SERVER_LIST.append(('DMnapi','DMnapi'))
@@ -237,7 +237,7 @@ class SubsDownloaderApplication(Screen):
 		self.ServerPicture = ePicLoad()
 		self["serverPicture"] = Pixmap()
 		self.ServerPicture.PictureData.get().append(self.DecodeServerPictureAction)
-		self.serverPicturePath = "/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/pic/none1.jpg"
+		self.serverPicturePath = resolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/pic/none1.jpg")
 		self.onLayoutFinish.append(self.Show_Server_Picture)
 		
 		self.display_Server_Picture()
@@ -246,7 +246,7 @@ class SubsDownloaderApplication(Screen):
 		self.CommertialPicture = ePicLoad()
 		self["commertialPicture"] = Pixmap()
 		self.CommertialPicture.PictureData.get().append(self.DecodeCommertialPictureAction)
-		self.CommertialPicturePath = "/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/pic/none1.jpg"
+		self.CommertialPicturePath = resolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/pic/none1.jpg")
 		self.onLayoutFinish.append(self.Show_Commertial_Picture)
 		
 		self.download_commertial_pictures = CommertialBannerDownload()
@@ -428,7 +428,7 @@ class SubsDownloaderApplication(Screen):
 # !!!!!!!!!!!! PICTURE FUNCTIONS !!!!!!!!!!!!!!	
 	def display_Server_Picture(self):
 		"""Function display suittalbe picture in ["serverPicture"] (based on subtitle server)""" 
-		self.serverPicturePath = "/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/pic/%s.jpg" % config.plugins.subsdownloader.subtitleserver.value
+		self.serverPicturePath = resolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/pic/%s.jpg" % config.plugins.subsdownloader.subtitleserver.value)
 		self.ServerPicture.startDecode(self.serverPicturePath)
 		
 	def Show_Server_Picture(self):
@@ -449,7 +449,7 @@ class SubsDownloaderApplication(Screen):
 			if self.return_media_kind(self.return_extention(x))=="picture":
 				commertial_pictures.append(Subtitle_Downloader_temp_dir+x)
 		if commertial_pictures == []:
-			return ["/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/pic/none1.jpg"]
+			return ["%s"] % resolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/pic/none1.jpg")
 		else:
 			return commertial_pictures
 				
@@ -1033,7 +1033,7 @@ class SubsDownloaderApplication(Screen):
 		self.selectedList.down()
 	
 	def showAboutScreen(self):
-		self.session.open(vEditor, '/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/about.nfo')
+		self.session.open(vEditor, resolveFilename(SCOPE_PLUGINS, 'Extensions/SubsDownloader2/about.nfo'))
 
 	def searchMusic(self):
 		slist = []
@@ -1520,7 +1520,7 @@ class MusicExplorer(MoviePlayer_4_MusicExploret):
 
 	def showMMI(self):
 		try:
-			Console().ePopen("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/music.mvi")
+			Console().ePopen("/usr/bin/showiframe %s") % resolveFilename(SCOPE_PLUGINS, "Extensions/DreamExplorer/res/music.mvi")
 			#TODO DAC wlasna
 		except:
 			pass #TU DOROBIC WLASNA TAPETE

@@ -38,7 +38,9 @@ from Screens.Standby import TryQuitMainloop
 from Components.ActionMap import ActionMap
 from Components.ActionMap import NumberActionMap
 from Components.Harddisk import harddiskmanager
-
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
+from Poll import Poll
+from Poll import Poll
 from threading import Thread, Lock
 import Queue
 Briefkasten = Queue.Queue()
@@ -786,7 +788,7 @@ class FanControl2Plugin(ConfigListScreen,Screen):
 		self.session.open(FanControl2Monitor)
 
 	def help(self):
-		self.session.open(Console,_("Information"),["cat /usr/lib/enigma2/python/Plugins/Extensions/FanControl2/%s" % _("README.md")])
+		self.session.open(Console,_("Information"),["cat %s" % resolveFilename(SCOPE_PLUGINS, "Extensions/FanControl2/%s" % _("README.md"))])
 
 	def SetupMenu(self):
 		self.session.open(FanControl2SpezialSetup)
@@ -957,8 +959,8 @@ class FanControl2(Screen):
 		self.RPMController.coeffKp = 0.1
 		self.RPMController.coeffKi = 0.25
 		FClog("Starting up")
-		if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/FanControl2/data/diagram.class.org"):
-			os.rename("/usr/lib/enigma2/python/Plugins/Extensions/FanControl2/data/diagram.class.org","/usr/lib/enigma2/python/Plugins/Extensions/FanControl2/data/diagram.class")
+		if os.path.exists(resolveFilename(SCOPE_PLUGINS, "Extensions/FanControl2/data/diagram.class.org")):
+			os.rename(resolveFilename(SCOPE_PLUGINS, "Extensions/FanControl2/data/diagram.class.org"),resolveFilename(SCOPE_PLUGINS, "Extensions/FanControl2/data/diagram.class"))
 # 		if not isDMMdisabled() and config.plugins.FanControl.DisableDMM.value:
 # 			disableDMM()
 		Box = GetBox()
@@ -1241,23 +1243,23 @@ class FanControl2(Screen):
 def autostart(reason, **kwargs):
 	global session
 	if reason == 0 and kwargs.has_key("session"):
-		if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/__init__.pyo") or os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/__init__.py"):
+		if os.path.exists(resolveFilename(SCOPE_PLUGINS, "Extensions/WebInterface/__init__.pyo")):
 			from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
 			from FC2webSite import FC2web, FC2webLog, FC2webChart
 			from twisted.web import static
-			root = static.File("/usr/lib/enigma2/python/Plugins/Extensions/FanControl2/data")
+			root = static.File(resolveFilename(SCOPE_PLUGINS, "Extensions/FanControl2/data"))
 #			root = FC2web()
 			root.putChild("", FC2web())
 			root.putChild("log", FC2webLog())
 			root.putChild("chart", FC2webChart())
-			if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/web/external.xml"):
+			if os.path.exists(resolveFilename(SCOPE_PLUGINS, "Extensions/WebInterface/web/external.xml")):
 				try:
 					addExternalChild( ("fancontrol", root, "Fan Control 2", Version, True) )
 					FClog("use new WebIF")
 				except:
 					addExternalChild( ("fancontrol", root) )
 					FClog("use old WebIF")
-			if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/pluginshook.src"):
+			if os.path.exists(resolveFilename(SCOPE_PLUGINS, "Extensions/OpenWebif/pluginshook.src")):
 				try:
 					addExternalChild( ("fancontrol", root, "Fan Control 2", Version) )
 					FClog("use new OpenWebIF")

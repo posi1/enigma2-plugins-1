@@ -52,7 +52,7 @@ import os
 from time import localtime, time, gmtime, sleep
 # Enigma system functions
 from enigma import quitMainloop, eTimer
-
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 ###############################################################################
 
@@ -655,7 +655,7 @@ class Elektro(ConfigListScreen,Screen):
 		return str(self["config"].getCurrent()[1].getText())
 
 	def help(self):
-		self.session.open(Console,_("Showing Elektro README.md"),["cat /usr/lib/enigma2/python/Plugins/Extensions/Elektro/%s" % _("README.md")])
+		self.session.open(Console,_("Showing Elektro README.md"),["cat %s" % resolveFilename(SCOPE_PLUGINS, "Extensions/Elektro/%s" % _("README.md"))])
 
 	def profile(self):
 		self.session.open(ElektroProfile)

@@ -15,7 +15,7 @@ from urllib import quote as urllib_quote
 from Components.Pixmap import Pixmap
 from GlobalFunctions import Showiframe
 from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, RT_VALIGN_CENTER, ePicLoad, eEnv
-from Tools.Directories import fileExists, pathExists
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS
 from Components.AVSwitch import AVSwitch
 from Components.config import ConfigSubsection, getConfigListEntry, ConfigText, ConfigSelection, ConfigSubList, configfile, ConfigInteger, config
 from Components.ConfigList import ConfigList, ConfigListScreen
@@ -42,7 +42,7 @@ def initConfig():
 			initWeatherPluginEntryConfig()
 			i += 1
 initConfig()
-path="/usr/lib/enigma2/python/Plugins/Extensions/BMediaCenter/"
+path=resolveFilename(SCOPE_PLUGINS, "Extensions/BMediaCenter/")
 class WeatherIconItem:
 	def __init__(self, url = "", filename = "", index = -1, error = False):
 		self.url = url

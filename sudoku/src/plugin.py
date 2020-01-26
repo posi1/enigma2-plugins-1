@@ -16,12 +16,12 @@ from Components.Sources.CanvasSource import CanvasSource
 from Components.Button import Button
 from Components.Label import Label
 from Components.ActionMap import ActionMap
-from Tools.Directories import fileExists, resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.Directories import fileExists, resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_PLUGINS
 from enigma import eTimer, gFont, getDesktop, RT_HALIGN_CENTER, RT_VALIGN_CENTER
 import random
 import xml.etree.cElementTree
 
-SAVEFILE = "/usr/lib/enigma2/python/Plugins/Extensions/Sudoku/Sudoku.sav"
+SAVEFILE = resolveFilename(SCOPE_PLUGINS, "Extensions/Sudoku/Sudoku.sav")
 
 def RGB(r,g,b):
 	return (r<<16)|(g<<8)|b

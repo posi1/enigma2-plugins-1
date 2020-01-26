@@ -9,6 +9,7 @@ from enigma import quitMainloop
 from Screens.MessageBox import MessageBox
 from Screens.Ipkg import Ipkg
 from Components.Ipkg import IpkgComponent
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 zlib_link = "http://subs-downloader.googlecode.com/files/libzen_0.4.22-0.0_all.ipk"
 libmediainfo_link = "http://subs-downloader.googlecode.com/files/libmediainfo_0.7.50-0.0_all.ipk"
@@ -23,7 +24,7 @@ class IsNewVersionCheck(threading.Thread):
 	self.session = session
         threading.Thread.__init__(self)
         self.__latest_version_info_url = "http://subs-downloader.googlecode.com/svn/current_version.txt"
-        self.__installed_version_info_file = "/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/about.nfo"
+        self.__installed_version_info_file = resolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/about.nfo")
                 
     def run(self):
         error_detected = 0

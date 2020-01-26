@@ -5,13 +5,13 @@ from Screens.MessageBox import MessageBox
 from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
 from Components.MenuList import MenuList
-from Tools.Directories import fileExists
+from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS
 import os
 
 transmission_sh = "/etc/init.d/transmission.sh"
-transinfo_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_info.sh"
-swap_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_swap.sh"
-pause_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_start_stop_down.sh"
+transinfo_sh = resolveFilename(SCOPE_PLUGINS, "Extensions/Transmission/trans_info.sh")
+swap_sh = resolveFilename(SCOPE_PLUGINS, "Extensions/Transmission/trans_swap.sh")
+pause_sh = resolveFilename(SCOPE_PLUGINS, "Extensions/Transmission/trans_start_stop_down.sh")
 
 class Transmission(Screen):
 	skin = """
@@ -45,7 +45,7 @@ class Transmission(Screen):
 	def run(self):
 		returnValue = self["menu"].l.getCurrentSelection() and self["menu"].l.getCurrentSelection()[1]
 		if returnValue is not None:
-			cmd = "cp /usr/lib/enigma2/python/Plugins/Extensions/Transmission/transmission.sh %s && chmod 755 %s" % (transmission_sh, transmission_sh)
+			cmd = "cp %s %s && chmod 755 %s" % (resolveFilename(SCOPE_PLUGINS, "Extensions/Transmission/transmission.sh"), transmission_sh, transmission_sh)
 			Console().ePopen(cmd)
 			if returnValue is "info":
 				self.session.open(Console,_("Information transmission download"),["chmod 755 %s && %s" % (transinfo_sh, transinfo_sh)])

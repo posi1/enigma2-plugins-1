@@ -15,7 +15,7 @@ from Screens.InputBox import InputBox
 from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
 from Screens.Screen import Screen
-from Tools.Directories import fileExists
+from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS
 from NTPSyncPoller import NTPSyncPoller
 import os
 import time
@@ -243,7 +243,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			os.chmod("/etc/init.d/set-rtctime", 0755)
 			Console().ePopen("update-rc.d set-rtctime defaults 40")
 		else:
-			Console().ePopen("cp /usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/set-rtctime /etc/init.d/set-rtctime")
+			Console().ePopen("cp %s /etc/init.d/set-rtctime") % resolveFilename(SCOPE_PLUGINS, "SystemPlugins/SystemTime/set-rtctime")
 			if fileExists("/etc/init.d/set-rtctime"):
 				os.chmod("/etc/init.d/set-rtctime", 0755)
 				Console().ePopen("update-rc.d set-rtctime defaults 40")

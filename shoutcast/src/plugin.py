@@ -30,7 +30,7 @@ from Components.ActionMap import ActionMap
 from Components.Label import Label
 from enigma import eServiceReference, eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, getDesktop, iPlayableService, iServiceInformation, eTimer, eConsoleAppContainer, ePicLoad
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import fileExists
+from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS
 import xml.etree.cElementTree
 from twisted.internet import reactor, defer
 from twisted.web import client
@@ -144,8 +144,8 @@ class SHOUTcastWidget(Screen):
 	SC = 'http://api.shoutcast.com'
 	SCY = 'http://yp.shoutcast.com'
 
-	FAVORITE_FILE_DEFAULT = '/usr/lib/enigma2/python/Plugins/Extensions/SHOUTcast/favorites'
-	FAVORITE_FILE_OLD = '/usr/lib/enigma2/python/Plugins/Extensions/SHOUTcast/favorites.user'
+	FAVORITE_FILE_DEFAULT = resolveFilename(SCOPE_PLUGINS, 'Extensions/SHOUTcast/favorites')
+	FAVORITE_FILE_OLD = resolveFilename(SCOPE_PLUGINS, 'Extensions/SHOUTcast/favorites.user')
 	FAVORITE_FILE = '/etc/enigma2/SHOUTcast.favorites'
 
 	sz_w = getDesktop(0).size().width() - 90

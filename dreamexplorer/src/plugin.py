@@ -34,22 +34,22 @@ from Components.ScrollLabel import ScrollLabel
 from Components.Pixmap import Pixmap
 from Components.AVSwitch import AVSwitch
 from Components.config import config, ConfigSubsection, ConfigText
-from Tools.Directories import fileExists, pathExists
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS
 from ServiceReference import ServiceReference
 from myFileList import FileList as myFileList
 #from vInputBox import vInputBox
 from Screens.InputBox import InputBox
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyo"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/PicturePlayer/plugin.pyo")):
 	from Plugins.Extensions.PicturePlayer.plugin import Pic_Thumb, picshow
 	PicPlayerAviable = True
 else:
 	PicPlayerAviable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyo"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/DVDPlayer/plugin.pyo")):
 	from Plugins.Extensions.DVDPlayer.plugin import DVDPlayer
 	DVDPlayerAviable = True
 else:
 	DVDPlayerAviable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyo"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/MerlinMusicPlayer/plugin.pyo")):
 	from Plugins.Extensions.MerlinMusicPlayer.plugin import MerlinMusicPlayerScreen, Item
 	MMPavaiable = True
 else:
@@ -275,7 +275,7 @@ class DreamExplorerII(Screen):
 					dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("IPKG-package:\\n"+filename), list=askList)
 					dei.setTitle(_("Dream-Explorer : Install..."))
 				elif testFileName.endswith(".pyo"):
-					self.commando = [ "/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/pyo2xml " + filename ]
+					self.commando = [ "%s %s" % (resolveFilename(SCOPE_PLUGINS, "Extensions/DreamExplorer/pyo2xml"), filename) ]
 					askList = [(_("Cancel"), "NO"),(_("Disassemble to bytecode..."), "YES")]
 					dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("Pyo-Script:\\n"+filename), list=askList)
 					dei.setTitle(_("Dream-Explorer : Disassemble..."))
@@ -976,7 +976,7 @@ class MusicExplorer(MoviePlayer):
 		MoviePlayer.WithoutStopClose = False
 
 	def showMMI(self):
-		Console().ePopen("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/music.mvi")
+		Console().ePopen("/usr/bin/showiframe %s") % resolveFilename(SCOPE_PLUGINS, "Extensions/DreamExplorer/res/music.mvi")
 
 	def searchMusic(self):
 		midx = 0

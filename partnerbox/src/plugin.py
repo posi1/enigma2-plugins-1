@@ -34,7 +34,7 @@ from Components.MultiContent import MultiContentEntryText
 from enigma import eServiceReference
 from enigma import eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_VALIGN_TOP
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_PLUGINS
 from Tools.FuzzyDate import FuzzyTime
 from timer import TimerEntry
 from enigma import eTimer, getDesktop
@@ -1783,27 +1783,27 @@ class E2EPGList(MenuList):
 		self.l.setFont(1, gFont(font[0], font[1]))
 		self.days = [ _("Mon"), _("Tue"), _("Wed"), _("Thu"), _("Fri"), _("Sat"), _("Sun") ]
 		self.timer_list = []
-		self.clock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock.png')
-		self.clock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_add.png')
-		self.clock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_pre.png')
-		self.clock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_post.png')
-		self.clock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_prepost.png')
-		self.zapclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock.png')
-		self.zapclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock_add.png')
-		self.zapclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock_pre.png')
-		self.zapclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock_post.png')
-		self.zapclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock_prepost.png')
+		self.clock_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_epgclock.png'))
+		self.clock_add_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_epgclock_add.png'))
+		self.clock_pre_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_epgclock_pre.png'))
+		self.clock_post_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_epgclock_post.png'))
+		self.clock_prepost_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_epgclock_prepost.png'))
+		self.zapclock_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_zapclock.png'))
+		self.zapclock_add_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_zapclock_add.png'))
+		self.zapclock_pre_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_zapclock_pre.png'))
+		self.zapclock_post_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_zapclock_post.png'))
+		self.zapclock_prepost_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_zapclock_prepost.png'))
 		#repeat
-		self.repclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock.png')
-		self.repclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock_add.png')
-		self.repclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock_pre.png')
-		self.repclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock_post.png')
-		self.repclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock_prepost.png')
-		self.repzapclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock.png')
-		self.repzapclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock_add.png')
-		self.repzapclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock_pre.png')
-		self.repzapclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock_post.png')
-		self.repzapclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock_prepost.png')
+		self.repclock_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repepgclock.png'))
+		self.repclock_add_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repepgclock_add.png'))
+		self.repclock_pre_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repepgclock_pre.png'))
+		self.repclock_post_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repepgclock_post.png'))
+		self.repclock_prepost_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repepgclock_prepost.png'))
+		self.repzapclock_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repzapclock.png'))
+		self.repzapclock_add_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repzapclock_add.png'))
+		self.repzapclock_pre_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repzapclock_pre.png'))
+		self.repzapclock_post_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repzapclock_post.png'))
+		self.repzapclock_prepost_pixmap = LoadPixmap(resolveFilename(SCOPE_PLUGINS, 'Extensions/Partnerbox/icons/remote_repzapclock_prepost.png'))
 
 	def postWidgetCreate(self, instance):
 		MenuList.postWidgetCreate(self, instance)

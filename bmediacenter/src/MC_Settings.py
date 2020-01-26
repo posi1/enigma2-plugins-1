@@ -12,7 +12,8 @@ from Components.config import *
 from Components.Console import Console
 from __init__ import _
 from os import mkdir
-mcpath = "/usr/lib/enigma2/python/Plugins/Extensions/BMediaCenter/skins/defaultHD/images/"
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
+mcpath = resolveFilename(SCOPE_PLUGINS, "Extensions/BMediaCenter/skins/defaultHD/images/")
 #try:
 #	from enigma import evfd
 #except Exception, e:

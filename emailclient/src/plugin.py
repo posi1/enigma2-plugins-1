@@ -25,7 +25,7 @@ from email.header import decode_header
 import time
 from TagStrip import strip_readable
 from protocol import createFactory
-
+from Tools.Directories import resolveFilename, SCOPE_SYSETC, SCOPE_CONFIG, SCOPE_PLUGINS, SCOPE_LIBDIR
 from . import _, initLog, debug, scaleH, scaleV, DESKTOP_WIDTH, DESKTOP_HEIGHT #@UnresolvedImport # pylint: disable-msg=F0401
 mailAccounts = [] # contains all EmailAccount objects
 from EmailConfig import EmailConfigOptions, EmailConfigAccount
@@ -1064,7 +1064,6 @@ class EmailAccountList(Screen):
 			acc.removeCallback()
 		self.close()
 
-from Tools.Directories import resolveFilename, SCOPE_SYSETC, SCOPE_CONFIG, SCOPE_PLUGINS
 import csv
 MAILCONF = resolveFilename(SCOPE_CONFIG, "EmailClient.csv")
 
@@ -1129,10 +1128,8 @@ def autostart(reason, **kwargs): #@UnusedVariable reason
 	debug("[EmailClient] - Autostart reason: %d kwargs: %s" %(reason, repr(kwargs)))
 	debug("[EmailClient] " + "$Revision$"[1:-1]	+ "$Date$"[7:23] + " starting")
 	import shutil
-	if os.path.isdir('/usr/lib/python2.6') and not os.path.isfile('/usr/lib/python2.6/uu.pyo'):
-		shutil.copy(resolveFilename(SCOPE_PLUGINS, "Extensions/EmailClient/uu.pyo"), '/usr/lib/python2.6/uu.pyo')
-	elif os.path.isdir('/usr/lib/python2.5') and not os.path.isfile('/usr/lib/python2.5/uu.py'):
-		shutil.copy(resolveFilename(SCOPE_PLUGINS, "Extensions/EmailClient/uu.pyo"), '/usr/lib/python2.5/uu.pyo')
+	if os.path.isdir(resolveFilename(SCOPE_LIBDIR, 'python2.7')) and not os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'python2.7/uu.pyo')):
+		shutil.copy(resolveFilename(SCOPE_PLUGINS, "Extensions/EmailClient/uu.pyo"), resolveFilename(SCOPE_LIBDIR, 'python2.7/uu.pyo'))
 
 	if reason == 0:
 		getAccounts()

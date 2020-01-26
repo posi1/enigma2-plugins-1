@@ -10,7 +10,7 @@ from Screens.MessageBox import MessageBox
 from Screens.HelpMenu import HelpableScreen
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import *
-from Tools.Directories import resolveFilename, fileExists, pathExists, createDir, SCOPE_MEDIA
+from Tools.Directories import resolveFilename, fileExists, pathExists, createDir, SCOPE_MEDIA, SCOPE_PLUGINS
 from Components.FileList import FileList
 from Components.AVSwitch import AVSwitch
 import os
@@ -31,7 +31,7 @@ config.plugins.mc_pp.infoline = ConfigEnableDisable(default=True)
 config.plugins.mc_pp.loop = ConfigEnableDisable(default=True)
 config.plugins.mc_pp.music = ConfigText(default=resolveFilename(SCOPE_MEDIA))
 config.plugins.mc_pp.musicenable = ConfigEnableDisable(default=False)
-mcpath="/usr/lib/enigma2/python/Plugins/Extensions/BMediaCenter/"
+mcpath=resolveFilename(SCOPE_PLUGINS, "Extensions/BMediaCenter/")
 def getAspect():
 	val = AVSwitch().getAspectRatioSetting()
 	return val/2

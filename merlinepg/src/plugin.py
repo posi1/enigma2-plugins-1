@@ -32,25 +32,25 @@ from Components.MenuList import MenuList
 from Components.Label import Label
 from Components.EpgList import EPGList, EPG_TYPE_SINGLE, Rect
 from Components.config import config, ConfigSubsection, ConfigYesNo, ConfigInteger, getConfigListEntry
-from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, fileExists
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, fileExists, SCOPE_PLUGINS
 from Tools.LoadPixmap import LoadPixmap
 from enigma import eServiceReference, eServiceCenter, getDesktop, eTimer, gFont, eListboxPythonMultiContent, RT_HALIGN_LEFT, RT_WRAP, eEPGCache
 from RecordTimer import RecordTimerEntry, parseEvent, AFTEREVENT
 from ServiceReference import ServiceReference
 from ShowMe import ShowMe
 from time import localtime, strftime
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/AutoTimerEditor.pyo"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AutoTimer/AutoTimerEditor.pyo")):
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import addAutotimerFromEvent
 	from Plugins.Extensions.AutoTimer.plugin import main as AutoTimerView
 	AutoTimerPresent=True
 else:
 	AutoTimerPresent=False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.pyo"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/IMDb/plugin.pyo")):
 	from Plugins.Extensions.IMDb.plugin import IMDB
 	IMDbPresent=True
 else:
 	IMDbPresent=False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/EPGSearch.pyo"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/EPGSearch/EPGSearch.pyo")):
 	from Plugins.Extensions.EPGSearch.EPGSearch import EPGSearchList, EPGSearch
 	epgSpresent=True
 else:
@@ -137,7 +137,7 @@ class MerlinEPGList(EPGList):
 	def __init__(self, type=EPG_TYPE_SINGLE, selChangedCB=None, timer = None):
 		EPGList.__init__(self, type, selChangedCB, timer)
 		self.l.setFont(0, gFont("Regular", 18))
-		self.PTpicture = LoadPixmap(cached=True, path="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/primetime.png")
+		self.PTpicture = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/MerlinEPG/primetime.png"))
 		self.evCnt = 0
 
 	def recalcEntrySize(self):
@@ -646,7 +646,7 @@ class Merlin_PGII(Screen):
 				self["epg_list"+str(xFL)].foudPrimetime()
 
 	def myhelp(self):
-		self.session.open(ShowMe, "/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/help.jpg")
+		self.session.open(ShowMe, resolveFilename(SCOPE_PLUGINS, "Extensions/MerlinEPG/help.jpg"))
 
 	def UserOK(self):
 		if config.plugins.MerlinEPG.ZapOnOK.value:
@@ -939,7 +939,7 @@ class Merlin_PGd(Screen):
 		self["epg_list"].instance.moveSelection(self["epg_list"].instance.moveTop)
 
 	def myhelp(self):
-		self.session.open(ShowMe, "/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/help.jpg")
+		self.session.open(ShowMe, resolveFilename(SCOPE_PLUGINS, "Extensions/MerlinEPG/help.jpg"))
 
 	def up(self):
 		self["epg_list"].moveUp()

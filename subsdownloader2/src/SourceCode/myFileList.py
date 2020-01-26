@@ -28,6 +28,7 @@ from Components.Harddisk import harddiskmanager
 from Components.config import config
 from enigma import RT_HALIGN_LEFT, eListboxPythonMultiContent, eServiceReference, eServiceCenter, gFont, iServiceInformation
 from Tools.LoadPixmap import LoadPixmap
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 EXTENSIONS = {
 		"mp2": "music",
@@ -69,12 +70,12 @@ def FileEntryComponent(name, absolute = None, isDir = False):
 	res = [ (absolute, isDir) ]
 	res.append((eListboxPythonMultiContent.TYPE_TEXT, 40, 2, 1000, 22, 0, RT_HALIGN_LEFT, name))
 	if isDir:
-		png = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/pic/res/dir.png")
+		png = LoadPixmap(esolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/pic/res/dir.png"))
 	else:
 		extension = name.split('.')
 		extension = extension[-1].lower()
 		if EXTENSIONS.has_key(extension):
-			png = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/pic/res/" + EXTENSIONS[extension] + ".png")
+			png = LoadPixmap(esolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/pic/res/" + EXTENSIONS[extension] + ".png"))
 		else:
 			png = None
 	if png is not None:
@@ -235,7 +236,7 @@ class FileList(MenuList):
 					else:
 						res = [ (x, False) ]
 						res.append((eListboxPythonMultiContent.TYPE_TEXT, 40, 2, 1000, 22, 0, RT_HALIGN_LEFT, name + " [" + self.getTSLength(path) + "]"))
-						png = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/SubsDownloader2/pic/res/movie.png")
+						png = LoadPixmap(esolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/pic/res/movie.png"))
 						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 12, 3, 20, 20, png))
 						self.list.append(res)
 		self.l.setList(self.list)

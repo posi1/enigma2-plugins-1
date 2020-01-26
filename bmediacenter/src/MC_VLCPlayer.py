@@ -17,7 +17,7 @@ from Screens.MessageBox import MessageBox
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import *
 
-from Tools.Directories import resolveFilename, fileExists, pathExists, createDir, SCOPE_MEDIA
+from Tools.Directories import resolveFilename, fileExists, pathExists, createDir, SCOPE_MEDIA, SCOPE_PLUGINS
 from Components.FileList import FileList
 from Screens.InfoBar import MoviePlayer
 
@@ -26,7 +26,7 @@ from pyexpat import ExpatError
 import os
 from os import path as os_path
 
-path="/usr/lib/enigma2/python/Plugins/Extensions/BMediaCenter/"
+path=resolveFilename(SCOPE_PLUGINS, "Extensions/BMediaCenter/")
 
 # IMPORT VLC PLAYER PLUGIN STUFF
 try:

@@ -1,4 +1,4 @@
-#! /usr/bin/python2.5
+#! /usr/bin/python2.7
 
 # Copyright 1994 by Lance Ellinghouse
 # Cathedral City, California Republic, United States of America.
