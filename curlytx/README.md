@@ -144,8 +144,7 @@ then be transferred to your dreambox, e.g. via ``scp``::
     $ ssh dreambox
     $ opkg install enigma2-plugin-extensions-curlytx_2.3_mipsel.ipk
 
-You will need the ``opkg-build`` script from
- http://reichholf.net/files/dreambox/tools/opkg-build
+You will need the ``opkg-build`` script.
 
 Also see http://dream.reichholf.net/wiki/Howto:IPK_Pakete_erstellen
 
