@@ -107,8 +107,6 @@ SUBDIRS = \
 	weathercomponent \
 	weathercomponenthandler \
 	weatherplugin \
-	webadmin \
-	webbouqueteditor \
 	webcamviewer \
 	werbezapper \
 	yttrailer \
