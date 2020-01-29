@@ -660,7 +660,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 	width = size.width()
 	if width == 720:
 		skin = """<screen name="ZDFMediathek" position="0,0" size="720,576" title="ZDF Mediathek" flags="wfNoBorder" backgroundColor="#252525" >
-				<ePixmap position="20,30" size="133,40" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ZDFMediathek/logo.png" />
+				<ePixmap position="20,30" size="133,40" pixmap="~/logo.png" />
 				<widget name="navigationTitle" position="250,40" size="430,25" font="Regular;18" backgroundColor="#252525" foregroundColor="#f47d19" noWrap="1" />
 				<widget name="leftList" position="20,70" size="220,440" transparent="1" selectionDisabled="1" />
 				<widget source="rightList" render="Listbox" position="250,70" size="430,480" backgroundColor="#3d3c3c" backgroundColorSelected="#565656" scrollbarMode="showOnDemand">
@@ -684,7 +684,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 			</screen>"""
 	else:
 		skin = """<screen name="ZDFMediathek" position="center,center" size="900,580" title="ZDF Mediathek" backgroundColor="#252525" >
-				<ePixmap position="20,30" size="133,40" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ZDFMediathek/logo.png" />
+				<ePixmap position="20,30" size="133,40" pixmap="~/logo.png" />
 				<widget name="navigationTitle" position="250,40" size="430,25" font="Regular;18" backgroundColor="#252525" foregroundColor="#f47d19" noWrap="1" />
 				<widget name="leftList" position="20,70" size="220,440" transparent="1" selectionDisabled="1" />
 				<widget source="rightList" render="Listbox" position="250,70" size="600,496" backgroundColor="#3d3c3c" backgroundColorSelected="#565656" scrollbarMode="showOnDemand">
@@ -711,6 +711,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 		self.session = session
 		
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ZDFMediathek")
 		
 		self["navigationTitle"] = Label(" ")
 		self["leftList"] = LeftMenuList()

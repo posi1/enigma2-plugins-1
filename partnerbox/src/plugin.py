@@ -888,7 +888,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 	if HD:
 		skin="""
 			<screen name="RemotePlayer" flags="wfNoBorder" position="283,102" size="720,576" title="Partnerbox - RemotePlayer" backgroundColor="#FFFFFFFF">
-				<ePixmap position="41,388" zPosition="-1" size="630,130" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/ExPlayer.png" alphatest="off" transparent="1"/>
+				<ePixmap position="41,388" zPosition="-1" size="630,130" pixmap="~/ExPlayer.png" alphatest="off" transparent="1"/>
 				<widget name="ServiceName" zPosition="1" position="50,404" size="610,59" valign="center" halign="center" font="Regular;21" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" />
 				<widget name="DateTime" zPosition="1" position="52,473" size="500,30" halign="left" font="Regular;16" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" transparent="1" />
 				<widget name="IP" zPosition="2" position="361,473" size="300,30" halign="right" font="Regular;16" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" transparent="1" />
@@ -896,7 +896,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 	else:
 		skin="""
 			<screen name="RemotePlayer" flags="wfNoBorder" position="3,30" size="720,576" title="Partnerbox - RemotePlayer" backgroundColor="#FFFFFFFF">
-				<ePixmap position="41,388" zPosition="-1" size="630,130" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/ExPlayer.png" alphatest="off" transparent="1"/>
+				<ePixmap position="41,388" zPosition="-1" size="630,130" pixmap="~/ExPlayer.png" alphatest="off" transparent="1"/>
 				<widget name="ServiceName" zPosition="1" position="50,404" size="610,59" valign="center" halign="center" font="Regular;21" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" />
 				<widget name="DateTime" zPosition="1" position="52,473" size="500,30" halign="left" font="Regular;16" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" transparent="1" />
 				<widget name="IP" zPosition="2" position="361,473" size="300,30" halign="right" font="Regular;16" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" transparent="1" />
@@ -905,6 +905,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 	def __init__(self, session, ServiceName, EventTitle, eventstart, eventduration, partnerboxentry, servicereference, parent = None):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/Partnerbox")
 		self.setTitle(_("Partnerbox - RemotePlayer"))
 		InfoBarAudioSelection.__init__(self)
 		self.enigma_type = int(partnerboxentry.enigma.value)

@@ -64,13 +64,11 @@ from skin import parseColor, parseFont
 # Plugin internal
 from netstat import netstat
 
-
 # Extenal plugins: WebInterface
 try:
 	from Plugins.Extensions.WebInterface.WebScreens import StreamingWebScreen 
 except:
 	StreamingWebScreen = None
-
 
 # Globals
 InfoBarShow = None
@@ -781,11 +779,13 @@ class InfoBarTunerState(object):
 # Base screen class, contains all skin relevant parts
 class TunerStateBase(Screen):
 	# Skin will only be read once
-	skinfile = os.path.join( resolveFilename(SCOPE_PLUGINS), "Extensions/InfoBarTunerState/skin.xml" )
-	skin = open(skinfile).read()
+	#skinfile = os.path.join( resolveFilename(SCOPE_PLUGINS), "Extensions/InfoBarTunerState/skin.xml" )
+	#skin = open(skinfile).read()
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		from skin import *
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/InfoBarTunerState")
 		self.skinName = "TunerState"
 		
 		self["Background"] = Pixmap()

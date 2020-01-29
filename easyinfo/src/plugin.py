@@ -285,8 +285,8 @@ class EasyInfo(Screen):
 		if config.plugins.EasyInfo.EvInStart.value == "yes":
 			skin = """
 			<screen flags="wfNoBorder" position="0,0" size="450,720" title="Easy Info">
-				<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/bg.png" position="0,0" size="450,576"/>
-				<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/bg.png" position="0,576" size="450,145"/>
+				<ePixmap pixmap="~/bg.png" position="0,0" size="450,576"/>
+				<ePixmap pixmap="~/bg.png" position="0,576" size="450,145"/>
 				<widget name="list" position="60,30" size="350,660" scrollbarMode="showNever" transparent="1" zPosition="2"/>
 			</screen>"""
 		else:
@@ -333,7 +333,7 @@ class EasyInfo(Screen):
 		if config.plugins.EasyInfo.EvInStart.value == "yes":
 			skin = """
 			<screen flags="wfNoBorder" position="-20,0" size="450,576" title="Easy Info">
-				<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/bg.png" position="0,0" size="450,576"/>
+				<ePixmap pixmap="~/bg.png" position="0,0" size="450,576"/>
 				<widget name="list" position="70,48" size="320,480" scrollbarMode="showNever" transparent="1" zPosition="2"/>
 			</screen>"""
 		else:
@@ -387,6 +387,7 @@ class EasyInfo(Screen):
 		EINiconspath = resolveFilename(SCOPE_PLUGINS, 'Extensions/EasyInfo/')
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/EasyInfo")
 		self.session = session
 		self.list = []
 		self.__keys = []
@@ -819,17 +820,17 @@ class EasyPG(EPGSelection, Screen):
 	if SKINTYPE == 3:
 		skin = """
 		<screen name="EasyPG" backgroundColor="#101220" flags="wfNoBorder" position="0,0" size="1280,720" title="Easy PG">
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/lines.png" position="60,35" size="660,650" zPosition="-1"/>
+			<ePixmap alphatest="on" pixmap="~/lines.png" position="60,35" size="660,650" zPosition="-1"/>
 			<widget font="Regular;20" position="785,30" render="Label" size="202,25" source="global.CurrentTime" transparent="1" zPosition="1">
 				<convert type="ClockToText">Format:%a %d. %b   %H:%M</convert>
 			</widget>
 			<widget backgroundColor="#ff000000" position="755,125" render="Pig" size="497,280" source="session.VideoPicture" zPosition="1"/>
 			<widget foregroundColor="#fcc000" font="Regular;20" name="date" position="755,415" size="100,25" transparent="1"/>
 			<widget name="list" position="60,35" scrollbarMode="showNever" size="660,650" transparent="1"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-red.png" position="785,65" size="5,20"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-green.png" position="785,90" size="5,20"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-yellow.png" position="1005,65" size="5,20"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-blue.png" position="1005,90" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-red.png" position="785,65" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-green.png" position="785,90" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-yellow.png" position="1005,65" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-blue.png" position="1005,90" size="5,20"/>
 			<eLabel font="Regular;18" position="800,63" size="150,25" text="Similar" transparent="1"/>
 			<eLabel font="Regular;18" position="800,90" size="150,25" text="Timer" transparent="1"/>
 			<eLabel font="Regular;18" position="1015,63" size="150,25" text="Back" transparent="1"/>
@@ -857,7 +858,7 @@ class EasyPG(EPGSelection, Screen):
 	elif SKINTYPE == 2:
 		skin = """
 		<screen name="EasyPG" backgroundColor="#0e1018" flags="wfNoBorder" position="0,0" size="1024,576" title="Easy PG">
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/lines.png" position="50,50" size="520,450" zPosition="-1"/>
+			<ePixmap alphatest="on" pixmap="~/lines.png" position="50,50" size="520,450" zPosition="-1"/>
 			<eLabel backgroundColor="#666666" position="0,518" size="1024,1"/>
 			<widget font="Regular;20" position="50,525" render="Label" size="186,25" source="global.CurrentTime" transparent="1" zPosition="1">
 				<convert type="ClockToText">Format:%a %d. %b   %H:%M</convert>
@@ -865,10 +866,10 @@ class EasyPG(EPGSelection, Screen):
 			<widget backgroundColor="#ff000000" position="590,30" render="Pig" size="384,216" source="session.VideoPicture" zPosition="-1"/>
 			<widget foregroundColor="#fcc000" font="Regular;20" name="date" position="590,255" size="100,25" transparent="1"/>
 			<widget name="list" position="50,48" scrollbarMode="showNever" size="520,450" transparent="1"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-red.png" position="275,525" size="5,20"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-green.png" position="450,525" size="5,20"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-yellow.png" position="625,525" size="5,20"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-blue.png" position="800,525" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-red.png" position="275,525" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-green.png" position="450,525" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-yellow.png" position="625,525" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-blue.png" position="800,525" size="5,20"/>
 			<eLabel font="Regular;18" position="290,526" size="150,25" text="Similar" transparent="1"/>
 			<eLabel font="Regular;18" position="465,526" size="150,25" text="Timer" transparent="1"/>
 			<eLabel font="Regular;18" position="640,526" size="150,25" text="Back" transparent="1"/>
@@ -897,13 +898,13 @@ class EasyPG(EPGSelection, Screen):
 	else:
 		skin = """
 		<screen name="EasyPG" backgroundColor="background" flags="wfNoBorder" position="0,0" size="720,576" title="Easy PG">
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/lines.png" position="50,48" size="620,450" zPosition="-1"/>
+			<ePixmap alphatest="on" pixmap="~/lines.png" position="50,48" size="620,450" zPosition="-1"/>
 			<eLabel backgroundColor="#666666" position="0,522" size="756,1"/>
 			<widget foregroundColor="#fcc000" font="Regular;20" name="date" position="50,525" size="100,25" transparent="1"/>
 			<widget name="list" position="50,48" scrollbarMode="showOnDemand" size="620,450" transparent="1"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-red.png" position="175,525" size="5,20"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-yellow.png" position="350,525" size="5,20"/>
-			<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/key-blue.png" position="525,525" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-red.png" position="175,525" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-yellow.png" position="350,525" size="5,20"/>
+			<ePixmap alphatest="blend" pixmap="~/key-blue.png" position="525,525" size="5,20"/>
 			<eLabel font="Regular;18" position="190,526" size="150,25" text="Similar" transparent="1"/>
 			<eLabel font="Regular;18" position="365,526" size="150,25" text="Back" transparent="1"/>
 			<eLabel font="Regular;18" position="540,526" size="150,25" text="Next" transparent="1"/>
@@ -911,6 +912,7 @@ class EasyPG(EPGSelection, Screen):
 		"""
 	def __init__(self, session, service, zapFunc=None, eventid=None, bouquetChangeCB=None, serviceChangeCB=None):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/EasyInfo")
 		EPGSelection.__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB)
 		global EINposition
 		EINposition = 0
@@ -1115,16 +1117,16 @@ class EasySelection(EPGSelection, Screen):
 	if SKINTYPE == 3:
 		skin = """
 		<screen name="EasySelection" backgroundColor="background" flags="wfNoBorder" position="0,0" size="1280,720" title="Easy Selection">
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/lines.png" position="60,35" size="660,650" zPosition="-1"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/lines.png" position="720,35" size="500,650" zPosition="-1"/>
+			<ePixmap alphatest="on" pixmap="~/lines.png" position="60,35" size="660,650" zPosition="-1"/>
+			<ePixmap alphatest="on" pixmap="~/lines.png" position="720,35" size="500,650" zPosition="-1"/>
 			<widget name="list" position="60,35" scrollbarMode="showNever" size="660,650" transparent="1"/>
 			<widget name="listN" position="720,35" scrollbarMode="showNever" size="500,650" transparent="1"/>
 		</screen>"""
 	elif SKINTYPE == 2:
 		skin = """
 		<screen name="EasySelection" backgroundColor="background" flags="wfNoBorder" position="0,0" size="1024,576" title="Easy Selection">
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/lines.png" position="40,38" size="660,500" zPosition="-1"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/lines.png" position="700,38" size="284,500" zPosition="-1"/>
+			<ePixmap alphatest="on" pixmap="~/lines.png" position="40,38" size="660,500" zPosition="-1"/>
+			<ePixmap alphatest="on" pixmap="~/lines.png" position="700,38" size="284,500" zPosition="-1"/>
 			<widget name="list" position="40,38" scrollbarMode="showNever" size="520,500" transparent="1"/>
 			<widget name="listN" position="560,38" scrollbarMode="showNever" size="444,500" transparent="1"/>
 		</screen>
@@ -1132,12 +1134,13 @@ class EasySelection(EPGSelection, Screen):
 	else:
 		skin = """
 		<screen name="EasySelection" backgroundColor="background" flags="wfNoBorder" position="0,0" size="720,576" title="Easy Selection">
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyInfo/lines.png" position="50,38" size="620,500" zPosition="-1"/>
+			<ePixmap alphatest="on" pixmap="~/lines.png" position="50,38" size="620,500" zPosition="-1"/>
 			<widget name="list" position="50,38" scrollbarMode="showOnDemand" size="620,500" transparent="1"/>
 		</screen>
 		"""
 	def __init__(self, session, service, zapFunc=None, eventid=None, bouquetChangeCB=None, serviceChangeCB=None):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/EasyInfo")
 		EPGSelection.__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB)
 		global EINposition
 		EINposition = 0
@@ -1232,15 +1235,3 @@ class EasySelection(EPGSelection, Screen):
 		if ref:
 			InfoBar_instance.servicelist.savedService = ref
 			self.session.openWithCallback(InfoBar_instance.servicelist.SingleServiceEPGClosed, EPGSelection, ref, serviceChangeCB = InfoBar_instance.servicelist.changeServiceCB)
-
-
-
-
-
-
-
-	
-
-
-
-

@@ -11,7 +11,7 @@ from Components.Label import Label
 from Components.Sources.List import List
 from Components.MultiContent import MultiContentEntryText
 from Components.Task import job_manager
-from Tools.Directories import resolveFilename, SCOPE_HDD
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_HDD
 
 from threading import Thread
 from ThreadQueue import ThreadQueue
@@ -168,7 +168,7 @@ if default not in tmp:
 class MyTubeSuggestionsListScreen(Screen):
 	skin = """
 		<screen name="MyTubeSuggestionsListScreen" title="MyTube - Search" position="60,93" zPosition="6" size="610,160" flags="wfNoBorder" >
-			<ePixmap position="0,0" zPosition="-1" size="610,160" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MyTube/suggestions_bg.png" alphatest="on" transparent="1" backgroundColor="transparent"/>
+			<ePixmap position="0,0" zPosition="-1" size="610,160" pixmap="~/suggestions_bg.png" alphatest="on" transparent="1" backgroundColor="transparent"/>
 			<widget source="suggestionslist" render="Listbox" position="10,5" zPosition="7" size="580,150" scrollbarMode="showOnDemand" transparent="1" >
 				<convert type="TemplatedMultiContent">
 					{"template": [
@@ -184,6 +184,7 @@ class MyTubeSuggestionsListScreen(Screen):
 
 	def __init__(self, session, configTextWithGoogleSuggestion):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/MyTube")
 		self.activeState = False
 		self.list = []
 		self.suggestlist = []
@@ -536,7 +537,7 @@ class MyTubeTasksScreen(Screen):
 class MyTubeHistoryScreen(Screen):
 	skin = """
 		<screen name="MyTubeHistoryScreen" position="60,93" zPosition="6" size="610,160" flags="wfNoBorder" title="MyTube - History">
-			<ePixmap position="0,0" zPosition="-1" size="610,160" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MyTube/suggestions_bg.png" alphatest="on" transparent="1" backgroundColor="transparent"/>
+			<ePixmap position="0,0" zPosition="-1" size="610,160" pixmap="~/suggestions_bg.png" alphatest="on" transparent="1" backgroundColor="transparent"/>
 			<widget source="historylist" render="Listbox" position="10,5" zPosition="7" size="580,150" scrollbarMode="showOnDemand" transparent="1" >
 				<convert type="TemplatedMultiContent">
 					{"template": [
@@ -551,6 +552,7 @@ class MyTubeHistoryScreen(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/MyTube")
 		self.session = session
 		self.historylist = []
 		print "self.historylist",self.historylist

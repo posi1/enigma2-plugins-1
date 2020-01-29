@@ -1,9 +1,13 @@
+from Screens.Screen import Screen
+from Components.Pixmap import Pixmap
+
+skin = """
 <screen name="TunerState" title="Tuner State" flags="wfNoBorder" position="0,50" size="1000,32" zPosition="5" padding="20" spacing="15" backgroundColor="#ff000000">
-	<widget name="Background" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/InfoBarTunerState/background.png" position="0,0" size="1280,32" zPosition="-1" transparent="1" alphatest="off"/>
+	<widget name="Background" pixmap="~/background.png" position="0,0" size="1280,32" zPosition="-1" transparent="1" alphatest="off"/>
 	<!-- Type Icons: Record, Stream, Finished -->
-	<widget name="Type" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/InfoBarTunerState/record.png,/usr/lib/enigma2/python/Plugins/Extensions/InfoBarTunerState/stream.png,/usr/lib/enigma2/python/Plugins/Extensions/InfoBarTunerState/finished.png,/usr/lib/enigma2/python/Plugins/Extensions/InfoBarTunerState/info.png" position="0,0" size="32,32" zPosition="1" transparent="1" alphatest="on"/>
+	<widget name="Type" pixmaps="~/record.png,~/stream.png,~/finished.png,~/info.png" position="0,0" size="32,32" zPosition="1" transparent="1" alphatest="on"/>
 	<!-- Progress -->
-	<widget name="Progress" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/InfoBarTunerState/progress.png" position="0,00" size="80,10" zPosition="1" borderWidth="2" borderColor="#000000" backgroundColor="#141415" transparent="1"/>
+	<widget name="Progress" pixmap="~/progress.png" position="0,00" size="80,10" zPosition="1" borderWidth="2" borderColor="#000000" backgroundColor="#141415" transparent="1"/>
 	<!-- Field information -->
 	<!-- nowrap=1 is essential for calculateSize -->
 	<!-- Default field: Tuner -->
@@ -26,4 +30,4 @@
 	<widget name="Field8" font="Regular;22" noWrap="1" halign="left" foregroundColor="#ffffff" backgroundColor="#141415" transparent="1" zPosition="1"/>
 	<!-- Default field: None -->
 	<widget name="Field9" font="Regular;22" noWrap="1" halign="left" foregroundColor="#bbbbbf" backgroundColor="#141415" transparent="1" zPosition="1"/>
-</screen>
+</screen>"""

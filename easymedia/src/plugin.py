@@ -17,8 +17,6 @@
 #
 #######################################################################
 
-
-
 from __init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -41,14 +39,10 @@ import pickle
 from Components.Console import Console
 from os import listdir as os_listdir
 
-
-
 EMbaseInfoBarPlugins__init__ = None
 EMStartOnlyOneTime = False
 EMsession = None
 InfoBar_instance = None
-
-
 
 config.plugins.easyMedia  = ConfigSubsection()
 config.plugins.easyMedia.music = ConfigSelection(default="mediaplayer", choices = [("no", _("Disabled")), ("mediaplayer", _("MediaPlayer")), ("merlinmp", _("MerlinMusicPlayer"))])
@@ -67,14 +61,9 @@ config.plugins.easyMedia.radio = ConfigSelection(default="yes", choices = [("no"
 config.plugins.easyMedia.myvideo = ConfigSelection(default="no", choices = [("no", _("Disabled")), ("yes", _("Enabled"))])
 config.plugins.easyMedia.timers = ConfigSelection(default="no", choices = [("no", _("Disabled")), ("yes", _("Enabled"))])
 
-
-
 def Plugins(**kwargs):
 	return [PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = EasyMediaAutostart),
 			PluginDescriptor(name="EasyMedia", description=_("Not easy way to start EasyMedia"), where = PluginDescriptor.WHERE_PLUGINMENU, fnc=notEasy),]
-
-
-
 def EasyMediaAutostart(reason, **kwargs):
 	global EMbaseInfoBarPlugins__init__
 	if "session" in kwargs:
@@ -84,8 +73,6 @@ def EasyMediaAutostart(reason, **kwargs):
 			EMbaseInfoBarPlugins__init__ = InfoBarPlugins.__init__
 		InfoBarPlugins.__init__ = InfoBarPlugins__init__
 		InfoBarPlugins.pvr = pvr
-
-
 
 def InfoBarPlugins__init__(self):
 	global EMStartOnlyOneTime
@@ -100,17 +87,11 @@ def InfoBarPlugins__init__(self):
 		InfoBarPlugins.pvr = None
 	EMbaseInfoBarPlugins__init__(self)
 
-
-
 def pvr(self):
 	self.session.openWithCallback(MPcallbackFunc, EasyMedia)
 
-
-
 def notEasy(session, **kwargs):
 	session.openWithCallback(MPcallbackFunc, EasyMedia)
-
-
 
 def MPanelEntryComponent(key, text, cell):
 	res = [ text ]
@@ -128,8 +109,6 @@ def MPanelEntryComponent(key, text, cell):
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 25, 5, 100, 50, png))
 	return res
 
-
-
 class MPanelList(MenuList):
 	def __init__(self, list, selection = 0, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
@@ -140,8 +119,6 @@ class MPanelList(MenuList):
 		MenuList.postWidgetCreate(self, instance)
 		self.moveToIndex(self.selection)
 
-
-
 def BookmarksCallback(choice):
 	choice = choice and choice[1]
 	if choice:
@@ -149,8 +126,6 @@ def BookmarksCallback(choice):
 		config.movielist.last_videodir.save()
 		if InfoBar_instance:
 			InfoBar_instance.showMovies()
-
-
 
 def TvRadioCallback(choice):
 	choice = choice and choice[1]
@@ -160,8 +135,6 @@ def TvRadioCallback(choice):
 	elif choice == "RM":
 		if InfoBar_instance:
 			InfoBar_instance.showRadio()
-
-
 
 class ConfigEasyMedia(ConfigListScreen, Screen):
 	skin = """
@@ -206,8 +179,6 @@ class ConfigEasyMedia(ConfigListScreen, Screen):
 
 	def plug(self):
 		self.session.open(AddPlug)
-
-
 
 class AddPlug(Screen):
 	skin = """
@@ -276,8 +247,6 @@ class AddPlug(Screen):
 				self.session.open(MessageBox, text = (plugin.name + _(" removed from EasyMedia")), type = MessageBox.TYPE_INFO)
 			except: self.session.open(MessageBox, text = "Write Error!", type = MessageBox.TYPE_WARNING)
 
-
-
 class EasyMediaSummary(Screen):
 	if getBoxType() == "dm800se":
 		skin = """
@@ -302,21 +271,19 @@ class EasyMediaSummary(Screen):
 	def setText(self, text, line):
 		self["text1"].setText(text)
 
-
-
 class EasyMedia(Screen):
 	sz_w = getDesktop(0).size().width()
 	if sz_w > 1100:
 		skin = """
 		<screen flags="wfNoBorder" position="0,0" size="450,720" title="Easy Media">
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyMedia/bg.png" position="0,0" size="450,576"/>
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyMedia/bg.png" position="0,576" size="450,145"/>
+			<ePixmap pixmap="~/bg.png" position="0,0" size="450,576"/>
+			<ePixmap pixmap="~/bg.png" position="0,576" size="450,145"/>
 			<widget name="list" position="60,30" size="350,660" scrollbarMode="showNever" transparent="1" zPosition="2"/>
 		</screen>"""
 	elif sz_w > 1000:
 		skin = """
 		<screen flags="wfNoBorder" position="-20,0" size="450,576" title="Easy Media">
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EasyMedia/bg.png" position="0,0" size="450,576"/>
+			<ePixmap pixmap="~/bg.png" position="0,0" size="450,576"/>
 			<widget name="list" position="70,48" size="320,480" scrollbarMode="showNever" transparent="1" zPosition="2"/>
 		</screen>"""
 	else:
@@ -324,12 +291,15 @@ class EasyMedia(Screen):
 		<screen position="center,center" size="320,440" title="Easy Media">
 			<widget name="list" position="10,10" size="300,420" scrollbarMode="showOnDemand" />
 		</screen>"""
+
 	if pathExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/EasyMedia/icons/')):
 		EMiconspath = resolveFilename(SCOPE_PLUGINS, 'Extensions/EasyMedia/icons/')
 	else:
 		EMiconspath = resolveFilename(SCOPE_PLUGINS, 'Extensions/EasyMedia/')
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/EasyMedia")
 		self.session = session
 		self.list = []
 		self.__keys = []
@@ -468,8 +438,6 @@ class EasyMedia(Screen):
 		text = str(self["list"].l.getCurrentSelection()[0][0])
 		self.summaries.setText(text, 1)
 
-
-
 def MPcallbackFunc(answer):
 	if EMsession is None:
 		return
@@ -589,6 +557,3 @@ def MPcallbackFunc(answer):
 			inpf.close()	
 			runPlug(session = EMsession)
 		except: EMsession.open(MessageBox, text = (plugToRun + " not found!"), type = MessageBox.TYPE_WARNING)
-
-
-

@@ -118,12 +118,12 @@ class DreamExplorerII(Screen):
 			skin = """
 				<screen position="center,80" size="1180,590" title="Dream-Explorer">
 				<widget name="filelist" position="5,10" scrollbarMode="showOnDemand" size="942,552" zPosition="4"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="995,20" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/green.png" position="995,60" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="995,100" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/blue.png" position="995,140" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/menu.png" position="995,180" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/info.png" position="995,220" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/red.png" position="995,20" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/green.png" position="995,60" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="995,100" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/blue.png" position="995,140" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/menu.png" position="995,180" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/info.png" position="995,220" size="35,25" zPosition="5"/>
 				<eLabel font="Regular;18" halign="left" position="1040,20" size="140,25" text="Delete" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="1040,60" size="140,25" text="Rename" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="1040,100" size="140,25" text="Move/Copy" transparent="1" valign="center" zPosition="6"/>
@@ -136,12 +136,12 @@ class DreamExplorerII(Screen):
 				<screen position="center,77" size="900,450" title="Dream-Explorer">
 				<widget name="filelist" position="5,2" scrollbarMode="showOnDemand" size="890,416" zPosition="4"/>
 				<eLabel backgroundColor="#555555" position="5,420" size="890,2" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="0,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/green.png" position="155,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/blue.png" position="465,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/menu.png" position="620,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/info.png" position="775,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/red.png" position="0,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/green.png" position="155,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/blue.png" position="465,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/menu.png" position="620,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/info.png" position="775,425" size="35,25" zPosition="5"/>
 				<eLabel font="Regular;18" halign="left" position="35,425" size="120,25" text="Delete" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="190,425" size="120,25" text="Rename" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="345,425" size="120,25" text="Move/Copy" transparent="1" valign="center" zPosition="6"/>
@@ -154,12 +154,12 @@ class DreamExplorerII(Screen):
 			<screen position="center,77" size="620,450" title="Dream-Explorer">
 			<widget name="filelist" position="5,2" scrollbarMode="showOnDemand" size="610,416" zPosition="4"/>
 			<eLabel backgroundColor="#555555" position="5,420" size="610,2" zPosition="5"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="0,425" size="35,25" zPosition="5"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/green.png" position="145,425" size="35,25" zPosition="5"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="290,425" size="35,25" zPosition="5"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/blue.png" position="430,425" size="35,25" zPosition="5"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/info.png" position="555,425" size="35,25" zPosition="5"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/menu.png" position="585,425" size="35,25" zPosition="5"/>
+			<ePixmap alphatest="on" pixmap="~/res/red.png" position="0,425" size="35,25" zPosition="5"/>
+			<ePixmap alphatest="on" pixmap="~/res/green.png" position="145,425" size="35,25" zPosition="5"/>
+			<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="290,425" size="35,25" zPosition="5"/>
+			<ePixmap alphatest="on" pixmap="~/res/blue.png" position="430,425" size="35,25" zPosition="5"/>
+			<ePixmap alphatest="on" pixmap="~/res/info.png" position="555,425" size="35,25" zPosition="5"/>
+			<ePixmap alphatest="on" pixmap="~/res/menu.png" position="585,425" size="35,25" zPosition="5"/>
 			<eLabel font="Regular;16" halign="left" position="35,425" size="100,25" text="Delete" transparent="1" valign="center" zPosition="6"/>
 			<eLabel font="Regular;16" halign="left" position="180,425" size="100,25" text="Rename" transparent="1" valign="center" zPosition="6"/>
 			<eLabel font="Regular;16" halign="left" position="325,425" size="100,25" text="Move/Copy" transparent="1" valign="center" zPosition="6"/>
@@ -169,6 +169,7 @@ class DreamExplorerII(Screen):
 	def __init__(self, session, args = None):
 		self.skin = DreamExplorerII.skin
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/DreamExplorer")
 		self.sesion = session
 		self.altservice = self.session.nav.getCurrentlyPlayingServiceReference()
 		self.MyBox = getBoxType()
@@ -1063,8 +1064,8 @@ class CPmaniger(Screen):
 				<widget name="File" font="Regular;20" halign="center" position="5,0" size="890,100" transparent="1" valign="center" zPosition="4"/>
 				<widget name="CPto" position="5,100" scrollbarMode="showOnDemand" size="890,312" zPosition="4"/>
 				<eLabel backgroundColor="#555555" position="5,420" size="890,2" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="0,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/red.png" position="0,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
 				<eLabel font="Regular;18" halign="left" position="35,425" size="120,25" text="MOVE" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="345,425" size="120,25" text="COPY" transparent="1" valign="center" zPosition="6"/>
 				</screen>"""
@@ -1074,8 +1075,8 @@ class CPmaniger(Screen):
 				<widget name="File" font="Regular;20" halign="center" position="5,0" size="890,100" transparent="1" valign="center" zPosition="4"/>
 				<widget name="CPto" position="5,100" scrollbarMode="showOnDemand" size="890,312" zPosition="4"/>
 				<eLabel backgroundColor="#555555" position="5,420" size="890,2" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="0,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/red.png" position="0,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
 				<eLabel font="Regular;18" halign="left" position="35,425" size="120,25" text="MOVE" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="345,425" size="120,25" text="COPY" transparent="1" valign="center" zPosition="6"/>
 				</screen>"""
@@ -1085,8 +1086,8 @@ class CPmaniger(Screen):
 				<widget name="File" font="Regular;20" halign="center" position="5,0" size="610,100" transparent="1" valign="center" zPosition="4"/>
 				<widget name="CPto" position="5,100" scrollbarMode="showOnDemand" size="610,312" zPosition="4"/>
 				<eLabel backgroundColor="#555555" position="5,420" size="610,2" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="0,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/red.png" position="0,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
 				<eLabel font="Regular;18" halign="left" position="35,425" size="120,25" text="MOVE" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="345,425" size="120,25" text="COPY" transparent="1" valign="center" zPosition="6"/>
 			</screen>"""
@@ -1094,6 +1095,7 @@ class CPmaniger(Screen):
 	def __init__(self, session, source = "/tmp/none"):
 		self.skin = CPmaniger.skin
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/DreamExplorer")
 		self.sesion = session
 		self.src = source
 		self["File"] = Label(_("WARNING! they doing now COPY or MOVE\n" + source + "\nto:"))
@@ -1167,8 +1169,8 @@ class SoftLinkScreen(Screen):
 				<widget name="File" font="Regular;20" halign="center" position="5,0" size="890,100" transparent="1" valign="center" zPosition="4"/>
 				<widget name="SLto" position="5,100" scrollbarMode="showOnDemand" size="890,312" zPosition="4"/>
 				<eLabel backgroundColor="#555555" position="5,420" size="890,2" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="0,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/red.png" position="0,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
 				<eLabel font="Regular;18" halign="left" position="35,425" size="120,25" text="Set name" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="345,425" size="220,25" text="Make a softlink" transparent="1" valign="center" zPosition="6"/>
 				</screen>"""
@@ -1178,8 +1180,8 @@ class SoftLinkScreen(Screen):
 				<widget name="File" font="Regular;20" halign="center" position="5,0" size="890,100" transparent="1" valign="center" zPosition="4"/>
 				<widget name="SLto" position="5,100" scrollbarMode="showOnDemand" size="890,312" zPosition="4"/>
 				<eLabel backgroundColor="#555555" position="5,420" size="890,2" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="0,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/red.png" position="0,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
 				<eLabel font="Regular;18" halign="left" position="35,425" size="120,25" text="Set name" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="345,425" size="220,25" text="Make a softlink" transparent="1" valign="center" zPosition="6"/>
 				</screen>"""
@@ -1189,14 +1191,15 @@ class SoftLinkScreen(Screen):
 				<widget name="File" font="Regular;20" halign="center" position="5,0" size="610,100" transparent="1" valign="center" zPosition="4"/>
 				<widget name="SLto" position="5,100" scrollbarMode="showOnDemand" size="610,312" zPosition="4"/>
 				<eLabel backgroundColor="#555555" position="5,420" size="610,2" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/red.png" position="0,425" size="35,25" zPosition="5"/>
-				<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/red.png" position="0,425" size="35,25" zPosition="5"/>
+				<ePixmap alphatest="on" pixmap="~/res/yellow.png" position="310,425" size="35,25" zPosition="5"/>
 				<eLabel font="Regular;18" halign="left" position="35,425" size="120,25" text="Set name" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="345,425" size="220,25" text="Make a softlink" transparent="1" valign="center" zPosition="6"/>
 			</screen>"""
 	def __init__(self, session, source = "/tmp/"):
 		self.skin = SoftLinkScreen.skin
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/DreamExplorer")
 		self.sesion = session
 		self.src = source
 		self.newSLname = " "

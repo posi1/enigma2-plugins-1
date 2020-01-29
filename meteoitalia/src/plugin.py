@@ -16,7 +16,7 @@ from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 from Components.Label import Label
 from Components.Pixmap import Pixmap
-from Tools.Directories import fileExists
+from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS
 
 from urllib2 import Request, urlopen, URLError, HTTPError
 from xml.dom import minidom, Node
@@ -27,7 +27,7 @@ METEOITALIA_ABOUT_TXT = "Meteo Italia Info Plugin v 0.1\n\nAuthor(s): Bacicciosa
 class meteoitMain(Screen):
 	skin = """
 	<screen position="center,center" size="720,576" flags="wfNoBorder">
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MeteoItalia/backg.png" position="0,0" size="720,576" alphatest="on" />
+		<ePixmap pixmap="~/backg.png" position="0,0" size="720,576" alphatest="on" />
 		<widget name="lab1" position="10,100" halign="center" size="700,30" zPosition="1" font="Regular;24" valign="top" transparent="1" />
 		<widget name="lab2" position="10,130" halign="center" size="700,30" zPosition="1" font="Regular;22" valign="top" transparent="1" />
 		<widget name="lab3" position="340,180" size="40,40" zPosition="1" />
@@ -47,6 +47,7 @@ class meteoitMain(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/MeteoItalia")
 
 		self["lab1"] = Label("Attendere prego, connessione al server in corso...")
 		self["lab2"] = Label("")
@@ -234,12 +235,12 @@ class meteoitMain(Screen):
 			
 # Make text safe for xml parser (Google old xml format without the character set declaration)
 	def checkXmlSanity(self, content):
-		content = content.replace('à', 'a')
-		content = content.replace('è', 'e')
-		content = content.replace('é', 'e')
-		content = content.replace('ì', 'i')
-		content = content.replace('ò', 'o')
-		content = content.replace('ù', 'u')
+		content = content.replace('Ã ', 'a')
+		content = content.replace('Ã¨', 'e')
+		content = content.replace('Ã©', 'e')
+		content = content.replace('Ã¬', 'i')
+		content = content.replace('Ã²', 'o')
+		content = content.replace('Ã¹', 'u')
 		return content
 
 	def get_Url(self):
@@ -268,7 +269,7 @@ class meteoitMain(Screen):
 class MeteoitSelectCity(Screen):
 	skin = """
 	<screen position="center,center" size="720,576" flags="wfNoBorder">
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MeteoItalia/backg.png" position="0,0" size="720,576" alphatest="on" />
+		<ePixmap pixmap="~/backg.png" position="0,0" size="720,576" alphatest="on" />
 		<widget source="list" render="Listbox" position="40,110" zPosition="1" size="640,380" scrollbarMode="showOnDemand" transparent="1" >
 			<convert type="StringList" />
 		</widget>
@@ -278,6 +279,7 @@ class MeteoitSelectCity(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/MeteoItalia")
 
 		self.list = ["Agrigento","Alessandria","Ancona","Andria","Aosta","Arezzo","Ascoli Piceno","Asti","Avellino","Bari",
 				"Barletta","Belluno","Benevento","Bergamo","Biella","Bologna","Bolzano","Brescia","Brindisi","Cagliari",

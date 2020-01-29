@@ -171,7 +171,7 @@ class SHOUTcastWidget(Screen):
 			<widget name="station" position="115,%d" zPosition="1" size="%d,40" font="Regular;18" transparent="1"  backgroundColor="#00000000"/>
 			<widget name="console" position="115,%d" zPosition="1" size="%d,40" font="Regular;18" transparent="1"  backgroundColor="#00000000"/>
 			<widget name="cover" zPosition="2" position="5,%d" size="102,110" alphatest="blend" />
-			<ePixmap position="%d,41" zPosition="4" size="120,35" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/SHOUTcast/shoutcast-logo1-fs8.png" transparent="1" alphatest="on" />
+			<ePixmap position="%d,41" zPosition="4" size="120,35" pixmap="~/shoutcast-logo1-fs8.png" transparent="1" alphatest="on" />
 		</screen>""" %(
 			sz_w, sz_h, # size
 			sz_w - 135, # size headertext
@@ -190,6 +190,7 @@ class SHOUTcastWidget(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/SHOUTcast")
 		self.oldtitle = None
 		self.currentcoverfile = 0
 		self.currentGoogle = None

@@ -326,27 +326,27 @@ class FritzAbout(Screen):
 				self.skin = """
 				<!-- SD screen -->
 				<screen name="FritzAbout" position="center,center" size="580,240" title=" ">
-					<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/fritz.png" position="5,50" size="150,110" />
+					<ePixmap alphatest="blend" pixmap="~/images/fritz.png" position="5,50" size="150,110" />
 					<widget font="Regular;18" name="text" position="175,10" size="210,160" />
-					<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/website.png" position="400,10" size="175,175" />
+					<ePixmap alphatest="blend" pixmap="~/images/website.png" position="400,10" size="175,175" />
 					<widget font="Regular;18" foregroundColor="#bab329" halign="center" name="url" position="10,205" size="560,25" />
 				</screen>"""
 			elif DESKTOP_WIDTH <= 1280:
 				self.skin = """
 				<!-- HD screen -->
 				<screen name="FritzAbout" position="center,center" size="780,240" title=" ">
-					<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/fritz.png" position="10,50" size="150,110" />
+					<ePixmap alphatest="blend" pixmap="~/images/fritz.png" position="10,50" size="150,110" />
 					<widget font="Regular;22" name="text" position="200,10" size="350,160" />
-					<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/website.png" position="580,10" size="175,175" />
+					<ePixmap alphatest="blend" pixmap="~/images/website.png" position="580,10" size="175,175" />
 					<widget font="Regular;22" foregroundColor="#bab329" halign="center" name="url" position="10,200" size="760,40" />
 				</screen>"""
 			elif DESKTOP_WIDTH <= 1920:
 				self.skin = """
 				<!-- Fullhd screen -->
 				<screen name="FritzAbout" position="center,center" size="880,300" title=" ">
-					<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/fritz.png" position="10,50" size="150,110" />
+					<ePixmap alphatest="blend" pixmap="~/images/fritz.png" position="10,50" size="150,110" />
 					<widget font="Regular;30" name="text" position="200,10" size="450,220" />
-					<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/website.png" position="680,30" size="175,175" />
+					<ePixmap alphatest="blend" pixmap="~/images/website.png" position="680,30" size="175,175" />
 					<widget font="Regular;30" foregroundColor="#bab329" halign="center" name="url" position="10,250" size="860,40" />
 				</screen>
 				"""
@@ -354,13 +354,14 @@ class FritzAbout(Screen):
 				self.skin = """
 				<!-- UHD screen -->
 				<screen name="FritzAbout" position="center,center" size="1880,460" title=" ">
-					<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/fritz.png" position="10,60" size="300,220" />
+					<ePixmap alphatest="blend" pixmap="~/images/fritz.png" position="10,60" size="300,220" />
 					<widget font="Regular;60" name="text" position="350,10" size="1100,360" />
-					<ePixmap alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/website.png" position="1570,20" size="300,300" />
+					<ePixmap alphatest="blend" pixmap="~/images/website.png" position="1570,20" size="300,300" />
 					<widget font="Regular;58" foregroundColor="#bab329" halign="center" name="url" position="10,380" size="1860,65" />
 				</screen>"""
 
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/FritzCall")
 		self["aboutActions"] = ActionMap(["OkCancelActions"],
 		{
 			"cancel": self.exit,
@@ -740,26 +741,26 @@ class FritzMenu(Screen, HelpableScreen):
 						<screen name="FritzMenuNew" position="center,center" size="600,370" title="FRITZ!Box Fon Status">
 							<widget name="FBFInfo" position="40,10" size="550,50" font="Regular;20" />
 							<widget name="FBFInternet" position="40,70" size="550,45" font="Regular;18" />
-							<widget name="internet_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,72" size="8,20" alphatest="blend"/>
-							<widget name="internet_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,72" size="8,20" alphatest="blend"/>
+							<widget name="internet_inactive" pixmap="~/images/inaktiv.png" position="20,72" size="8,20" alphatest="blend"/>
+							<widget name="internet_active" pixmap="~/images/aktiv.png" position="20,72" size="8,20" alphatest="blend"/>
 							<widget name="FBFDsl" position="40,144" size="550,25" font="Regular;18" />
-							<widget name="dsl_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,140" size="8,20" alphatest="blend"/>
-							<widget name="dsl_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,140" size="8,20" alphatest="blend"/>
+							<widget name="dsl_inactive" pixmap="~/images/inaktiv.png" position="20,140" size="8,20" alphatest="blend"/>
+							<widget name="dsl_active" pixmap="~/images/aktiv.png" position="20,140" size="8,20" alphatest="blend"/>
 							<widget name="FBFWlan" position="40,169" size="550,25" font="Regular;18" />
-							<widget name="wlan_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,165" size="8,20" alphatest="blend"/>
-							<widget name="wlan_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,165" size="8,20" alphatest="blend"/>
+							<widget name="wlan_inactive" pixmap="~/images/inaktiv.png" position="20,165" size="8,20" alphatest="blend"/>
+							<widget name="wlan_active" pixmap="~/images/aktiv.png" position="20,165" size="8,20" alphatest="blend"/>
 							<widget name="FBFDect" position="40,194" size="550,25" font="Regular;18" />
-							<widget name="dect_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,190" size="8,20" alphatest="blend"/>
-							<widget name="dect_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,190" size="8,20" alphatest="blend"/>
+							<widget name="dect_inactive" pixmap="~/images/inaktiv.png" position="20,190" size="8,20" alphatest="blend"/>
+							<widget name="dect_active" pixmap="~/images/aktiv.png" position="20,190" size="8,20" alphatest="blend"/>
 							<widget name="FBFFax" position="40,219" size="550,25" font="Regular;18" />
-							<widget name="fax_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,215" size="8,20" alphatest="blend"/>
-							<widget name="fax_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,215" size="8,20" alphatest="blend"/>
+							<widget name="fax_inactive" pixmap="~/images/inaktiv.png" position="20,215" size="8,20" alphatest="blend"/>
+							<widget name="fax_active" pixmap="~/images/aktiv.png" position="20,215" size="8,20" alphatest="blend"/>
 							<widget name="FBFRufuml" position="40,244" size="550,25" font="Regular;18" />
-							<widget name="rufuml_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,240" size="8,20" alphatest="blend"/>
-							<widget name="rufuml_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,240" size="8,20" alphatest="blend"/>
+							<widget name="rufuml_inactive" pixmap="~/images/inaktiv.png" position="20,240" size="8,20" alphatest="blend"/>
+							<widget name="rufuml_active" pixmap="~/images/aktiv.png" position="20,240" size="8,20" alphatest="blend"/>
 							<widget name="FBFGast" position="40,269" size="550,25" font="Regular;18" />
-							<widget name="gast_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,265" size="8,20" alphatest="blend"/>
-							<widget name="gast_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,265" size="8,20" alphatest="blend"/>
+							<widget name="gast_inactive" pixmap="~/images/inaktiv.png" position="20,265" size="8,20" alphatest="blend"/>
+							<widget name="gast_active" pixmap="~/images/aktiv.png" position="20,265" size="8,20" alphatest="blend"/>
 							<widget font="Regular;18" halign="center" name="key_red" position="10,330" size="160,22" />
 							<widget font="Regular;18" halign="center" name="key_green" position="180,330" size="160,22" />
 							<widget font="Regular;18" halign="center" name="key_yellow" position="350,330" size="240,22" />
@@ -773,26 +774,26 @@ class FritzMenu(Screen, HelpableScreen):
 						<screen name="FritzMenuNew" position="center,center" size="800,430" title="FRITZ!Box Fon Status">
 							<widget name="FBFInfo" position="60,10" size="730,60" font="Regular;20" />
 							<widget name="FBFInternet" position="60,80" size="730,50" font="Regular;20" />
-							<widget name="internet_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,82" size="8,25" alphatest="blend"/>
-							<widget name="internet_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,82" size="8,25" alphatest="blend"/>
+							<widget name="internet_inactive" pixmap="~/images/inaktiv.png" position="20,82" size="8,25" alphatest="blend"/>
+							<widget name="internet_active" pixmap="~/images/aktiv.png" position="20,82" size="8,25" alphatest="blend"/>
 							<widget name="FBFDsl" position="60,154" size="730,30" font="Regular;20" />
-							<widget name="dsl_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,152" size="8,25" alphatest="blend"/>
-							<widget name="dsl_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,152" size="8,25" alphatest="blend"/>
+							<widget name="dsl_inactive" pixmap="~/images/inaktiv.png" position="20,152" size="8,25" alphatest="blend"/>
+							<widget name="dsl_active" pixmap="~/images/aktiv.png" position="20,152" size="8,25" alphatest="blend"/>
 							<widget name="FBFWlan" position="60,184" size="730,30" font="Regular;20" />
-							<widget name="wlan_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,182" size="8,25" alphatest="blend"/>
-							<widget name="wlan_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,182" size="8,25" alphatest="blend"/>
+							<widget name="wlan_inactive" pixmap="~/images/inaktiv.png" position="20,182" size="8,25" alphatest="blend"/>
+							<widget name="wlan_active" pixmap="~/images/aktiv.png" position="20,182" size="8,25" alphatest="blend"/>
 							<widget name="FBFDect" position="60,214" size="730,30" font="Regular;20" />
-							<widget name="dect_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,212" size="8,25" alphatest="blend"/>
-							<widget name="dect_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,212" size="8,25" alphatest="blend"/>
+							<widget name="dect_inactive" pixmap="~/images/inaktiv.png" position="20,212" size="8,25" alphatest="blend"/>
+							<widget name="dect_active" pixmap="~/images/aktiv.png" position="20,212" size="8,25" alphatest="blend"/>
 							<widget name="FBFFax" position="60,244" size="730,30" font="Regular;20" />
-							<widget name="fax_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,242" size="8,25" alphatest="blend"/>
-							<widget name="fax_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,242" size="8,25" alphatest="blend"/>
+							<widget name="fax_inactive" pixmap="~/images/inaktiv.png" position="20,242" size="8,25" alphatest="blend"/>
+							<widget name="fax_active" pixmap="~/images/aktiv.png" position="20,242" size="8,25" alphatest="blend"/>
 							<widget name="FBFRufuml" position="60,274" size="730,30" font="Regular;20" />
-							<widget name="rufuml_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,272" size="8,25" alphatest="blend"/>
-							<widget name="rufuml_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,272" size="8,25" alphatest="blend"/>
+							<widget name="rufuml_inactive" pixmap="~/images/inaktiv.png" position="20,272" size="8,25" alphatest="blend"/>
+							<widget name="rufuml_active" pixmap="~/images/aktiv.png" position="20,272" size="8,25" alphatest="blend"/>
 							<widget name="FBFGast" position="60,304" size="730,30" font="Regular;20" />
-							<widget name="gast_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,302" size="8,25" alphatest="blend"/>
-							<widget name="gast_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,302" size="8,25" alphatest="blend"/>
+							<widget name="gast_inactive" pixmap="~/images/inaktiv.png" position="20,302" size="8,25" alphatest="blend"/>
+							<widget name="gast_active" pixmap="~/images/aktiv.png" position="20,302" size="8,25" alphatest="blend"/>
 							<widget font="Regular;20" halign="center" name="key_red" position="10,375" size="220,30" />
 							<widget font="Regular;20" halign="center" name="key_green" position="240,375" size="220,30" />
 							<widget font="Regular;20" halign="center" name="key_yellow" position="470,375" size="320,30" />
@@ -806,26 +807,26 @@ class FritzMenu(Screen, HelpableScreen):
 						<screen name="FritzMenuNew" position="center,center" size="1100,660" title="FRITZ!Box Fon Status">
 							<widget name="FBFInfo" position="60,10" size="980,105" font="Regular;30" />
 							<widget name="FBFInternet" position="60,122" size="980,80" font="Regular;28" />
-							<widget name="internet_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,125" size="10,35" alphatest="blend"/>
-							<widget name="internet_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,125" size="10,35" alphatest="blend"/>
+							<widget name="internet_inactive" pixmap="~/images/inaktiv.png" position="20,125" size="10,35" alphatest="blend"/>
+							<widget name="internet_active" pixmap="~/images/aktiv.png" position="20,125" size="10,35" alphatest="blend"/>
 							<widget name="FBFDsl" position="60,233" size="980,40" font="Regular;28" />
-							<widget name="dsl_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,230" size="10,35" alphatest="blend"/>
-							<widget name="dsl_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,230" size="10,35" alphatest="blend"/>
+							<widget name="dsl_inactive" pixmap="~/images/inaktiv.png" position="20,230" size="10,35" alphatest="blend"/>
+							<widget name="dsl_active" pixmap="~/images/aktiv.png" position="20,230" size="10,35" alphatest="blend"/>
 							<widget name="FBFWlan" position="60,283" size="980,40" font="Regular;28" />
-							<widget name="wlan_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,280" size="10,35" alphatest="blend"/>
-							<widget name="wlan_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,280" size="10,35" alphatest="blend"/>
+							<widget name="wlan_inactive" pixmap="~/images/inaktiv.png" position="20,280" size="10,35" alphatest="blend"/>
+							<widget name="wlan_active" pixmap="~/images/aktiv.png" position="20,280" size="10,35" alphatest="blend"/>
 							<widget name="FBFDect" position="60,333" size="980,40" font="Regular;28" />
-							<widget name="dect_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,330" size="10,35" alphatest="blend"/>
-							<widget name="dect_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,330" size="10,35" alphatest="blend"/>
+							<widget name="dect_inactive" pixmap="~/images/inaktiv.png" position="20,330" size="10,35" alphatest="blend"/>
+							<widget name="dect_active" pixmap="~/images/aktiv.png" position="20,330" size="10,35" alphatest="blend"/>
 							<widget name="FBFFax" position="60,383" size="980,40" font="Regular;28" />
-							<widget name="fax_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,380" size="10,35" alphatest="blend"/>
-							<widget name="fax_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,380" size="10,35" alphatest="blend"/>
+							<widget name="fax_inactive" pixmap="~/images/inaktiv.png" position="20,380" size="10,35" alphatest="blend"/>
+							<widget name="fax_active" pixmap="~/images/aktiv.png" position="20,380" size="10,35" alphatest="blend"/>
 							<widget name="FBFRufuml" position="60,433" size="980,40" font="Regular;28" />
-							<widget name="rufuml_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,430" size="10,35" alphatest="blend"/>
-							<widget name="rufuml_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,430" size="10,35" alphatest="blend"/>
+							<widget name="rufuml_inactive" pixmap="~/images/inaktiv.png" position="20,430" size="10,35" alphatest="blend"/>
+							<widget name="rufuml_active" pixmap="~/images/aktiv.png" position="20,430" size="10,35" alphatest="blend"/>
 							<widget name="FBFGast" position="60,483" size="980,80" font="Regular;28" />
-							<widget name="gast_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,480" size="10,35" alphatest="blend"/>
-							<widget name="gast_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,480" size="10,35" alphatest="blend"/>
+							<widget name="gast_inactive" pixmap="~/images/inaktiv.png" position="20,480" size="10,35" alphatest="blend"/>
+							<widget name="gast_active" pixmap="~/images/aktiv.png" position="20,480" size="10,35" alphatest="blend"/>
 							<widget font="Regular;30" halign="center" name="key_red" position="10,590" size="300,40" />
 							<widget font="Regular;30" halign="center" name="key_green" position="330,590" size="300,40" />
 							<widget font="Regular;30" halign="center" name="key_yellow" position="650,590" size="440,40" />
@@ -839,26 +840,26 @@ class FritzMenu(Screen, HelpableScreen):
 						<screen name="FritzMenuNew" position="center,center" size="2400,1270" title="FRITZ!Box Fon Status">
 							<widget name="FBFInfo" position="80,10" size="2300,150" font="Regular;65" />
 							<widget name="FBFInternet" position="80,200" size="2100,130" font="Regular;60" />
-							<widget name="internet_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,205" size="20,70" alphatest="blend"/>
-							<widget name="internet_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,205" size="20,70" alphatest="blend"/>
+							<widget name="internet_inactive" pixmap="~/images/inaktiv.png" position="20,205" size="20,70" alphatest="blend"/>
+							<widget name="internet_active" pixmap="~/images/aktiv.png" position="20,205" size="20,70" alphatest="blend"/>
 							<widget name="FBFDsl" position="80,397" size="2300,70" font="Regular;60" />
-							<widget name="dsl_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,395" size="20,70" alphatest="blend"/>
-							<widget name="dsl_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,395" size="20,70" alphatest="blend"/>
+							<widget name="dsl_inactive" pixmap="~/images/inaktiv.png" position="20,395" size="20,70" alphatest="blend"/>
+							<widget name="dsl_active" pixmap="~/images/aktiv.png" position="20,395" size="20,70" alphatest="blend"/>
 							<widget name="FBFWlan" position="80,517" size="2300,70" font="Regular;60" />
-							<widget name="wlan_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,515" size="20,70" alphatest="blend"/>
-							<widget name="wlan_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,515" size="20,70" alphatest="blend"/>
+							<widget name="wlan_inactive" pixmap="~/images/inaktiv.png" position="20,515" size="20,70" alphatest="blend"/>
+							<widget name="wlan_active" pixmap="~/images/aktiv.png" position="20,515" size="20,70" alphatest="blend"/>
 							<widget name="FBFDect" position="80,617" size="2300,70" font="Regular;60" />
-							<widget name="dect_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,615" size="20,70" alphatest="blend"/>
-							<widget name="dect_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,615" size="20,70" alphatest="blend"/>
+							<widget name="dect_inactive" pixmap="~/images/inaktiv.png" position="20,615" size="20,70" alphatest="blend"/>
+							<widget name="dect_active" pixmap="~/images/aktiv.png" position="20,615" size="20,70" alphatest="blend"/>
 							<widget name="FBFFax" position="80,727" size="2300,70" font="Regular;60" />
-							<widget name="fax_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,725" size="20,70" alphatest="blend"/>
-							<widget name="fax_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,725" size="20,70" alphatest="blend"/>
+							<widget name="fax_inactive" pixmap="~/images/inaktiv.png" position="20,725" size="20,70" alphatest="blend"/>
+							<widget name="fax_active" pixmap="~/images/aktiv.png" position="20,725" size="20,70" alphatest="blend"/>
 							<widget name="FBFRufuml" position="80,837" size="2300,70" font="Regular;60" />
-							<widget name="rufuml_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,835" size="20,70" alphatest="blend"/>
-							<widget name="rufuml_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,785" size="20,70" alphatest="blend"/>
+							<widget name="rufuml_inactive" pixmap="~/images/inaktiv.png" position="20,835" size="20,70" alphatest="blend"/>
+							<widget name="rufuml_active" pixmap="~/images/aktiv.png" position="20,785" size="20,70" alphatest="blend"/>
 							<widget name="FBFGast" position="80,947" size="2300,70" font="Regular;60" />
-							<widget name="gast_inactive" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/inaktiv.png" position="20,945" size="20,70" alphatest="blend"/>
-							<widget name="gast_active" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FritzCall/images/aktiv.png" position="20,945" size="20,70" alphatest="blend"/>
+							<widget name="gast_inactive" pixmap="~/images/inaktiv.png" position="20,945" size="20,70" alphatest="blend"/>
+							<widget name="gast_active" pixmap="~/images/aktiv.png" position="20,945" size="20,70" alphatest="blend"/>
 							<widget font="Regular;60" halign="center" name="key_red" position="20,1140" size="650,70" />
 							<widget font="Regular;60" halign="center" name="key_green" position="700,1140" size="650,70" />
 							<widget font="Regular;60" halign="center" name="key_yellow" position="1380,1140" size="1000,70" />
@@ -868,6 +869,7 @@ class FritzMenu(Screen, HelpableScreen):
 						</screen>"""
 
 			Screen.__init__(self, session)
+			self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/FritzCall")
 			HelpableScreen.__init__(self)
 			# TRANSLATORS: keep it short, this is a button
 			self["menuActions"] = ActionMap(["OkCancelActions", "ColorActions", "EPGSelectActions"],

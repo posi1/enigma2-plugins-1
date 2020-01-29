@@ -92,9 +92,9 @@ class PTSTimeshiftState(Screen):
 			<widget source="session.CurrentService" render="Label" position="335,5" size="70,27" font="Regular;20" halign="left" foregroundColor="white" backgroundColor="transpBlack">
 				<convert type="ServicePosition">Length</convert>
 			</widget>
-			<widget name="PTSSeekPointer" position="8,30" zPosition="3" size="19,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentTimeshift/images/timeline-now.png" alphatest="on" />
-			<ePixmap position="10,33" size="840,15" zPosition="1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentTimeshift/images/slider_back.png" alphatest="on"/>
-				<widget source="session.CurrentService" render="Progress" position="10,33" size="390,15" zPosition="2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentTimeshift/images/slider.png" transparent="1">
+			<widget name="PTSSeekPointer" position="8,30" zPosition="3" size="19,50" pixmap="~/timeline-now.png" alphatest="on" />
+			<ePixmap position="10,33" size="840,15" zPosition="1" pixmap="~/images/slider_back.png" alphatest="on"/>
+				<widget source="session.CurrentService" render="Progress" position="10,33" size="390,15" zPosition="2" pixmap="~/images/slider.png" transparent="1">
 				<convert type="ServicePosition">Position</convert>
 			</widget>
 			<widget name="eventname" position="10,49" zPosition="4" size="420,20" font="Regular;18" halign="center" backgroundColor="transpBlack" />
@@ -102,6 +102,7 @@ class PTSTimeshiftState(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/PermanentTimeshift")
 		self["state"] = Label(text="")
 		self["PTSSeekPointer"] = Pixmap()
 		self["eventname"] = Label(text="")

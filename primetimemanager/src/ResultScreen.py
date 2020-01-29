@@ -28,10 +28,10 @@ EXTDESC		= 6
 SERVICENAME	= 7
 
 skinPTMhdfull = """<screen title="%s" position="center,center" size="630,650">
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/red.png" position="35,20" size="140,2" transparent="1" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/green.png" position="175,20" size="140,2" transparent="1" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/yellow.png" position="315,20" size="140,2" transparent="1" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/blue.png" position="455,20" size="140,2" transparent="1" alphatest="on" />
+		<ePixmap pixmap="~/images/red.png" position="35,20" size="140,2" transparent="1" alphatest="on" />
+		<ePixmap pixmap="~/images/green.png" position="175,20" size="140,2" transparent="1" alphatest="on" />
+		<ePixmap pixmap="~/images/yellow.png" position="315,20" size="140,2" transparent="1" alphatest="on" />
+		<ePixmap pixmap="~/images/blue.png" position="455,20" size="140,2" transparent="1" alphatest="on" />
 		<widget render="Label" source="key_red" position="35,0" size="140,19" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget render="Label" source="key_green" position="175,0" size="140,19" zPosition="5" valign="center" halign="center" backgroundColor="green" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget render="Label" source="key_yellow" position="315,0" size="140,19" zPosition="5" valign="center" halign="center" backgroundColor="yellow" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
@@ -58,6 +58,7 @@ skinPTMsd = """<screen title="%s" position="center,center" size="630,520">
 class ResultScreen(Screen, HelpableScreen):
 	def __init__(self, session, favoriteEvents):
 		self.session = session
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/PrimeTimeManager")
 		self.favoriteEvents = favoriteEvents
 		if size_width >= 1280 and len(self.favoriteEvents) > 3:
 			self.skin = skinPTMhdfull

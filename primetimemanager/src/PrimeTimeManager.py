@@ -109,13 +109,13 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		<ePixmap pixmap="buttons/green.png" position="185,0" size="140,40" transparent="1" alphatest="on" />
 		<ePixmap pixmap="buttons/yellow.png" position="325,0" size="140,40" transparent="1" alphatest="on" />
 		<ePixmap pixmap="buttons/blue.png" position="465,0" size="140,40" transparent="1" alphatest="on" />
-		<ePixmap position="10,10" size="35,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/key_menu.png" alphatest="on" />
-		<ePixmap position="610,10" size="35,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/key_help.png" alphatest="on" />
+		<ePixmap position="10,10" size="35,25" pixmap="~/images/key_menu.png" alphatest="on" />
+		<ePixmap position="610,10" size="35,25" pixmap="~/images/key_help.png" alphatest="on" />
 		<widget render="Label" source="key_red" position="45,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget render="Label" source="key_green" position="185,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="green" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget render="Label" source="key_yellow" position="325,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="yellow" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget render="Label" source="key_blue" position="465,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="blue" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<ePixmap position="0,40" zPosition="0" size="650,480" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/border.png" transparent="0" alphatest="on" />
+		<ePixmap position="0,40" zPosition="0" size="650,480" pixmap="~/images/border.png" transparent="0" alphatest="on" />
 		<widget render="Label" source="primetime" position="0,40" size="650,21" zPosition="1" font="Regular;17" transparent="1" halign="left" foregroundColor="yellow" shadowColor="black" shadowOffset="-1,-1" />
 		<widget name="description" position="5,190" size="640,165" font="Regular;18" />
 		<widget name="infoPixmap" position="610,185" size="35,25" zPosition="1" transparent="1" alphatest="on" />
@@ -145,6 +145,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 	def __init__(self, session, servicelist = None):
 		self.servicelist = servicelist
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/PrimeTimeManager")
 		self.session = session
 		self.setTitle(_("Prime Time Manager"))
 
@@ -2609,7 +2610,7 @@ class PrimeTimeSelection(EPGSelection):
 			<widget source="Event" render="Label" position="20,30" size="1060,90" backgroundColor="background" foregroundColor="#00999999" halign="center" transparent="1" font="Regular;20">
 				<convert type="EventName">ExtendedDescription</convert>
 			</widget>
-			<widget name="list" position="10,135" size="1080,380" itemHeight="24"  transparent="1" scrollbarMode="showOnDemand" foregroundColorSelected="#ffd700" selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/sel.png" />
+			<widget name="list" position="10,135" size="1080,380" itemHeight="24"  transparent="1" scrollbarMode="showOnDemand" foregroundColorSelected="#ffd700" selectionPixmap="~/images/sel.png" />
 			<widget position="65, 540" size="95, 20" halign="left" source="global.CurrentTime" render="Label" font="Regular;20" backgroundColor="background" transparent="1" zPosition="3">
 				<convert type="ClockToText">Default</convert>
 			</widget>
@@ -2641,6 +2642,7 @@ class PrimeTimeSelection(EPGSelection):
 		self.setPositionService = setPositionService
 		self.bouquetname = bouquetname
 		EPGSelection.__init__(self, session, service)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/PrimeTimeManager")
 		self.skinName = "PrimeTimeSelection"
 		self.setup_title = _("Bouquet: %s - EPG Selection Multi") % self.bouquetname
 		self["actions"] = ActionMap(["EPGSelectActions", "OkCancelActions"],

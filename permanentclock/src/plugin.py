@@ -53,7 +53,7 @@ config.plugins.PermanentClock.color_digital = ConfigSelection([("0", _("yellow")
 ##############################################################################
 SKIN1 = """
 	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
-		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad1.png" alphatest="on" />
+		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="~/trad/trad1.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
 		</widget>
@@ -67,7 +67,7 @@ SKIN1 = """
 ##############################################################################
 SKIN2 = """
 	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
-		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad2.png" alphatest="on" />
+		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="~/trad/trad2.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
 		</widget>
@@ -81,7 +81,7 @@ SKIN2 = """
 ##############################################################################
 SKIN3 = """
 	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
-		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad3.png" alphatest="on" />
+		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="~/trad/trad3.png" alphatest="on" />
 			<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 				<convert type="PermanentClockTime">secHand</convert>
 			</widget>
@@ -95,7 +95,7 @@ SKIN3 = """
 ##############################################################################
 SKIN4 = """
 	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
-		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad4.png" alphatest="on" />
+		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="~/trad/trad4.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
 		</widget>
@@ -109,7 +109,7 @@ SKIN4 = """
 ##############################################################################
 SKIN5 = """
 	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
-		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad5.png" alphatest="on" />
+		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="~/trad/trad5.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
 		</widget>
@@ -123,7 +123,7 @@ SKIN5 = """
 ##############################################################################
 SKIN6 = """
 	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
-		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad6.png" alphatest="on" />
+		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="~/trad/trad6.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
 		</widget>
@@ -137,7 +137,7 @@ SKIN6 = """
 ##############################################################################
 SKIN7 = """
 	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
-		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad7.png" alphatest="on" />
+		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="~/trad/trad7.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
 		</widget>
@@ -209,6 +209,7 @@ class PermanentClockNewScreen(Screen):
 			elif config.plugins.PermanentClock.color_digital.value == "3":
 				self.skin = SKIN0L
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/permanentclock")
 		self.onShow.append(self.movePosition)
 
 	def movePosition(self):

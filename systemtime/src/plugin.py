@@ -48,10 +48,10 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			<widget name="key_green" position="175,0" size="175,33" font="Regular;17" halign="center" valign="center" transparent="1" />
 			<widget name="key_yellow" position="350,0" size="175,33" font="Regular;17" halign="center" valign="center" transparent="1" />
 			<widget name="key_blue" position="525,0" size="175,33" font="Regular;17" halign="center" valign="center" transparent="1" />
-			<ePixmap position="0,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/red.png" alphatest="blend" />
-			<ePixmap position="175,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/green.png" alphatest="blend" />
-			<ePixmap position="350,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/yellow.png" alphatest="blend" />
-			<ePixmap position="525,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/blue.png" alphatest="blend" />
+			<ePixmap position="0,33" size="175,2" pixmap="~/images/red.png" alphatest="blend" />
+			<ePixmap position="175,33" size="175,2" pixmap="~/images/green.png" alphatest="blend" />
+			<ePixmap position="350,33" size="175,2" pixmap="~/images/yellow.png" alphatest="blend" />
+			<ePixmap position="525,33" size="175,2" pixmap="~/images/blue.png" alphatest="blend" />
 			<widget name="config" scrollbarMode="showOnDemand" position="0,45" size="700,225" />
 			<widget name="description" position="5,290" size="690,75" font="Regular;17" />
 			<ePixmap pixmap="div-h.png" position="0,280" size="700,2" />
@@ -70,6 +70,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "SystemPlugins/SystemTime")
 		self.setTitle(_("System time setup"))
 		self.skinName = ["SystemTimeSetupScreen", "Setup"]
 		self.syncTimer = eTimer()

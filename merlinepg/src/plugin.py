@@ -17,8 +17,6 @@
 #
 #######################################################################
 
-
-
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.EventView import EventViewSimple
@@ -218,7 +216,7 @@ class Merlin_PGII(Screen):
 			<widget itemHeight="70" name="epg_list3" position="522,80" scrollbarMode="showOnDemand" size="225,560" transparent="1" zPosition="4"/>
 			<widget itemHeight="70" name="epg_list4" position="753,80" scrollbarMode="showOnDemand" size="225,560" transparent="1" zPosition="4"/>
 			<widget itemHeight="70" name="epg_list5" position="984,80" scrollbarMode="showOnDemand" size="225,560" transparent="1" zPosition="4"/>
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/buttons.png" position="60,655" size="430,24"/>
+			<ePixmap pixmap="~/buttons.png" position="60,655" size="430,24"/>
 			<widget backgroundColor="background" font="Regular;18" foregroundColor="#ffc000" position="500,655" render="Label" size="200,24" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
 				<convert type="ClockToText">Format:%H:%M  %a %d. %b</convert>
 			</widget>
@@ -239,7 +237,7 @@ class Merlin_PGII(Screen):
 			<widget itemHeight="70" name="epg_list2" position="281,80" scrollbarMode="showOnDemand" size="225,420" transparent="1" zPosition="4"/>
 			<widget itemHeight="70" name="epg_list3" position="512,80" scrollbarMode="showOnDemand" size="225,420" transparent="1" zPosition="4"/>
 			<widget itemHeight="70" name="epg_list4" position="743,80" scrollbarMode="showOnDemand" size="225,420" transparent="1" zPosition="4"/>
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/buttons.png" position="50,518" size="430,24"/>
+			<ePixmap pixmap="~/buttons.png" position="50,518" size="430,24"/>
 			<widget backgroundColor="background" font="Regular;18" foregroundColor="#ffc000" position="490,518" render="Label" size="200,24" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
 				<convert type="ClockToText">Format:%H:%M  %a %d. %b</convert>
 			</widget>
@@ -261,7 +259,7 @@ class Merlin_PGII(Screen):
 			<widget itemHeight="70" name="epg_list2" position="205,90" scrollbarMode="showOnDemand" size="155,420" transparent="1" zPosition="4"/>
 			<widget itemHeight="70" name="epg_list3" position="360,90" scrollbarMode="showOnDemand" size="155,420" transparent="1" zPosition="4"/>
 			<widget itemHeight="70" name="epg_list4" position="515,90" scrollbarMode="showOnDemand" size="155,420" transparent="1" zPosition="4"/>
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/buttons.png" position="50,518" size="430,24"/>
+			<ePixmap pixmap="~/buttons.png" position="50,518" size="430,24"/>
 			<widget backgroundColor="background" font="Regular;18" foregroundColor="#ffc000" position="490,518" render="Label" size="200,24" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
 				<convert type="ClockToText">Format:%H:%M  %a %d. %b</convert>
 			</widget>
@@ -269,6 +267,7 @@ class Merlin_PGII(Screen):
 
 	def __init__(self, session, servicelist=None):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/MerlinEPG")
 		self.session = session
 		self.srvList = servicelist
 		self.myServices = []
@@ -694,10 +693,10 @@ class Merlin_PGd(Screen):
 			<widget backgroundColor="#ffffffff" position="0,0" render="Pig" size="520,292" source="session.VideoPicture" zPosition="-1"/>
 			<eLabel backgroundColor="#00111112" position="0,292" size="520,450" zPosition="1"/>
 			<eLabel backgroundColor="#00111112" position="520,0" size="760,720" zPosition="1"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/epg.png" position="1136,105" size="85,77" zPosition="5"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/channels.png" position="395,306" size="80,80" zPosition="5"/>
-			<ePixmap alphatest="on" name="red" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/red.png" position="70,635" size="35,25" zPosition="2"/>
-			<ePixmap alphatest="on" name="green" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/green.png" position="275,635" size="35,25" zPosition="2"/>
+			<ePixmap alphatest="on" pixmap="~/epg.png" position="1136,105" size="85,77" zPosition="5"/>
+			<ePixmap alphatest="on" pixmap="~/channels.png" position="395,306" size="80,80" zPosition="5"/>
+			<ePixmap alphatest="on" name="red" pixmap="~/red.png" position="70,635" size="35,25" zPosition="2"/>
+			<ePixmap alphatest="on" name="green" pixmap="~/green.png" position="275,635" size="35,25" zPosition="2"/>
 			<eLabel backgroundColor="#00111112" font="Regular;18" position="110,635" size="131,24" text="ZAP" transparent="1" zPosition="2"/>
 			<eLabel backgroundColor="#00111112" font="Regular;18" position="315,635" size="191,24" text="TIMERS" transparent="1" zPosition="2"/>
 			<widget itemHeight="25" name="prg_list" position="75,306" scrollbarMode="showNever" size="400,300" transparent="1" zPosition="4"/>
@@ -710,10 +709,10 @@ class Merlin_PGd(Screen):
 			<widget backgroundColor="#ffffffff" position="0,0" render="Pig" size="384,216" source="session.VideoPicture" zPosition="-1"/>
 			<eLabel backgroundColor="#00111112" position="0,216" size="384,366" zPosition="1"/>
 			<eLabel backgroundColor="#00111112" position="384,0" size="720,576" zPosition="1"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/epg.png" position="900,80" size="85,77" zPosition="5"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/channels.png" position="292,228" size="80,80" zPosition="5"/>
-			<ePixmap alphatest="on" name="red" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/red.png" position="40,520" size="35,25" zPosition="3"/>
-			<ePixmap alphatest="on" name="green" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/green.png" position="185,520" size="35,25" zPosition="3"/>
+			<ePixmap alphatest="on" pixmap="~/epg.png" position="900,80" size="85,77" zPosition="5"/>
+			<ePixmap alphatest="on" pixmap="~/channels.png" position="292,228" size="80,80" zPosition="5"/>
+			<ePixmap alphatest="on" name="red" pixmap="~/red.png" position="40,520" size="35,25" zPosition="3"/>
+			<ePixmap alphatest="on" name="green" pixmap="~/green.png" position="185,520" size="35,25" zPosition="3"/>
 			<eLabel backgroundColor="#00111112" font="Regular;18" position="80,520" size="92,24" text="ZAP" transparent="1" zPosition="2"/>
 			<eLabel backgroundColor="#00111112" font="Regular;18" position="230,520" size="141,24" text="TIMERS" transparent="1" zPosition="2"/>
 			<widget itemHeight="25" name="prg_list" position="40,228" scrollbarMode="showNever" size="332,275" transparent="1" zPosition="4"/>
@@ -723,9 +722,9 @@ class Merlin_PGd(Screen):
 	else:
 		skin = """
 		<screen flags="wfNoBorder" name="Merlin_PG" position="0,0" size="720,576" title="Merlin Program Guide">
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/mpgbgSD-fs8.png" position="0,0" size="720,576" zPosition="1"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/red.png" position="165,90" size="35,25" zPosition="2"/>
-			<ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/green.png" position="165,110" size="35,25" zPosition="2"/>
+			<ePixmap alphatest="on" pixmap="~/mpgbgSD-fs8.png" position="0,0" size="720,576" zPosition="1"/>
+			<ePixmap alphatest="on" pixmap="~/red.png" position="165,90" size="35,25" zPosition="2"/>
+			<ePixmap alphatest="on" pixmap="~/green.png" position="165,110" size="35,25" zPosition="2"/>
 			<eLabel backgroundColor="#1f1f1f" font="Regular;15" foregroundColor="#f0f0f0" position="205,93" size="70,20" text="ZAP" transparent="1" zPosition="2"/>
 			<eLabel backgroundColor="#1f1f1f" font="Regular;15" foregroundColor="#f0f0f0" position="205,113" size="70,20" text="TIMERS" transparent="1" zPosition="2"/>
 			<widget name="prg_list" position="342,63" scrollbarMode="showOnDemand" size="327,150" zPosition="2" itemHeight="25"/>
@@ -741,6 +740,7 @@ class Merlin_PGd(Screen):
 
 	def __init__(self, session, servicelist=None):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/MerlinEPG")
 		self.session = session
 		self.myServices = []
 		self.myBqts = []
@@ -1048,9 +1048,3 @@ if epgSpresent:
 
 		def timerAdd(self):
 			pass
-
-
-
-
-
-
