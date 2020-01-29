@@ -226,7 +226,7 @@ All important for the fan current readings
 appears as a value and bar graph. The bar display
 range is based on the individually set parameters.
 FanControl2 is prepared for different languages.
-POT file is in ipkg if anyone other languages
+POT file is in opkg if anyone other languages
 would make available.
 The settings are stored in the normal Enigma2 settings and
 are therefore included in the backup / restore.

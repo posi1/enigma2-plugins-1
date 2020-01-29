@@ -172,8 +172,8 @@ msgstr "Nome host Growl"
 msgid "Growl Port"
 msgstr "Porta Growl"
 
-msgid "IPKG Update Notification"
-msgstr "Notifiche aggiornamenti IPKG"
+msgid "OPKG Update Notification"
+msgstr "Notifiche aggiornamenti OPKG"
 
 msgid "If You can see this, Your configuration is correct."
 msgstr "Se viene visualizzato questo messaggio la configurazione è corretta."

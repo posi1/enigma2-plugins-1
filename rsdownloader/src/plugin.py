@@ -1417,7 +1417,7 @@ class RSMain(ChangedScreen):
 		self.session.open(UnrarManager)
 
 	def installUnrar(self):
-		self.session.open(ConsoleScreen, title=_("Installing unrar..."), cmdlist=["ipkg install http://www.lt-forums.org/ali/downloads/unrar_3.4.3-r0_mipsel.ipk"])
+		self.session.open(ConsoleScreen, title=_("Installing unrar..."), cmdlist=["opkg install http://www.lt-forums.org/ali/downloads/unrar_3.4.3-r0_mipsel.ipk"])
 
 	def updateList(self):
 		list = []

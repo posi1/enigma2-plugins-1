@@ -158,7 +158,7 @@ msgstr ""
 msgid "Growl Port"
 msgstr ""
 
-msgid "IPKG Update Notification"
+msgid "OPKG Update Notification"
 msgstr ""
 
 msgid "If You can see this, Your configuration is correct."

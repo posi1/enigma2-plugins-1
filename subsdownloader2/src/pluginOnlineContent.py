@@ -7,8 +7,8 @@ from Components.MenuList import MenuList
 from Components.ActionMap import ActionMap
 from enigma import quitMainloop
 from Screens.MessageBox import MessageBox
-from Screens.Ipkg import Ipkg
-from Components.Ipkg import IpkgComponent
+from Screens.Opkg import Opkg
+from Components.Opkg import OpkgComponent
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 zlib_link = "http://subs-downloader.googlecode.com/files/libzen_0.4.22-0.0_all.ipk"
@@ -60,10 +60,10 @@ class InstallDownloadableContent():
 	self.session = session
 	self.cmdList = []
 	for item in url_to_download:
-	    self.cmdList.append((IpkgComponent.CMD_INSTALL, { "package": item }))
+	    self.cmdList.append((OpkgComponent.CMD_INSTALL, { "package": item }))
 		
     def __install__(self):
-	self.session.openWithCallback(self.__restartMessage__, Ipkg, cmdList = self.cmdList)
+	self.session.openWithCallback(self.__restartMessage__, Opkg, cmdList = self.cmdList)
     
     def __restartMessage__(self):
 	self.session.openWithCallback(self.__restartGUI__, MessageBox,_("Do You want to restart GUI to apply changes?"), MessageBox.TYPE_YESNO, default = False)

@@ -192,11 +192,11 @@ def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, 
                             subs_file = new_file_in_directory(files_before_unrar,files_after_unrar)
                             os.remove(local_tmp_file)
                         else:
-                            from Components.Ipkg import IpkgComponent
-                            from Screens.Ipkg import Ipkg
+                            from Components.Opkg import OpkgComponent
+                            from Screens.Opkg import Opkg
                             __cmdList = []
-                            __cmdList.append((IpkgComponent.CMD_INSTALL, { "package": 'unrar' }))
-                            screen_session.openWithCallback(__restartMessage__(screen_session, callback = None), Ipkg, cmdList = __cmdList)
+                            __cmdList.append((OpkgComponent.CMD_INSTALL, { "package": 'unrar' }))
+                            screen_session.openWithCallback(__restartMessage__(screen_session, callback = None), Opkg, cmdList = __cmdList)
                     
                 return False, language, subs_file #standard output
     #log( __name__ ," Login to Itasa failed. Check your username/password at the addon configuration.")

@@ -76,7 +76,7 @@ Or by entering the following commands in a Telnet
 session:
 
 cd /
-ipkg install /tmp/elektro*.ipk
+opkg install /tmp/elektro*.ipk
 
 To ensure proper operation of Elektro please "Restart"
 (reboot) the Dreambox. 

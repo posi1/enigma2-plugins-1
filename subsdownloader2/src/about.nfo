@@ -102,7 +102,7 @@ ver 0.23.0:
 - added support for XBMC Subtitles.
 
 ver 0.21.5:
-- improved OnlineContent installation (Screen.Ipkg library),
+- improved OnlineContent installation (Screen.Opkg library),
 - restart GUI prompt after OnlineContent installation,
 - changes in IPK file,
 - christmass edition ;-).

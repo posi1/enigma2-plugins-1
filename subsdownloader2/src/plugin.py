@@ -940,9 +940,9 @@ class SubsDownloaderApplication(Screen):
 						if fileExists("/usr/bin/opkg"):
 							self.commando = [ "opkg install " + filename ]
 						else:
-							self.commando = [ "ipkg install " + filename ]
+							self.commando = [ "opkg install " + filename ]
 							askList = [(_("Cancel"), "NO"),(_("Install this package"), "YES")]
-							dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("IPKG-package:\\n"+filename), list=askList)
+							dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("OPKG-package:\\n"+filename), list=askList)
 							dei.setTitle(_("SubsDownloader : Install..."))
 					elif testFileName.endswith(".sh"):
 						self.commando = [ filename ]

@@ -31,11 +31,11 @@ from Plugins.SystemPlugins.SoftwareManager.SoftwareTools import iSoftwareTools
 
 
 # Constants
-SUBJECT = _("IPKG Update Notification")
+SUBJECT = _("OPKG Update Notification")
 BODY    = _("There are updates available:\n%s")
 
 
-class IPKGUpdateNotification(ControllerBase):
+class OPKGUpdateNotification(ControllerBase):
 	
 	ForceSingleInstance = True
 	
@@ -54,7 +54,7 @@ class IPKGUpdateNotification(ControllerBase):
 			# Last refresh was within one day
 			return self.buildList(callback, errback)
 		else:
-			print "IPKGUpdateNotification run else"
+			print "OPKGUpdateNotification run else"
 			if self.getValue('selfcheck'):
 				# Refresh package list
 				iSoftwareTools.startSoftwareTools( boundFunction(self.getUpdateInfosCB, callback, errback) )
@@ -83,7 +83,7 @@ class IPKGUpdateNotification(ControllerBase):
 						print "No network connection available."
 						return errback(_("No network connection available."))
 				else:
-					print "IPKGUpdateNotification getUpdates"
+					print "OPKGUpdateNotification getUpdates"
 					# Call update
 					iSoftwareTools.lastDownloadDate = time()
 					iSoftwareTools.list_updating = True

@@ -31,13 +31,13 @@ Then install Babelzapping by entering the
 following commands in a Telnet session:
 
 cd /
-ipkg install /tmp/enigma2-plugin-extensions-babelzapper*.ipk
+opkg install /tmp/enigma2-plugin-extensions-babelzapper*.ipk
 
 You can remove Babelzapper with the red button in the Plugin List,
 or the Softwaremanager Plugin of enigma2,
 or with the following command in telnet:
 
-ipkg remove enigma2-plugin-extensions-babelzapper
+opkg remove enigma2-plugin-extensions-babelzapper
 
 Usage:
 ------
