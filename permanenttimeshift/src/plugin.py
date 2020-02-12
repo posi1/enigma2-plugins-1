@@ -6,6 +6,7 @@
 # Version: 1.5
 # Support: www.dreambox-plugins.de
 #####################################################
+from __future__ import print_function
 from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import config, configfile, getConfigListEntry, ConfigSubsection, ConfigYesNo, ConfigInteger, ConfigSelection, NoSave
@@ -57,7 +58,7 @@ def _(txt):
 	if gettext.dgettext(PluginLanguageDomain, txt):
 		return gettext.dgettext(PluginLanguageDomain, txt)
 	else:
-		print "[" + PluginLanguageDomain + "] fallback to default translation for " + txt
+		print("[" + PluginLanguageDomain + "] fallback to default translation for " + txt)
 		return gettext.gettext(txt)
 
 language.addCallback(localeInit())
@@ -653,7 +654,7 @@ class InfoBar(InfoBarOrg):
 							elif config.recording.filename_composition.value == "short":
 								ptsfilename = "%s - %s" % (strftime("%Y%m%d",localtime(self.pts_starttime)),self.pts_curevent_name)
 					except Exception, errormsg:
-						print "PTS-Plugin: Using default filename"
+						print("PTS-Plugin: Using default filename")
 
 					if config.recording.ascii_filenames.value:
 						ptsfilename = ASCIItranslit.legacyEncode(ptsfilename)
@@ -681,7 +682,7 @@ class InfoBar(InfoBarOrg):
 							elif config.recording.filename_composition.value == "short":
 								ptsfilename = "%s - %s" % (strftime("%Y%m%d",localtime(int(begintime))),eventname)
 					except Exception, errormsg:
-						print "PTS-Plugin: Using default filename"
+						print("PTS-Plugin: Using default filename")
 
 					if config.recording.ascii_filenames.value:
 						ptsfilename = ASCIItranslit.legacyEncode(ptsfilename)
@@ -786,7 +787,7 @@ class InfoBar(InfoBarOrg):
 					statinfo = os_stat("%s/%s" % (config.usage.timeshift_path.value,filename))
 					# if no write for 5 sec = stranded timeshift
 					if statinfo.st_mtime < (time()-5.0):
-						print "PTS-Plugin: Erasing stranded timeshift %s" % filename
+						print("PTS-Plugin: Erasing stranded timeshift %s" % filename)
 						self.BgFileEraser.erase("%s/%s" % (config.usage.timeshift_path.value,filename))
 
 						# Delete Meta and EIT File too
@@ -794,7 +795,7 @@ class InfoBar(InfoBarOrg):
 							self.BgFileEraser.erase("%s/%s.meta" % (config.usage.timeshift_path.value,filename))
 							self.BgFileEraser.erase("%s/%s.eit" % (config.usage.timeshift_path.value,filename))
 		except:
-			print "PTS: IO-Error while cleaning Timeshift Folder ..."
+			print("PTS: IO-Error while cleaning Timeshift Folder ...")
 
 	def ptsGetEventInfo(self):
 		event = None
@@ -840,7 +841,7 @@ class InfoBar(InfoBarOrg):
 				elif fileExists("/proc/stb/fp/led0_pattern"):
 					open("/proc/stb/fp/led0_pattern", "w").write("0")
 		except Exception, errormsg:
-			print "PTS Plugin: %s" % (errormsg)
+			print("PTS Plugin: %s" % (errormsg))
 
 	def ptsCreateHardlink(self):
 		for filename in os_listdir(config.usage.timeshift_path.value):
@@ -852,7 +853,7 @@ class InfoBar(InfoBarOrg):
 							self.BgFileEraser.erase("%s/pts_livebuffer.%s" % (config.usage.timeshift_path.value,self.pts_eventcount))
 							self.BgFileEraser.erase("%s/pts_livebuffer.%s.meta" % (config.usage.timeshift_path.value,self.pts_eventcount))
 						except Exception, errormsg:
-							print "PTS Plugin: %s" % (errormsg)
+							print("PTS Plugin: %s" % (errormsg))
 
 						try:
 							# Create link to pts_livebuffer file
@@ -878,7 +879,7 @@ class InfoBar(InfoBarOrg):
 								metafile.write("%s\n%s\n%s\n%i\nautosaved\n" % (self.pts_curevent_servicerefname,self.pts_curevent_name.replace("\n", ""),self.pts_curevent_description.replace("\n", ""),int(self.pts_starttime)))
 								metafile.close()
 							except Exception, errormsg:
-								print "PTS Plugin: %s" % (errormsg)
+								print("PTS Plugin: %s" % (errormsg))
 				except Exception, errormsg:
 					errormsg = str(errormsg)
 					if errormsg.find('Input/output error') != -1:
@@ -980,7 +981,7 @@ class InfoBar(InfoBarOrg):
 				serviceref = ServiceReference(self.session.nav.getCurrentlyPlayingServiceReference()).ref.toString()
 				eitsave.SaveEIT(serviceref, filename+".eit", self.pts_curevent_eventid, -1, -1)
 			except Exception, errormsg:
-				print "PTS Plugin: %s" % (errormsg)
+				print("PTS Plugin: %s" % (errormsg))
 
 	def ptsCopyFilefinished(self, srcfile, destfile):
 		# Erase Source File
@@ -1228,7 +1229,7 @@ class InfoBar(InfoBarOrg):
 		try:
 			ts.setNextPlaybackFile("%s/%s" % (config.usage.timeshift_path.value,nexttsfile))
 		except:
-			print "PTS-Plugin: setNextPlaybackFile() not supported by OE. Enigma2 too old !?"
+			print("PTS-Plugin: setNextPlaybackFile() not supported by OE. Enigma2 too old !?")
 
 	def ptsSeekBackHack(self):
 		if not config.plugins.pts.enabled.value or not self.timeshift_enabled:

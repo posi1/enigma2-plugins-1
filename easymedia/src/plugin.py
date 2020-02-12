@@ -17,6 +17,7 @@
 #
 #######################################################################
 
+from __future__ import print_function
 from __init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -231,7 +232,7 @@ class AddPlug(Screen):
 
 	def save(self):
 		plugin = self["pluginlist"].getCurrent()[0]
-		print plugin
+		print(plugin)
 		plugin.icon = None
 		if not fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/EasyMedia/" + plugin.name + ".plug")):
 			try:

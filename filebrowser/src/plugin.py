@@ -1,3 +1,4 @@
+from __future__ import print_function
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config, ConfigSubList, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, getConfigListEntry
 from Components.FileList import FileList
@@ -62,13 +63,13 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
         self.setTitle(pname+" "+_("Settings"))
 
     def save(self):
-        print "saving"
+        print("saving")
         for x in self["config"].list:
             x[1].save()
         self.close(True)
 
     def cancel(self):
-        print "cancel"
+        print("cancel")
         for x in self["config"].list:
             x[1].cancel()
         self.close(False)
@@ -257,7 +258,7 @@ class FilebrowserScreen(Screen):
     def onFileAction(self):
         try:
             x = openFile(self.session,guess_type(self.SOURCELIST.getFilename())[0],self.SOURCELIST.getCurrentDirectory()+self.SOURCELIST.getFilename())
-            print "RESULT OPEN FILE",x
+            print("RESULT OPEN FILE",x)
         except TypeError,e:
             # catching error
             #  File "/usr/lib/enigma2/python/Components/Scanner.py", line 43, in handleFile

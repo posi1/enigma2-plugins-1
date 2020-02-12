@@ -1,4 +1,5 @@
 # l10n
+from __future__ import print_function
 from . import _
 
 # GUI (Screens)
