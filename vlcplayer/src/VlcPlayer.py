@@ -12,13 +12,7 @@
 
 from time import time
 from . import _
-from enigma import iPlayableServicePtr
-from enigma import iPlayableService
-from enigma import iServiceInformation
-from enigma import iSeekableService
-from enigma import eServiceReference
-from enigma import eServiceCenter
-from enigma import eTimer
+from enigma import iPlayableServicePtr, iPlayableService, iServiceInformation, iSeekableService, eServiceReference, eServiceCenter, eTimer
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.MinuteInput import MinuteInput
@@ -27,9 +21,7 @@ from Components.Sources.Source import Source
 from Components.ServiceEventTracker import ServiceEventTracker
 from Components.ActionMap import ActionMap
 from Components.config import config
-
 from Screens.ChoiceBox import ChoiceBox
-from Components.Button import Button
 from os import system
 
 def isValidServiceId(id):
@@ -37,7 +29,7 @@ def isValidServiceId(id):
 	info = eServiceCenter.getInstance().info(testSRef)
 	return info is not None
 
-ENIGMA_SERVICEGS_ID = 0x1001
+ENIGMA_SERVICEGS_ID = eServiceReference.idServiceMP3
 ENIGMA_SERVICETS_ID = 0x1002
 
 ENIGMA_SERVICE_ID = 0
